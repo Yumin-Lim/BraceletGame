@@ -71,7 +71,7 @@ public class User : MonoBehaviour
     public void AddBracelet(string key, int count)
     {
         UserBracelet userBracelet=GetUserBracelet(key);
-        userBracelet.count += count;
+      userBracelet.count += count;
     }
 
     
@@ -108,7 +108,7 @@ public void SubBracelet(string key, int count)
         {
             if(userBracelets[i].key==key)
             {
-                userBracelets[i].count -= count;
+               userBracelets[i].count -= count;
             }
 
         }
@@ -157,5 +157,5 @@ public class UserBeads
 public class UserBracelet
 {
     public string key;
-    public int count;
+   public int count;
 }

@@ -15,6 +15,7 @@ public class CoinCounter : MonoBehaviour
     {
         User user = User.Instance;
         coinCounter.text = user.coin.ToString();
+
     }
 
     // Update is called once per frame

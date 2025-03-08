@@ -116,38 +116,6 @@ public class MakingBraceletManager : MonoBehaviour
         
         
         }
-
-
-
-        //Q3 왜 아래처럼 하면 안되는지 
-           /* if(User.Instance.userBeads.Count>0) 리트 갯수이다
-            {
-                
-            Vector2 screenPoint = Input.mousePosition;
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
-
-            Debug.Log("screenPoint: "+ screenPoint);
-            Debug.Log("worldPoint: "+ worldPoint);
-
-            GameObject beadsPrefabClone = Instantiate(beadsPrefab);
-
-            beadsPrefabClone.GetComponent<Transform>().position = worldPoint;
-            beadsPrefabClone.GetComponent<Beads>(). SetBeads(beadsKey);
-
-            User.Instance.SubBeads(beadsKey);//11/19
-            
-            }
-            if(User.Instance.userBeads.Count<=0)
-            {
-                Debug.Log("no more beads ");
-            }
-
-            return;*/
-        //비즈 없을때 비즈 안나오게 숫자도 소모하면 줄어들고 !!
-        //다시 만들기 버튼누르면 창위에 모든 비즈 회수하고 ui 갱신 
-
-
-
             
             
             
