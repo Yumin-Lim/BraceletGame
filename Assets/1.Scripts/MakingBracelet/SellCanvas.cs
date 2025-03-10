@@ -30,12 +30,19 @@ public class SellCanvas : MonoBehaviour
 
         for (int i = 0; i < User.Instance.userBracelets.Count; i++)
         {
-            GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
+            if(User.Instance.userBracelets[i].count <= 0)
+            continue;
+            
+            for(int j = 0; j < User.Instance.userBracelets[i].count;)
+            {
+                   GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
             sellbraveletPanel sellbraveletPanel = SellPanel.GetComponent<sellbraveletPanel>();
             sellbraveletPanel.SetBracelet(User.Instance.userBracelets[i].key);
             Debug.Log("key값이 주어지는다");
             Debug.Log(User.Instance.userBracelets[i].key);
 
+            }
+         
 
 
 
