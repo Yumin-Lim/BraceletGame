@@ -7,6 +7,7 @@ TagManager:
   - BeadsPlace
   - WorkPlace
   - StorePlace
+  - Shop_1
   layers:
   - Default
   - TransparentFX

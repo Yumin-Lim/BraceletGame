@@ -30,19 +30,20 @@ public class SellCanvas : MonoBehaviour
 
         for (int i = 0; i < User.Instance.userBracelets.Count; i++)
         {
-            if(User.Instance.userBracelets[i].count <= 0)
-            continue;
-            
-            for(int j = 0; j < User.Instance.userBracelets[i].count;)
+            if (User.Instance.userBracelets[i].count <= 0)
+                continue;
+
+            for (int j = 0; j < User.Instance.userBracelets[i].count; j++)
+
             {
-                   GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
-            sellbraveletPanel sellbraveletPanel = SellPanel.GetComponent<sellbraveletPanel>();
-            sellbraveletPanel.SetBracelet(User.Instance.userBracelets[i].key);
-            Debug.Log("key값이 주어지는다");
-            Debug.Log(User.Instance.userBracelets[i].key);
+                GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
+                sellbraveletPanel sellbraveletPanel = SellPanel.GetComponent<sellbraveletPanel>();
+                sellbraveletPanel.SetBracelet(User.Instance.userBracelets[i].key);
+                Debug.Log("key값이 주어지는다");
+                Debug.Log(User.Instance.userBracelets[i].key);
 
             }
-         
+
 
 
 
@@ -50,15 +51,10 @@ public class SellCanvas : MonoBehaviour
         //여기가 카운트에 따라서 만들어지는게 아니라 단독적으로 하나당 패널 하나씩 만들어져야하는데 ....
 
 
-        
+
 
     }
 
-
-    void destoryPanel()
-    {
-
-    }
 
 
 

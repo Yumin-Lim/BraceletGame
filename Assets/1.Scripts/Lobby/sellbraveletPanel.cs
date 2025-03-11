@@ -44,6 +44,8 @@ public class sellbraveletPanel : MonoBehaviour
 
       BraceletData braceletData = BraceletManager.Instance.GetBraceletData(key);
       User.Instance.AddCoin(braceletData.price);
+
+     Destroy(gameObject);
     
      
 
