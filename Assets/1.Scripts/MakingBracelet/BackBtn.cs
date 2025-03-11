@@ -6,6 +6,7 @@ public class BackBtn : MonoBehaviour
 {
 
   public GameObject shopPannel;
+  public GameObject shop1Pannel;
   // Start is called before the first frame update
   void Start()
   {
@@ -29,5 +30,9 @@ public class BackBtn : MonoBehaviour
   public void ShopPannelCloseButton()
   {
     shopPannel.SetActive(false);
+  }
+  public void Shop1PannelCloseButton()
+  {
+    shop1Pannel.SetActive(false);
   }
 }

@@ -27,7 +27,7 @@ public class Shop_1 : MonoBehaviour
         {
             if(cols[i].tag == "Shop_1")
             {
-                Debug.Log("Store is Cliked");
+                Debug.Log("Shop!");
                    ShopCanvas_1.SetActive(true);
 
             }
