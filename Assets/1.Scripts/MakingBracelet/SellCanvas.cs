@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.Analytics;
 
 public class SellCanvas : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class SellCanvas : MonoBehaviour
         //
     }
 
+    List<SellbraceletPanel> sellbraceletPanels = new List<SellbraceletPanel>();
     void OnEnable() //껏다가 켜질 때 마다
     {
         //생성 할 때 두번쨰 인자로 Transform 을 전달하면 생성된 애의 부모가?!
@@ -36,13 +38,17 @@ public class SellCanvas : MonoBehaviour
             for (int j = 0; j < User.Instance.userBracelets[i].count; j++)
 
             {
-                GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
-                sellbraveletPanel sellbraveletPanel = SellPanel.GetComponent<sellbraveletPanel>();
-                sellbraveletPanel.SetBracelet(User.Instance.userBracelets[i].key);
+                //sellbraceletPanels 리스트에 비활성화 된 sellBraceletPanel이 없을떄 새로 만들고 
+            
+                
+            
+                SellbraceletPanel panel =  GetSellbraceletPanel();
+                panel.SetBracelet(User.Instance.userBracelets[i].key);
                 Debug.Log("key값이 주어지는다");
                 Debug.Log(User.Instance.userBracelets[i].key);
 
             }
+            
 
 
 
@@ -54,6 +60,38 @@ public class SellCanvas : MonoBehaviour
 
 
     }
+
+//재사용을 위해서 
+
+    SellbraceletPanel GetSellbraceletPanel()
+    {
+        for(int i = 0; i <sellbraceletPanels.Count;i++)
+        {
+            if(sellbraceletPanels[i].gameObject.activeSelf)
+            {
+                continue;
+            }
+
+            sellbraceletPanels[i].gameObject.SetActive(true);
+            return sellbraceletPanels[i];   
+        }
+        GameObject SellPanel = Instantiate(sellPanelPrefab, parentPanel);
+        SellbraceletPanel  sellbraceletPanel  = SellPanel.GetComponent<SellbraceletPanel>();
+        sellbraceletPanels.Add(sellbraceletPanel);
+        return sellbraceletPanel;
+    }
+
+
+public void OnClikedClose()
+{
+    gameObject.SetActive(false);   
+
+    for(int i = 0; i<sellbraceletPanels.Count; i++)
+    {
+        sellbraceletPanels[i].gameObject.SetActive(false);  
+    }
+
+}
 
 
 

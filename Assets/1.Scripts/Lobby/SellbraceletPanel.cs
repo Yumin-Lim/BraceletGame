@@ -6,7 +6,7 @@ using TMPro;
 using System.Linq;
 using System.Data.Common;
 using System.Data;
-public class sellbraveletPanel : MonoBehaviour
+public class SellbraceletPanel : MonoBehaviour
 {
  
   
