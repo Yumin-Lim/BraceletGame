@@ -24,6 +24,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
     public void OnClickedClose()
     {
         gameObject.SetActive(false);
+      
        MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
       // mgr.currentBeads
        for(int i = 0; i < mgr.currentBeads.Count; i++)

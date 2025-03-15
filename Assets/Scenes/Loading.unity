@@ -153,14 +153,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: 130
+  level: 0
+  exp: 8
   userBracelets:
-  - key: red
+  - key: pink
     count: 1
   userBeads:
-  - key: red
+  - key: pink
     count: 100
-  - key: dia
-    count: 1
+  - key: pearl
+    count: 100
 --- !u!4 &58710179
 Transform:
   m_ObjectHideFlags: 0
@@ -207,36 +209,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   braceletDatas:
   - price: 100
-    key: red
+    key: pink
     name: 
     des: 
     concept: 0
     thum: {fileID: 1930443635, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
     braceletNeeds:
-    - beadsKey: red
+    - beadsKey: pink
       rate: 1
       count: 0
   - price: 200
-    key: blue
+    key: pearlpink
     name: 
     des: 
     concept: 0
     thum: {fileID: 0}
     braceletNeeds:
-    - beadsKey: blue
-      rate: 1
-      count: 0
-  - price: 200
-    key: diared
-    name: 
-    des: 
-    concept: 0
-    thum: {fileID: 0}
-    braceletNeeds:
-    - beadsKey: dia
+    - beadsKey: pearl
       rate: 0
       count: 1
-    - beadsKey: red
+    - beadsKey: pink
       rate: 0.9
       count: 0
 --- !u!4 &373585080
@@ -422,17 +414,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beadsDatas:
   - price: 20
-    key: red
-    name: "\uD551\uD06C\uBE44\uC988"
+    key: pink
+    name: pink
     des: 
     concept: 0
     thum: {fileID: 1930443635, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
   - price: 40
-    key: dia
-    name: 
+    key: pearl
+    name: pearl
     des: 
-    concept: 2
-    thum: {fileID: 0}
+    concept: 0
+    thum: {fileID: -2118108103, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
+  - price: 40
+    key: black
+    name: black
+    des: 
+    concept: 1
+    thum: {fileID: -1866338616, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
+  - price: 40
+    key: web
+    name: web
+    des: 
+    concept: 1
+    thum: {fileID: 77868999, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
 --- !u!4 &872551932
 Transform:
   m_ObjectHideFlags: 0
