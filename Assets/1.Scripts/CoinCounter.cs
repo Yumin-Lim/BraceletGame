@@ -14,8 +14,8 @@ public class CoinCounter : MonoBehaviour
     void Start()
     {
         User user = User.Instance;
-        coinCounter.text = user.coin.ToString();
-        levelCounter.text = user.level.ToString();
+        coinCounter.text = user.userData.coin.ToString();
+        levelCounter.text = user.userData.level.ToString();
 
     }
 
@@ -23,8 +23,8 @@ public class CoinCounter : MonoBehaviour
     void Update()
     {
         User user = User.Instance;
-        coinCounter.text = user.coin.ToString(); // vs  coinCounter.text = User.Instance.coin.ToString();
+        coinCounter.text = user.userData.coin.ToString(); // vs  coinCounter.text = User.Instance.coin.ToString();
 
-        levelCounter.text = user.level.ToString();
+        levelCounter.text = user.userData.level.ToString();
     }
 }

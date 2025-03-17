@@ -152,17 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85366fc038bc24f43ad97b37fb1248f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: 130
-  level: 0
-  exp: 8
-  userBracelets:
-  - key: pink
-    count: 1
-  userBeads:
-  - key: pink
-    count: 100
-  - key: pearl
-    count: 100
+  userData:
+    coin: 0
+    level: 0
+    exp: 0
+    userBracelets: []
+    userBeads: []
+    useCatData: []
 --- !u!4 &58710179
 Transform:
   m_ObjectHideFlags: 0
@@ -437,6 +433,24 @@ MonoBehaviour:
     des: 
     concept: 1
     thum: {fileID: 77868999, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
+  - price: 20
+    key: purple
+    name: purple
+    des: 
+    concept: 0
+    thum: {fileID: 94934279, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
+  - price: 45
+    key: spider
+    name: spider
+    des: 
+    concept: 1
+    thum: {fileID: 1812442318, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
+  - price: 45
+    key: heart_1
+    name: heart_1
+    des: 
+    concept: 2
+    thum: {fileID: -1376140397, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
 --- !u!4 &872551932
 Transform:
   m_ObjectHideFlags: 0
@@ -452,6 +466,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505594339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505594341}
+  - component: {fileID: 1505594340}
+  m_Layer: 0
+  m_Name: CatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1505594340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505594339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4377c1f47c0a4540be1d620cf727e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catDatas:
+  - name: Brown Cat
+    bread: Brown
+    price: 1000
+    thum: {fileID: 588940368, guid: 470e10c2584604ab9a00f67bf5773dc2, type: 3}
+    catKey: Brown
+  - name: Black Cat
+    bread: Black
+    price: 1000
+    thum: {fileID: -1713805906, guid: d40aac308e93844a898c89bc48fb1a1f, type: 3}
+    catKey: Black
+  - name: Christmas Cat
+    bread: Christmas
+    price: 5000
+    thum: {fileID: -232879164, guid: e256409a665424c9fba056f4c392692f, type: 3}
+    catKey: Christmas
+--- !u!4 &1505594341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505594339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.543587, y: 1.8096346, z: 3.39614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -460,3 +534,4 @@ SceneRoots:
   - {fileID: 58710179}
   - {fileID: 872551932}
   - {fileID: 373585080}
+  - {fileID: 1505594341}

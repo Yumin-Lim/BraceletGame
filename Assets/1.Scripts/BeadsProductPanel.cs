@@ -47,14 +47,14 @@ public class BeadsProductPanel : MonoBehaviour
     {
         //User user = FindObjectOfType<User>(); //이거 너무 무거워서 
         User user = User.Instance;
-        if (user.coin < beadsData.price)
+        if (user.userData.coin < beadsData.price)
         {
             Debug.Log("no money");
             return;
         }
-        if (user.coin > beadsData.price)
+        if (user.userData.coin > beadsData.price)
         {
-            user.coin -= beadsData.price;
+            user.userData.coin -= beadsData.price;
         }
         user.AddCoin(-beadsData.price);
         user.AddBeads(beadsKey, 1);

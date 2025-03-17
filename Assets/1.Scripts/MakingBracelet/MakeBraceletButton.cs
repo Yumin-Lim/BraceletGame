@@ -113,7 +113,7 @@ public class MakeBraceletButton : MonoBehaviour
       //그 후 해야할 일은 
       //씬상에 보이는 비즈를 안보이게 처리 왜냐면 만들었으니까.
 
-        User.Instance.exp++;
+     User.Instance.AddExp(1);
 
       completCanvas.SetActive(true);
       //위를 가져온다고 아래는 다른것

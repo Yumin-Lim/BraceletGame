@@ -18,7 +18,7 @@ public class MakingBraceletCanvas : MonoBehaviour
     void Start()
     {
         User user = User.Instance;
-        List<UserBeads> userBeads = user.userBeads;
+        List<UserBeads> userBeads = user.userData.userBeads;
 
          for(int i = 0; i < userBeads.Count; i++)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelBeadsSys : MonoBehaviour
 {
     public GameObject panelLevel_10;
-    public int level;
+    public int openLevel;
 
     
         // Start is called before the first frame update
@@ -14,15 +14,22 @@ public class LevelBeadsSys : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        this.level = User.Instance.level;    
 
-        if(level==1)
+    void OnEnable()
+    {
+        if(User.Instance.userData.level >= openLevel)
         {
             this.panelLevel_10.SetActive(false);
         }
+        else
+        {
+            this.panelLevel_10.SetActive(true);
+        }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+      
 
     }
 

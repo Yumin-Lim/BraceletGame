@@ -30,12 +30,12 @@ public class SellCanvas : MonoBehaviour
     {
         //생성 할 때 두번쨰 인자로 Transform 을 전달하면 생성된 애의 부모가?!
 
-        for (int i = 0; i < User.Instance.userBracelets.Count; i++)
+        for (int i = 0; i < User.Instance.userData.userBracelets.Count; i++)
         {
-            if (User.Instance.userBracelets[i].count <= 0)
+            if (User.Instance.userData.userBracelets[i].count <= 0)
                 continue;
 
-            for (int j = 0; j < User.Instance.userBracelets[i].count; j++)
+            for (int j = 0; j < User.Instance.userData.userBracelets[i].count; j++)
 
             {
                 //sellbraceletPanels 리스트에 비활성화 된 sellBraceletPanel이 없을떄 새로 만들고 
@@ -43,9 +43,9 @@ public class SellCanvas : MonoBehaviour
                 
             
                 SellbraceletPanel panel =  GetSellbraceletPanel();
-                panel.SetBracelet(User.Instance.userBracelets[i].key);
+                panel.SetBracelet(User.Instance.userData.userBracelets[i].key);
                 Debug.Log("key값이 주어지는다");
-                Debug.Log(User.Instance.userBracelets[i].key);
+                Debug.Log(User.Instance.userData.userBracelets[i].key);
 
             }
             

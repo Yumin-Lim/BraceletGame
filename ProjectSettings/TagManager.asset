@@ -8,6 +8,8 @@ TagManager:
   - WorkPlace
   - StorePlace
   - Shop_1
+  - CatStreetBtn
+  - CatShop
   layers:
   - Default
   - TransparentFX
