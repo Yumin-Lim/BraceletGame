@@ -68,7 +68,7 @@ public class MakingBraceletManager : MonoBehaviour
 
                     Debug.Log("in the spot");
                     BeadsPlace place = cols[i].gameObject.GetComponent<BeadsPlace>();
-                     if(place.beads!=null)
+                     if(place.beads!=null) //만약 비즈 플레이스가 널이 아니다 즉 차여 있다마면 
                      {
                         continue;
                      }

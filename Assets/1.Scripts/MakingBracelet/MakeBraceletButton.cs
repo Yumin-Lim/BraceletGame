@@ -127,7 +127,7 @@ public class MakeBraceletButton : MonoBehaviour
     {
       //현재 비즈로 만들 수 있는 팔찌가 없다.
     }
-
+    
 
   }
   //빨간색을 세었으면 빼야하는데 !

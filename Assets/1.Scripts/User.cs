@@ -162,6 +162,8 @@ public class User : MonoBehaviour
     {
         UserCatData cat = GetCat(CatKey);
         SaveManger.SaveData("UserData", userData);
+         SaveManger.SaveData("UserData", userData);
+
 
     }
 

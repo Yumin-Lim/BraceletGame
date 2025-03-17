@@ -1,12 +1,8 @@
 {
-    "coin": 90000,
+    "coin": 100,
     "level": 0,
     "exp": 0,
     "userBracelets": [],
     "userBeads": [],
-    "userCatData": [
-        {
-            "CatKey": "Christmas"
-        }
-    ]
+    "userCatData": []
 }
