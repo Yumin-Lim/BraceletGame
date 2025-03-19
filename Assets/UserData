@@ -1,8 +1,18 @@
 {
-    "coin": 100,
+    "coin": 1100,
     "level": 0,
-    "exp": 0,
-    "userBracelets": [],
-    "userBeads": [],
+    "exp": 1,
+    "userBracelets": [
+        {
+            "key": "pink",
+            "count": 1
+        }
+    ],
+    "userBeads": [
+        {
+            "key": "pink",
+            "count": 974
+        }
+    ],
     "userCatData": []
 }

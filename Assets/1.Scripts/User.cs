@@ -16,8 +16,17 @@ public class User : MonoBehaviour
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);//씬 ㅈ ㅓㄴ환되어도 제거되지 않는다 
-        userData = new UserData();
+        userData = SaveManger.LoadData<UserData>("UserData"); //<파일형식테이터타입>("파일이름")
+        if (userData == null) //신규유저
+        {
+            userData = new UserData();
+            AddBeads("pink",10);
+            SaveManger.SaveData("UserData", userData);
+        }
+        else
+        {
 
+        }
         Instance = this;
     }
     public void AddCoin(int c)
@@ -162,7 +171,7 @@ public class User : MonoBehaviour
     {
         UserCatData cat = GetCat(CatKey);
         SaveManger.SaveData("UserData", userData);
-         SaveManger.SaveData("UserData", userData);
+        SaveManger.SaveData("UserData", userData);
 
 
     }

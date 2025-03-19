@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class MakingBraceletManager : MonoBehaviour
     public MakeBraceletButton makeBraceletButton;
     
     public List<Beads> currentBeads = new List<Beads>();
+    public bool haveEmptyPlace;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class MakingBraceletManager : MonoBehaviour
         //List<UserBeads> userBeads = user.userBeads;
 
         UserBeads userBeadsGet = user.GetUserBeads(beadsKey);
+        Debug.Log(haveEmptyPlace);
+
 
         
         if(userBeadsGet.count <=0)
@@ -68,7 +72,7 @@ public class MakingBraceletManager : MonoBehaviour
 
                     Debug.Log("in the spot");
                     BeadsPlace place = cols[i].gameObject.GetComponent<BeadsPlace>();
-                     if(place.beads!=null) //만약 비즈 플레이스가 널이 아니다 즉 차여 있다마면 
+                     if(place.beads!=null) //만약 비즈 플레이스가 널이 아니다 즉 차여 있다마면  //그니까 이 근처에서 이제 
                      {
                         continue;
                      }
@@ -81,7 +85,7 @@ public class MakingBraceletManager : MonoBehaviour
                     currentBeads.Add(beadsPrefabClone.GetComponent<Beads>());
                    
 
-                    bool haveEmptyPlace = false;
+                    bool haveEmptyPlace = false; //이 근처지 근데 이 근처에서 뭔가 이프문으로 아 엑스 버튼에서 확인을 해야겠네 회수하는 function 
                     for(int j=0; j<beadsPlaces.Length;j++)
                     {
                        if(beadsPlaces[j].beads==null)
