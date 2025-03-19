@@ -29,24 +29,25 @@ public class BackBtn : MonoBehaviour
   }
   public void ReGettingBeads()
   {
-  
+
     MakingBraceletManager mgr = FindAnyObjectByType<MakingBraceletManager>();
 
 
 
-  
+
     if (mgr.haveEmptyPlace == false)
     {
       Debug.Log("아직 다 안채워져서 비즈최수");
 
       User user = User.Instance;
 
-      foreach (Beads bead in mgr.currentBeads)
+      for (int i = 0; i < mgr.currentBeads.Count; i++)
       {
+        
+        
+        user.AddBeads(mgr.currentBeads[i].beadsKey, 1);
 
-        user.AddBeads(mgr.beadsKey, 1);
       }
-
       // currentBeads 리스트 비우기
 
     }
