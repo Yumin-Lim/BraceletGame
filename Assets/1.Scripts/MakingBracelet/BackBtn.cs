@@ -22,42 +22,42 @@ public class BackBtn : MonoBehaviour
 
   public void OnClickedButton()
   {
-   ReGettingBeads();
-   SceneManager.LoadScene("Lobby");
+    ReGettingBeads();
+    SceneManager.LoadScene("Lobby");
 
 
   }
-    public void ReGettingBeads()
-{
-    // MakingBraceletManager 인스턴스 찾기
+  public void ReGettingBeads()
+  {
+  
     MakingBraceletManager mgr = FindAnyObjectByType<MakingBraceletManager>();
 
-    
 
-    // 빈 공간이 있는 경우(즉, 비즈가 다 차지 않은 경우)
-    if (mgr.haveEmptyPlace==false)
+
+  
+    if (mgr.haveEmptyPlace == false)
     {
-        Debug.Log("아직 다 안채워져서 비즈최수");
+      Debug.Log("아직 다 안채워져서 비즈최수");
 
-        User user = User.Instance;
+      User user = User.Instance;
 
-        foreach (Beads bead in mgr.currentBeads)
-        {
-         
-            user.AddBeads(mgr.beadsKey, 1);
-        }
+      foreach (Beads bead in mgr.currentBeads)
+      {
 
-        // currentBeads 리스트 비우기
+        user.AddBeads(mgr.beadsKey, 1);
+      }
+
+      // currentBeads 리스트 비우기
 
     }
     else
     {
-        Debug.Log(" 비즈를 회수X.");
+      Debug.Log(" 비즈를 회수X.");
     }
-}
+  }
 
 
-    public void ShopPannelCloseButton()
+  public void ShopPannelCloseButton()
   {
     shopPannel.SetActive(false);
   }
