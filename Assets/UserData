@@ -1,5 +1,5 @@
 {
-    "coin": 1400,
+    "coin": 1800,
     "level": 0,
     "exp": 1,
     "userBracelets": [
@@ -15,6 +15,10 @@
         },
         {
             "key": "black",
+            "count": 1000
+        },
+        {
+            "key": "web",
             "count": 1000
         }
     ],
