@@ -32,9 +32,9 @@ public class CompleteBraceletCanvas : MonoBehaviour
             Destroy(mgr.currentBeads[i].gameObject);
        }  
        mgr.currentBeads.Clear();
-       for(int i = 0;i<mgr.beadsPlaces.Length;i++)
+       for(int i = 0;i<mgr.beadsBoard.beadsPlaces.Length;i++)
        {
-        mgr.beadsPlaces[i].beads = null;
+        mgr.beadsBoard.beadsPlaces[i].beads = null;
        }
     }   
 }

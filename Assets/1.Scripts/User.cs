@@ -20,7 +20,7 @@ public class User : MonoBehaviour
         if (userData == null) //신규유저
         {
             userData = new UserData();
-            AddBeads("pink",10);
+            AddBeads("pink", 10);
             SaveManger.SaveData("UserData", userData);
         }
         else
@@ -171,11 +171,37 @@ public class User : MonoBehaviour
     {
         UserCatData cat = GetCat(CatKey);
         SaveManger.SaveData("UserData", userData);
-        SaveManger.SaveData("UserData", userData);
 
 
     }
 
+   public UserBoardData GetBoard(string BoardKey)
+{
+    for (int i = 0; i < userData.userBoardData.Count; i++)
+    {
+        if (userData.userBoardData[i].BoardKey == BoardKey)
+        {
+            return userData.userBoardData[i];
+        }
+    }
+
+    // 없으면 새로 생성
+    UserBoardData newBoard = new UserBoardData();
+    newBoard.BoardKey = BoardKey;
+    userData.userBoardData.Add(newBoard);
+
+    return newBoard;
+}
+
+
+
+    
+    public void AddBoard(String BoardKey)
+    {
+        UserBoardData board = GetBoard(BoardKey);
+        SaveManger.SaveData("UserData", userData);
+
+    }
 
 
 
@@ -221,6 +247,15 @@ public class UserCatData
     public int count;
 }
 
+[System.Serializable]
+public class UserBoardData
+{
+    public string BoardKey;
+
+}
+
+
+
 [System.Serializable] //객체를 만들려면 class 가 필요하다 
 //객체는 메모리상에 할당된 데이터 
 public class UserData
@@ -234,5 +269,6 @@ public class UserData
     public List<UserBracelet> userBracelets = new List<UserBracelet>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserBeads> userBeads = new List<UserBeads>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserCatData> userCatData = new List<UserCatData>();
+    public List<UserBoardData> userBoardData = new List<UserBoardData>();
 }
 

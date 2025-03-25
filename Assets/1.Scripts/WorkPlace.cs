@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class WorkPlace : MonoBehaviour
 {
-  
+   public GameObject userBoardCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,8 @@ public class WorkPlace : MonoBehaviour
                 {
                     //씬전환 코드
                     
-                    SceneManager.LoadScene("MakingBracelet");
+                    //SceneManager.LoadScene("MakingBracelet");
+                     userBoardCanvas.SetActive(true);
                     
                 }
             }

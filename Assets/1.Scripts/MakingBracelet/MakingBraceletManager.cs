@@ -9,11 +9,15 @@ public class MakingBraceletManager : MonoBehaviour
    
    
    
+    
+    public static MakingBraceletManager Instance;
+    
     public BeadsData beadsData;
     public GameObject beadsPrefab;
     public string beadsKey;
 
-    public BeadsPlace[] beadsPlaces;
+    public BeadsBoard beadsBoard;
+   // public BeadsPlace[] beadsPlaces;
 
     public MakeBraceletButton makeBraceletButton;
     
@@ -21,6 +25,10 @@ public class MakingBraceletManager : MonoBehaviour
     public bool haveEmptyPlace;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         
@@ -86,9 +94,9 @@ public class MakingBraceletManager : MonoBehaviour
                    
 
                     bool haveEmptyPlace = false; //이 근처지 근데 이 근처에서 뭔가 이프문으로 아 엑스 버튼에서 확인을 해야겠네 회수하는 function 
-                    for(int j=0; j<beadsPlaces.Length;j++)
+                    for(int j=0; j<beadsBoard.beadsPlaces.Length;j++)
                     {
-                       if(beadsPlaces[j].beads==null)
+                       if(beadsBoard.beadsPlaces[j].beads==null)
                        {
                             haveEmptyPlace=true;
                             break;

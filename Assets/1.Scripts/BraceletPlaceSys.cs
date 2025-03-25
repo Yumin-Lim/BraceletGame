@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class BraceletPlaceSys : MonoBehaviour
 {
     public Camera mainCamera;
@@ -11,53 +11,82 @@ public class BraceletPlaceSys : MonoBehaviour
     public GameObject leftButton;
     public GameObject rightButton;
 
-    public GameObject[] BraceletPlaces;
+    public BeadsBoard[] beadsBoards;
+
+
+    public string boardKey;
+    //이 보드키가 버튼 뉼렸을때 할당을 받아야 하고 그 할당받은 보드키랑 보드 리스트랑 비교해서 같은것만 
+
+    //뭔가 현재 보드 
+    public int currentBoardIdx; //현재 보여지는 보드인뎃그
+    
+
+
+
+
+
 
     void Start()
     {
-        UpdateButtons(); 
-        UpdateBraceletPlaces(); 
+        UpdateBraceletPlaces();
     }
-
-    void UpdateButtons()
+    
+    public void SetBoardKeSys(string boardKey)
     {
-
-        leftButton.SetActive(mainCamera.transform.position != firstPlacePosition.transform.position);
-        rightButton.SetActive(mainCamera.transform.position != lastPlacePosition.transform.position);
+        this.boardKey = boardKey;
     }
+    
+    private void Awake()
+    {
+        BeadsBoard[] bBoard = FindObjectsOfType<BeadsBoard>(true);//비활오하 되어있는것도 찾ㅡ다. 
+        beadsBoards=bBoard.OrderBy(e => e.order).ToArray();
+        currentBoardIdx = 0;
+    }
+
 
     void UpdateBraceletPlaces()
     {
-        for (int i = 0; i < BraceletPlaces.Length; i++)
+        leftButton.SetActive(mainCamera.transform.position != firstPlacePosition.transform.position);
+        rightButton.SetActive(mainCamera.transform.position != lastPlacePosition.transform.position);
+
+        //현재 보드가 1번째 보드일떄??
+
+
+        for (int i = 0; i < beadsBoards.Length; i++)
         {
-            if (Vector3.Distance(BraceletPlaces[i].transform.position, mainCamera.transform.position) < 0.1f)
+            if (currentBoardIdx == i)
             {
-                BraceletPlaces[i].SetActive(true);
+                beadsBoards[i].gameObject.SetActive(true);
+                beadsBoards[i].StartBeadsBoard();
             }
             else
             {
-                BraceletPlaces[i].SetActive(false);
+                beadsBoards[i].gameObject.SetActive(false);
             }
+        }
+        leftButton.SetActive(true);
+        rightButton.SetActive(true);
+        if (currentBoardIdx == beadsBoards.Length - 1)
+        {
+            rightButton.SetActive(false);
+        }
+        if (currentBoardIdx == 0)
+        {
+            leftButton.SetActive(false);
         }
     }
 
     public void OnclickedLeftButton()
     {
-        if (mainCamera.transform.position != firstPlacePosition.transform.position)
-        {
-            mainCamera.transform.position += new Vector3(-10, 0, 0);
-            UpdateButtons();  
-            UpdateBraceletPlaces(); 
-        }
+        currentBoardIdx--;
+        UpdateBraceletPlaces();
+
     }
 
     public void OnclickedRightButton()
     {
-        if (mainCamera.transform.position != lastPlacePosition.transform.position)
-        {
-            mainCamera.transform.position += new Vector3(10, 0, 0);
-            UpdateButtons(); 
-            UpdateBraceletPlaces(); // 패널 상태 업데이트
-        }
+        currentBoardIdx++;
+        UpdateBraceletPlaces(); // 패널 상태 업데이트
+
     }
 }

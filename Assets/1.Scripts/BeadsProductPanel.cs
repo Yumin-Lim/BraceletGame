@@ -12,13 +12,13 @@ public class BeadsProductPanel : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text priceText;
     public Image thumImage;
-    public TMP_Text desText;
     public string beadsKey;
     public TMP_Text concept;
 
 
 
     public BeadsData beadsData;
+
     // Start is called before the first frame update
 
 
@@ -29,11 +29,11 @@ public class BeadsProductPanel : MonoBehaviour
     void Start()
     {
 
-        BeadsManager mgr = FindObjectOfType<BeadsManager>(); //사용지양 upadate 이런데서 쓰지 말아야함 무거워서 
+        BeadsManager mgr = FindObjectOfType<BeadsManager>();
         beadsData = mgr.GetBeadsData(beadsKey);
 
         nameText.text = beadsData.name;
-        priceText.text = beadsData.price.ToString(); //숫자를 문자열로 바꾸는 함수 
+        priceText.text = beadsData.price.ToString();
         thumImage.sprite = beadsData.thum;
         concept.text = beadsData.concept.ToString();
 
