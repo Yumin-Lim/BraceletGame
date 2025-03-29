@@ -978,12 +978,14 @@ MonoBehaviour:
     des: 
     concept: 0
     thum: {fileID: 0}
+    openLv: 0
   beadsPrefab: {fileID: 1028404000112382988, guid: d3c99869b8f2448d89173b28c35b18a8, type: 3}
   beadsKey: 
   beadsBoard: {fileID: 0}
   makeBraceletButton: {fileID: 2090343900}
   currentBeads: []
   haveEmptyPlace: 0
+  beadsBoards: []
 --- !u!1 &43740328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,6 +2389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afce5c11d63c14499bab90243ba3588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
   beadsPlaces: []
   key: b
   order: 1
@@ -3266,8 +3269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: 95.112}
-  m_SizeDelta: {x: 1, y: 190.22}
+  m_AnchoredPosition: {x: 0.5, y: 152.18481}
+  m_SizeDelta: {x: 1, y: 304.3655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354585550
 MonoBehaviour:
@@ -4817,6 +4820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afce5c11d63c14499bab90243ba3588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
   beadsPlaces: []
   key: 
   order: 0
@@ -6161,12 +6165,14 @@ MonoBehaviour:
     des: 
     concept: 0
     thum: {fileID: 0}
+    openLv: 0
   beadsPrefab: {fileID: 1028404000112382988, guid: d3c99869b8f2448d89173b28c35b18a8, type: 3}
   beadsKey: 
   beadsBoard: {fileID: 0}
   makeBraceletButton: {fileID: 2090343900}
   currentBeads: []
   haveEmptyPlace: 0
+  beadsBoards: []
 --- !u!1 &712473040
 GameObject:
   m_ObjectHideFlags: 0
@@ -8157,6 +8163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afce5c11d63c14499bab90243ba3588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
   beadsPlaces: []
   key: d
   order: 3
@@ -9465,12 +9472,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: -77
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 10.17
+  m_Spacing: -73.5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -11601,6 +11608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afce5c11d63c14499bab90243ba3588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
   beadsPlaces: []
   key: c
   order: 2
@@ -13752,12 +13760,18 @@ MonoBehaviour:
     des: 
     concept: 0
     thum: {fileID: 0}
+    openLv: 0
   beadsPrefab: {fileID: 1028404000112382988, guid: d3c99869b8f2448d89173b28c35b18a8, type: 3}
   beadsKey: 
   beadsBoard: {fileID: 0}
   makeBraceletButton: {fileID: 2090343900}
   currentBeads: []
   haveEmptyPlace: 0
+  beadsBoards:
+  - {fileID: 507399820}
+  - {fileID: 255222258}
+  - {fileID: 1358972582}
+  - {fileID: 962048743}
 --- !u!4 &1535536221
 Transform:
   m_ObjectHideFlags: 0
@@ -15062,7 +15076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 471, y: -672}
+  m_AnchoredPosition: {x: 471, y: -511}
   m_SizeDelta: {x: 130.5825, y: 133.3893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1705855951
@@ -15904,6 +15918,7 @@ MonoBehaviour:
   leftButton: {fileID: 480595497}
   rightButton: {fileID: 1697965347}
   beadsBoards: []
+  boardKey: 
   currentBoardIdx: 0
 --- !u!4 &1783247889
 Transform:
@@ -16839,7 +16854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5972cc89de4f4059a225e87b6f34410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectBeadsPanel: {fileID: 1691322870274672036, guid: b4dd4994eec45400b9b4cc468780c057, type: 3}
+  SelectBeadsPanel: {fileID: 5784504591266010507, guid: 9a884e724aeed4ffbba1767dbb0c10ac, type: 3}
   contentParentTr: {fileID: 1082022223}
 --- !u!1 &1885363424
 GameObject:
@@ -18405,7 +18420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 499.9856, y: -838.6584}
+  m_AnchoredPosition: {x: 499.9856, y: -677.6584}
   m_SizeDelta: {x: 200.0287, y: 74.6832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2090343897

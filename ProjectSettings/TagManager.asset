@@ -11,6 +11,7 @@ TagManager:
   - CatStreetBtn
   - CatShop
   - Shop_2
+  - shopNpc
   layers:
   - Default
   - TransparentFX

@@ -47,5 +47,6 @@ public class BoardData
     public string name;
     public Sprite thum;
     public CatConcept concept;
+    public int placeCount;
 
 }

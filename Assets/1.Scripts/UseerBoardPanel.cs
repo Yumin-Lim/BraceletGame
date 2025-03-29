@@ -47,9 +47,9 @@ public class UseerBoardPanel : MonoBehaviour
     public void OnclikedButton()
     {
 
-        BraceletPlaceSys board = FindAnyObjectByType<BraceletPlaceSys>();
+        // BraceletPlaceSys board = FindAnyObjectByType<BraceletPlaceSys>();
 
-
+        User.Instance.selectedBoardKey = boardKey;
 
 
         SceneManager.LoadScene("MakingBracelet");

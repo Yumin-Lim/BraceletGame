@@ -1,17 +1,17 @@
 {
-    "coin": 0,
+    "coin": 1600,
     "level": 0,
-    "exp": 1,
+    "exp": 2,
     "userBracelets": [
         {
             "key": "pink",
-            "count": 1
+            "count": 2
         }
     ],
     "userBeads": [
         {
             "key": "pink",
-            "count": 1000
+            "count": 981
         },
         {
             "key": "black",

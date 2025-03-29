@@ -8,43 +8,61 @@ using Unity.VisualScripting;
 
 public class SelectBeadsPanel : MonoBehaviour
 {
-    
-   
+
+
     public TMP_Text CountText;
-    public Image thumImage;
+    public Image[] thumImage;
     public string beadsKey;
     public UserBeads userBeads;
-   
-    // Start is called before the first frame update
-    
-    
-    
-    
-    public void SetBeads (string beadsKey) //레드를 보여주는건지 블루를 보여주는건지 
-    {
-       this.beadsKey = beadsKey; //지금 이름이 똑같아서 내가 가진 멤버변수 비즈키 라고 확실히 알려줌 
-       userBeads = User.Instance.GetUserBeads(beadsKey);
-       CountText.text = userBeads.count.ToString();
-       thumImage.sprite = BeadsManager.Instance.GetBeadsData(beadsKey).thum;
 
-      //왜냐면 각 패널당 키가 들어가 있으므로 그걸 가져오면 되지 않을까 
+    // Start is called before the first frame update
+  
+
+
+
+    public void beadsPrefabDes()
+    {
+
     }
-    
-    
-    
+
+
+
+
+
+    public void SetBeads(string beadsKey) //레드를 보여주는건지 블루를 보여주는건지 
+    {
+        this.beadsKey = beadsKey; //지금 이름이 똑같아서 내가 가진 멤버변수 비즈키 라고 확실히 알려줌 
+        userBeads = User.Instance.GetUserBeads(beadsKey);
+        CountText.text = userBeads.count.ToString();
+        //thumImage.sprite = BeadsManager.Instance.GetBeadsData(beadsKey).thum;
+
+
+        for (int i = 0; i < thumImage.Length; i++)
+        {
+            thumImage[i].sprite = BeadsManager.Instance.GetBeadsData(beadsKey).thum;
+        }
+        
+       
+        
+        
+        //왜냐면 각 패널당 키가 들어가 있으므로 그걸 가져오면 되지 않을까 
+    }
+
+
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update() //11/19
     {
-       
-       CountText.text = userBeads.count.ToString();
+
+        CountText.text = userBeads.count.ToString();
     }
 
-public void OnClickedSelectedBeads() 
+    public void OnClickedSelectedBeads()
     {
 
         FindObjectOfType<MakingBraceletManager>().SelectedBeads(beadsKey);

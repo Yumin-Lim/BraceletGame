@@ -3,26 +3,30 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MakingBraceletManager : MonoBehaviour
 {
-   
-   
-   
-    
+
+
+
+
     public static MakingBraceletManager Instance;
-    
+
     public BeadsData beadsData;
     public GameObject beadsPrefab;
     public string beadsKey;
 
     public BeadsBoard beadsBoard;
-   // public BeadsPlace[] beadsPlaces;
+  //현재활성화된 비즈 보드 담는 용도 
 
     public MakeBraceletButton makeBraceletButton;
-    
+
     public List<Beads> currentBeads = new List<Beads>();
     public bool haveEmptyPlace;
+
+    public BeadsBoard[] beadsBoards;
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -31,7 +35,22 @@ public class MakingBraceletManager : MonoBehaviour
     }
     void Start()
     {
-        
+        for (int i = 0; i < beadsBoards.Length; i++)
+
+        {
+            if(beadsBoards[i].key ==  User.Instance.selectedBoardKey)
+            {
+                beadsBoards[i].gameObject.SetActive(true);
+                beadsBoard = beadsBoards[i];    
+            }
+            else
+            {
+                beadsBoards[i].gameObject.SetActive(false);
+            }
+        }
+
+
+    
     }
     //비즈객체를 담을 수 있는 리스트를 선언하고 생성해주새요.
     //스크립트가 결국 컴포넌트가 되어서 어떻게 동작하는지 생각하는게 중요하다.
@@ -74,23 +93,23 @@ public class MakingBraceletManager : MonoBehaviour
 
             for (int i=0 ; i<cols.Length;i++)
             {
-                if(cols[i].tag=="BeadsPlace")
-            
-                {
 
+                if(cols[i].tag=="BeadsPlace")
+                {
                     Debug.Log("in the spot");
                     BeadsPlace place = cols[i].gameObject.GetComponent<BeadsPlace>();
                      if(place.beads!=null) //만약 비즈 플레이스가 널이 아니다 즉 차여 있다마면  //그니까 이 근처에서 이제 
                      {
                         continue;
                      }
-                    GameObject beadsPrefabClone = Instantiate(beadsPrefab);
-                    beadsPrefabClone.GetComponent<Transform>().position = worldPoint;
-                    beadsPrefabClone.GetComponent<Beads>(). SetBeads(beadsKey);
-                    place.SetBeads(beadsPrefabClone.GetComponent<Beads>());
+
+                    Beads beads =  GetBeads() ;
+                    beads.transform.position = worldPoint;
+                    beads.SetBeads(beadsKey);
+                    place.SetBeads(beads);
                     User.Instance.SubBeads(beadsKey);
                    
-                    currentBeads.Add(beadsPrefabClone.GetComponent<Beads>());
+                    currentBeads.Add(beads);
                    
 
                     bool haveEmptyPlace = false; //이 근처지 근데 이 근처에서 뭔가 이프문으로 아 엑스 버튼에서 확인을 해야겠네 회수하는 function 
@@ -137,7 +156,17 @@ public class MakingBraceletManager : MonoBehaviour
     }
 
 
-   
+    public Beads GetBeads()
+    {
+        GameObject beadsPrefabClone = Instantiate(beadsPrefab);
+        Beads beads = beadsPrefabClone.GetComponent<Beads>();
+        
+
+        return beads;
+    }
+
+
+
     public void SelectedBeads(string beadsKey) //
     {
         this.beadsKey = beadsKey;

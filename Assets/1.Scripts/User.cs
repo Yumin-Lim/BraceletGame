@@ -12,7 +12,9 @@ public class User : MonoBehaviour
     public static User Instance; //Instance 라는 변수에 User 넣는다
 
     public UserData userData;
+    public string selectedBoardKey;
 
+    public ShopQuest shopQuest;
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);//씬 ㅈ ㅓㄴ환되어도 제거되지 않는다 
