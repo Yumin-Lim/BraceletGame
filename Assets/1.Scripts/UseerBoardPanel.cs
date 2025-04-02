@@ -50,6 +50,7 @@ public class UseerBoardPanel : MonoBehaviour
         // BraceletPlaceSys board = FindAnyObjectByType<BraceletPlaceSys>();
 
         User.Instance.selectedBoardKey = boardKey;
+        Debug.Log("보드키 유저에게 할당" + boardKey);
 
 
         SceneManager.LoadScene("MakingBracelet");

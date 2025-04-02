@@ -16,20 +16,24 @@ public class User : MonoBehaviour
 
     public ShopQuest shopQuest;
     public void Awake()
+    {if (Instance == null)
     {
-        DontDestroyOnLoad(gameObject);//씬 ㅈ ㅓㄴ환되어도 제거되지 않는다 
-        userData = SaveManger.LoadData<UserData>("UserData"); //<파일형식테이터타입>("파일이름")
-        if (userData == null) //신규유저
-        {
-            userData = new UserData();
-            AddBeads("pink", 10);
-            SaveManger.SaveData("UserData", userData);
-        }
-        else
-        {
-
-        }
         Instance = this;
+        DontDestroyOnLoad(gameObject); //반드시 Instance 설정 후에!해야한다
+    }
+    else
+    {
+        Destroy(gameObject); // 이미 존재하면 새로 만든 건 파괴해야한다???
+    }
+
+    userData = SaveManger.LoadData<UserData>("UserData");
+    if (userData == null) // 신규유저
+    {
+        userData = new UserData();
+        AddBeads("pink", 10);
+        SaveManger.SaveData("UserData", userData);
+    }
+
     }
     public void AddCoin(int c)
     {

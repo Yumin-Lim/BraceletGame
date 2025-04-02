@@ -242,11 +242,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f7d06ab50184b03b0a8b32864b938b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardKey: a
+  boardKey: 
   name: {fileID: 3302100302995580991}
   price: {fileID: 7061293119589295110}
   image: {fileID: 6775740190861641728}
   concept: {fileID: 0}
+  boardDatas:
+    boardKey: 
+    price: 0
+    name: 
+    thum: {fileID: 0}
+    concept: 0
+    placeCount: 0
 --- !u!1 &4798111222341838725
 GameObject:
   m_ObjectHideFlags: 0
