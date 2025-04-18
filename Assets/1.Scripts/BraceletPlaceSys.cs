@@ -9,7 +9,7 @@ using System.Linq;public class BraceletPlaceSys : MonoBehaviour
     public void Awake()
     {
     
-    boardKey = User.Instance?.selectedBoardKey;
+    boardKey = User.Instance.selectedBoardKey;
     
 
         OpenSelectedPanel();

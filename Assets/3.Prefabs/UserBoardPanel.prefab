@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thumImage: {fileID: 3548283073737184464}
   boardKey: 
+  name: {fileID: 3454401190746887228}
 --- !u!1 &4752257483047057099
 GameObject:
   m_ObjectHideFlags: 0

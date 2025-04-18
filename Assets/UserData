@@ -1,5 +1,5 @@
 {
-    "coin": 966000,
+    "coin": 966800,
     "level": 0,
     "exp": 5,
     "userBracelets": [
@@ -15,7 +15,7 @@
     "userBeads": [
         {
             "key": "pink",
-            "count": 956
+            "count": 951
         },
         {
             "key": "black",
@@ -23,7 +23,7 @@
         },
         {
             "key": "web",
-            "count": 1000
+            "count": 999
         },
         {
             "key": "purple",

@@ -17,8 +17,6 @@ public class ShopNPC : MonoBehaviour
         {
             if (BeadsManager.Instance.beadsDatas[i].openLv <= User.Instance.userData.level)
             {
-                Debug.Log($"Shop Npc Start() canbeads.Add {BeadsManager.Instance.beadsDatas[i].key}");
-
                 canBeads.Add(BeadsManager.Instance.beadsDatas[i]);
             }
         }
