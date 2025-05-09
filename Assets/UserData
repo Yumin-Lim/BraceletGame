@@ -1,5 +1,5 @@
 {
-    "coin": 966800,
+    "coin": 963500,
     "level": 0,
     "exp": 5,
     "userBracelets": [
@@ -37,10 +37,12 @@
     "userCatData": [],
     "userBoardData": [
         {
-            "BoardKey": "A"
+            "boardKey": "",
+            "purchased": false
         },
         {
-            "BoardKey": "B"
+            "boardKey": "",
+            "purchased": false
         }
     ]
 }

@@ -15,13 +15,14 @@ public class BeadsBoardPanel : MonoBehaviour
     public Image image;
     public TMP_Text concept;
 
+    public GameObject purchasedPanel;
 
 
     public BoardData boardDatas;
 
     void Start()
     {
-        BeadsBoardManager mgr = FindObjectOfType<BeadsBoardManager>();
+        BeadsBoardManager mgr = BeadsBoardManager.Instance;
         boardDatas = mgr.GetBoardData(boardKey);
 
         name.text = boardDatas.name;
@@ -31,9 +32,20 @@ public class BeadsBoardPanel : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
+        UpdatePanel();
+    }
+
+    // Update is called once per frame
+    public void UpdatePanel()
+    {
+
+        //혀ㄴ재 비즈보드 키에 해ㅇㅏ는게 가지 있으면 패널 활성화
+
+        UserBoardData userBoardData = User.Instance.GetBoard(boardKey);
+        purchasedPanel.SetActive(userBoardData.purchased);
+
 
     }
 
@@ -54,7 +66,15 @@ public class BeadsBoardPanel : MonoBehaviour
         user.AddCoin(-boardDatas.price);
         user.AddBoard(boardKey);
 
-      UseerBoardPanel panel = FindAnyObjectByType<UseerBoardPanel>();
+       
+
+        UpdatePanel();
+
+
+
+
+
+
 
 
 

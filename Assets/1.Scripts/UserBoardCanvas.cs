@@ -19,7 +19,7 @@ public class UserBoardCanvas : MonoBehaviour
             GameObject UserBoardPanelClone = Instantiate(UserBoardPanelPrefab);
             UserBoardPanelClone.transform.SetParent(ParentCanvas, false);
             UseerBoardPanel panel = UserBoardPanelClone.GetComponent<UseerBoardPanel>();
-           panel.SetBoard(userBoards[i].BoardKey);
+           panel.SetBoard(userBoards[i].boardKey);
             
         
         }

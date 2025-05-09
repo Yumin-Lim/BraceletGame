@@ -22,6 +22,9 @@ public class BackBtn : MonoBehaviour
 
   public void OnClickedButton()
   {
+    SoundManager.Instance.PlaySound(SoundType.Click);
+  
+    
     ReGettingBeads();
     SceneManager.LoadScene("Lobby");
 

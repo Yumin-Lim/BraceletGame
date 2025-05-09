@@ -14,7 +14,7 @@ public class UseerBoardPanel : MonoBehaviour
     public Image thumImage;
 
     public string boardKey;
-    public TMP_Text name;
+    public TMP_Text nameText;
 
     public void SetBoard(string boardKey)
     {
@@ -22,7 +22,7 @@ public class UseerBoardPanel : MonoBehaviour
         BoardData data = BeadsBoardManager.Instance.GetBoardData(boardKey);
         thumImage.sprite = data.thum;
 
-        name.text = data.name;
+       nameText.text = data.name;
 
 
 

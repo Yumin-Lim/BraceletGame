@@ -110,6 +110,7 @@ public class MakingBraceletManager : MonoBehaviour
                     User.Instance.SubBeads(beadsKey);
                    
                     currentBeads.Add(beads);
+                    SoundManager.Instance.PlaySound(SoundType.Beads);
                    
 
                     bool haveEmptyPlace = false; //이 근처지 근데 이 근처에서 뭔가 이프문으로 아 엑스 버튼에서 확인을 해야겠네 회수하는 function 

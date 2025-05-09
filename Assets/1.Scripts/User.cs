@@ -185,7 +185,7 @@ public class User : MonoBehaviour
 {
     for (int i = 0; i < userData.userBoardData.Count; i++)
     {
-        if (userData.userBoardData[i].BoardKey == BoardKey)
+        if (userData.userBoardData[i].boardKey == BoardKey)
         {
             return userData.userBoardData[i];
         }
@@ -193,7 +193,7 @@ public class User : MonoBehaviour
 
     // 없으면 새로 생성
     UserBoardData newBoard = new UserBoardData();
-    newBoard.BoardKey = BoardKey;
+    newBoard.boardKey = BoardKey;
     userData.userBoardData.Add(newBoard);
 
     return newBoard;
@@ -256,7 +256,8 @@ public class UserCatData
 [System.Serializable]
 public class UserBoardData
 {
-    public string BoardKey;
+    public string boardKey;
+    public bool purchased; 
 
 }
 

@@ -35,6 +35,7 @@ public class CatProductPanel : MonoBehaviour
     }
     public void OnClickedPurchaseButton()
     {
+        SoundManager.Instance.PlaySound(SoundType.Purchase);
         User user = User.Instance;
         if (user.userData.coin < catData.price)
         {
