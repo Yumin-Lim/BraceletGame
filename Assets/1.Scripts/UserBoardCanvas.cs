@@ -9,25 +9,37 @@ public class UserBoardCanvas : MonoBehaviour
     public Transform ParentCanvas;
 
     // Start is called before the first frame update
-    void Start()
+
+
+    void OnEnable()
     {
+        int childCount = ParentCanvas.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            Transform child = ParentCanvas.GetChild(0);
+            Destroy(child.gameObject);
+        }
+
+
+
         User user = User.Instance;
         List<UserBoardData> userBoards = user.userData.userBoardData;
 
         for (int i = 0; i < userBoards.Count; i++)
         {
+            if (!userBoards[i].purchased)
+                continue;
             GameObject UserBoardPanelClone = Instantiate(UserBoardPanelPrefab);
             UserBoardPanelClone.transform.SetParent(ParentCanvas, false);
             UseerBoardPanel panel = UserBoardPanelClone.GetComponent<UseerBoardPanel>();
-           panel.SetBoard(userBoards[i].boardKey);
-            
-        
+            panel.SetBoard(userBoards[i].boardKey);
+
+
         }
-
-
     }
 
 
+    //확인 하는 함수? 팔찌 보유갯수 보드 보유갯수 확인 똗닷가
 
 
 

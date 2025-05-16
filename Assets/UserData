@@ -1,48 +1,28 @@
 {
-    "coin": 963500,
+    "coin": 8100,
     "level": 0,
-    "exp": 5,
+    "exp": 3,
     "userBracelets": [
         {
             "key": "pink",
-            "count": 4
-        },
-        {
-            "key": "pearlpink",
             "count": 0
         }
     ],
     "userBeads": [
         {
             "key": "pink",
-            "count": 951
-        },
-        {
-            "key": "black",
-            "count": 991
-        },
-        {
-            "key": "web",
-            "count": 999
-        },
-        {
-            "key": "purple",
-            "count": 19
-        },
-        {
-            "key": "pearl",
-            "count": 1
+            "count": 0
         }
     ],
     "userCatData": [],
     "userBoardData": [
         {
-            "boardKey": "",
-            "purchased": false
+            "boardKey": "A",
+            "purchased": true
         },
         {
-            "boardKey": "",
-            "purchased": false
+            "boardKey": "B",
+            "purchased": true
         }
     ]
 }

@@ -15,7 +15,7 @@ public class BeadsBoardPanel : MonoBehaviour
     public Image image;
     public TMP_Text concept;
 
-    public GameObject purchasedPanel;
+  //  public GameObject purchasedPanel;
 
 
     public BoardData boardDatas;
@@ -44,7 +44,7 @@ public class BeadsBoardPanel : MonoBehaviour
         //혀ㄴ재 비즈보드 키에 해ㅇㅏ는게 가지 있으면 패널 활성화
 
         UserBoardData userBoardData = User.Instance.GetBoard(boardKey);
-        purchasedPanel.SetActive(userBoardData.purchased);
+    //    purchasedPanel.SetActive(userBoardData.purchased);
 
 
     }

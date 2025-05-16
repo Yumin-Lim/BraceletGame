@@ -45,9 +45,11 @@ public class SellbraceletPanel : MonoBehaviour
       BraceletData braceletData = BraceletManager.Instance.GetBraceletData(key);
       User.Instance.AddCoin(braceletData.price);
 
-     Destroy(gameObject);
-    
-     
+     //이거 왜 오류? 이거한다고 왜 왜 지 아
+    //판매 상저 닫을대? 
+     //destroy 하지 말고 그냥 비활성화 ->왜냐면 
+
+     gameObject.SetActive(false);
 
   }
 

@@ -22,6 +22,7 @@ public class BackBtn : MonoBehaviour
 
   public void OnClickedButton()
   {
+    Debug.Log("backBtn onclicked");
     SoundManager.Instance.PlaySound(SoundType.Click);
   
     

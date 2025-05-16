@@ -54,7 +54,7 @@ public class BeadsProductPanel : MonoBehaviour
         }
         if (user.userData.coin > beadsData.price)
         {
-            user.userData.coin -= beadsData.price;
+            user.AddCoin(-beadsData.price);
         }
         user.AddCoin(-beadsData.price);
         user.AddBeads(beadsKey, 1);

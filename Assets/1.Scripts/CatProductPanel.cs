@@ -44,7 +44,7 @@ public class CatProductPanel : MonoBehaviour
         }
         if (user.userData.coin > catData.price)
         {
-            user.userData.coin -= catData.price;
+            user.AddCoin(-catData.price);
         }
         user.AddCoin(-catData.price);
         user.AddCat(CatKey, 1);

@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     // list 느ㄴ 크긱ㅏ 유동적이다 근ㅔ 배열은 Array는  크ㄱㅣ가 고정적이다
     void Start()
     {
-        soundInfos = Resources.LoadAll<SoundInfo>("Sound");
+        soundInfos = Resources.LoadAll<SoundInfo>("Sound"); //Resoutecde     flie sound 
     }
    void Awake()
 {
