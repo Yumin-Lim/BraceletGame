@@ -1,27 +1,22 @@
 {
-    "coin": 8100,
+    "coin": -20,
     "level": 0,
-    "exp": 3,
-    "userBracelets": [
-        {
-            "key": "pink",
-            "count": 0
-        }
-    ],
+    "exp": 0,
+    "userBracelets": [],
     "userBeads": [
         {
             "key": "pink",
-            "count": 0
+            "count": 1
+        },
+        {
+            "key": "pearl",
+            "count": 1
         }
     ],
     "userCatData": [],
     "userBoardData": [
         {
             "boardKey": "A",
-            "purchased": true
-        },
-        {
-            "boardKey": "B",
             "purchased": true
         }
     ]
