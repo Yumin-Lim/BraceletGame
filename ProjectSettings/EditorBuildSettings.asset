@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Loading.unity
+    path: Assets/4.Scenes/Loading.unity
     guid: daab9aef19b1c4f569a19c4178098c41
   - enabled: 1
-    path: Assets/Scenes/Lobby.unity
+    path: Assets/4.Scenes/Lobby.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/MakingBracelet.unity
+    path: Assets/4.Scenes/MakingBracelet.unity
     guid: 6e24df819780d4a1b8d0c5ca0b74bcb1
   m_configObjects: {}
