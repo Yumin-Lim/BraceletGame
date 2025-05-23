@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class ShopNPC : MonoBehaviour
 {
+    public static ShopNPC Instance;
+
     public ShopQuest[] shopQuests;
 
     //퀘스트 종류
-    //만들 이미지를 
+    //만들 이미지를
+
+    void Awake()
+    {
+        Instance = this;
+        makingQuest();
+    }
     private void Start()
+    {
+        makingQuest(); //이걸 하루에 한번 호출으로 바꾸면
+    }
+
+    private void makingQuest()
     {
         shopQuests = new ShopQuest[10]; //현제 레벨에 맞게 사용할 수 있는 비즈만 담는다 
 
@@ -41,7 +54,25 @@ public class ShopNPC : MonoBehaviour
         }
 
         StartQuest();
+        putQuestsToMgr();
+
     }
+
+
+    //GetQuest를 하지말고 생성을 한 뒤에 저기다 넣자 그냥 
+    /*
+    public ShopQuest[] GetQuest()
+    {
+        return shopQuests;
+    }
+    */
+    public void putQuestsToMgr()
+    {
+        QuestManager.Instance.shopQuests = shopQuests;
+    }
+
+
+
 
     public ShopQuest curShopQuest;
     public void StartQuest()
