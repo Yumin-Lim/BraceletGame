@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance;
+
+
     public GameObject questBoardPrefab;
     public Transform parentPanel;
 
+
+
     [SerializeField]
-    public QuestBoard[] questBoardObjects;
+    public QuestBoard[] questBoards;
     public ShopQuest[] shopQuests;
 
 
@@ -23,17 +29,34 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
+
         MakeQuestBoards();
+
     }
 
-    void MakeQuestBoards()
+   void MakeQuestBoards()
+{
+    questBoards = new QuestBoard[10];
+
+    for (int i = 0; i < questBoards.Length; i++)
     {
-        for (int i = 0; i < shopQuests.Length; i++)
-        {
-           GameObject questBoard = Instantiate(questBoardPrefab, parentPanel); 
-           
-        }
+        questBoards[i] = new QuestBoard();
+        questBoards[i].name = $"Daily Quest {i}";
+        questBoards[i].des = $"Contents {i}";
+
+        GameObject questBoard = Instantiate(questBoardPrefab, parentPanel);
+
+        QuestBoardPrefab script = questBoard.GetComponent<QuestBoardPrefab>();
+        script.titleText.text = questBoards[i].name;
+        script.descriptionText.text = questBoards[i].des;
+        questBoards[i].shopQuest = shopQuests[i];
+        script.questForBoard = shopQuests[i];
     }
+
+    BraceletQuestView.Instance.questBoardUpdate();
+}
+
+
 
 
     // Update is called once per frame
@@ -41,4 +64,12 @@ public class QuestManager : MonoBehaviour
     {
 
     }
+}
+
+[System.Serializable]
+public class QuestBoard
+{
+    public string name;
+    public string des;
+    public ShopQuest shopQuest;
 }

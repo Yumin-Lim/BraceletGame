@@ -2382,7 +2382,6 @@ GameObject:
   - component: {fileID: 278635420}
   - component: {fileID: 278635419}
   - component: {fileID: 278635418}
-  - component: {fileID: 278635421}
   m_Layer: 5
   m_Name: NpcQuestCanvas
   m_TagString: Shop_1
@@ -2473,22 +2472,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 100
   m_TargetDisplay: 0
---- !u!114 &278635421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278635416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda55279e2e5749d7bb50a28a1006be4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questBoardPrefab: {fileID: 0}
-  parentPanel: {fileID: 0}
-  questBoardObjects: []
-  shopQuests: []
 --- !u!1 &294591688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,6 +3733,7 @@ GameObject:
   - component: {fileID: 483217757}
   - component: {fileID: 483217760}
   - component: {fileID: 483217759}
+  - component: {fileID: 483217761}
   m_Layer: 5
   m_Name: COntents
   m_TagString: Untagged
@@ -3815,6 +3799,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483217756}
   m_CullTransparentMesh: 1
+--- !u!114 &483217761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483217756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &493860459
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,7 +10788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questBoardPrefab: {fileID: 6761291621626288811, guid: d4aaec7bd08c345c28319f75acaefcab, type: 3}
   parentPanel: {fileID: 483217757}
-  questBoardObjects: []
+  questBoards: []
   shopQuests: []
 --- !u!4 &1131575984
 Transform:

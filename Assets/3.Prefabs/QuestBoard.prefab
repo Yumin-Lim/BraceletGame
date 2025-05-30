@@ -328,7 +328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8961593506830908169}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836952221780756487}
+        m_TargetAssemblyTypeName: QuestBoardPrefab, Assembly-CSharp
+        m_MethodName: OnclickedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1982872004110709956
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,11 +631,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6761291621626288811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48b887b5f8829438796744e388f3d44a, type: 3}
+  m_Script: {fileID: 11500000, guid: ae24e477d67314092b0bd7dc75e50604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  des: {fileID: 1982872004110709956}
-  name: {fileID: 1374631678723974672}
+  titleText: {fileID: 7490328391549549812}
+  descriptionText: {fileID: 701789540505423162}
+  button: {fileID: 1829023164217781041}
+  questForBoard:
+    boardKey: 
+    beadsPlaceCorrects: []
+  index: 0
 --- !u!1 &7155828033596933047
 GameObject:
   m_ObjectHideFlags: 0

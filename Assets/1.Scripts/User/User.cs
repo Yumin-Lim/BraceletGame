@@ -15,25 +15,29 @@ public class User : MonoBehaviour
     public string selectedBoardKey;
 
     public ShopQuest shopQuest;
-    public void Awake()
-    {if (Instance == null)
-    {
-        Instance = this;
-        DontDestroyOnLoad(gameObject); //반드시 Instance 설정 후에!해야한다
-    }
-    else
-    {
-        Destroy(gameObject); // 이미 존재하면 새로 만든 건 파괴해야한다???
-    }
 
-    userData = SaveManger.LoadData<UserData>("UserData");
-    if (userData == null) // 신규유저
+    public void Awake()
     {
-        userData = new UserData();
-        AddCoin(100);
-        AddBoard("A");
-        SaveManger.SaveData("UserData", userData);
-    }
+       
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); //반드시 Instance 설정 후에!해야한다
+        }
+        else
+        {
+            Destroy(gameObject); // 이미 존재하면 새로 만든 건 파괴해야한다???
+        }
+
+        userData = SaveManger.LoadData<UserData>("UserData");
+        if (userData == null) // 신규유저
+        {
+            userData = new UserData();
+            AddCoin(100);
+            AddBoard("A");
+            SaveManger.SaveData("UserData", userData);
+        }
 
     }
     public void AddCoin(int c)
@@ -279,5 +283,7 @@ public class UserData
     public List<UserBeads> userBeads = new List<UserBeads>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserCatData> userCatData = new List<UserCatData>();
     public List<UserBoardData> userBoardData = new List<UserBoardData>(); //사용자가 ㄷ어떤 보드 가지고 있고 안가지고 있고 유저의 보드 보유 상태 
+
+    public List<ShopQuest> questList = new List<ShopQuest>();
 }
 

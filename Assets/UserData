@@ -1,16 +1,17 @@
 {
-    "coin": -20,
+    "coin": 60,
     "level": 0,
-    "exp": 0,
-    "userBracelets": [],
-    "userBeads": [
+    "exp": 1,
+    "userBracelets": [
         {
             "key": "pink",
             "count": 1
-        },
+        }
+    ],
+    "userBeads": [
         {
-            "key": "pearl",
-            "count": 1
+            "key": "pink",
+            "count": 9
         }
     ],
     "userCatData": [],
@@ -18,6 +19,106 @@
         {
             "boardKey": "A",
             "purchased": true
+        }
+    ],
+    "questList": [
+        {
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "pearl"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "purple"
+                }
+            ]
+        },
+        {
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "pearl"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "pearl"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "pearl"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "purple"
+                }
+            ]
         }
     ]
 }

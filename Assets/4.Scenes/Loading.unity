@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userData:
-    coin: 0
+    coin: 10000
     level: 0
     exp: 0
     userBracelets: []

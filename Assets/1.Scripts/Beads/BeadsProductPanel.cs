@@ -53,7 +53,7 @@ public class BeadsProductPanel : MonoBehaviour
             return;
         }
         user.AddCoin(-beadsData.price);
-        user.AddBeads(beadsKey, 1);
+        user.AddBeads(beadsKey, 10); //사용자 구매시 얻게 되는 비즈 1개에서 10개로 수정 
 
 
     }
