@@ -11,12 +11,15 @@ public class BeadsPlace : MonoBehaviour
     {
         
     }
-    public void SetBeads(Beads b) //이걸 호출하면 
+   public void SetBeads(Beads b)
+{
+    beads = b;
+
+    if (beads != null)
     {
-        beads=b;
         beads.transform.position = transform.position;
     }
-
+}
 
     // Update is called once per frame
     void Update()

@@ -6,39 +6,49 @@ using TMPro;
 public class BraceletQuestBoard : MonoBehaviour
 {
 
-      public Image thumImage;
-       //   public TMP_Text titleText;
-          
-             public ShopQuest questForBraceletBoard;
+    public Image thumImage;
+    //   public TMP_Text titleText;
+
+    public QuestData questForBraceletBoard;
     // Start is called before the first frame update
 
     public void OnclickedButton()
-{
-    Debug.Log("✅ 버튼 클릭됨!");
-    User.Instance.shopQuest = questForBraceletBoard;
-
-    Debug.Log($"🟡 User의 shopQuest.boardKey: {User.Instance.shopQuest.boardKey}");
-
-    if (ShopQuestPreviewBoard.Instance == null)
     {
-        Debug.LogError("❌ ShopQuestPreviewBoard.Instance가 null입니다!");
+
+
+        if (ShopQuestPreviewBoard.Instance == null)
+        {
+            Debug.LogError("ShopQuestPreviewBoard.Instance가 null");
+            Debug.LogError("beadsPlaceCorrects가 null입니다!");
+            return;
+        }
+        else
+        {
+
+
+
+            ShopQuestPreviewBoard.Instance.curradsBoardData = questForBraceletBoard;
+
+            ShopQuestPreviewBoard.Instance.UpdatePreviewBoard();
+
+
+
+
+
+
+
+        }
     }
-    else
-    {
-        Debug.Log("✅ UpdatePreviewBoard 호출!");
-        ShopQuestPreviewBoard.Instance.UpdatePreviewBoard();
-    }
-}
 
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

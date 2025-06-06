@@ -10788,8 +10788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questBoardPrefab: {fileID: 6761291621626288811, guid: d4aaec7bd08c345c28319f75acaefcab, type: 3}
   parentPanel: {fileID: 483217757}
-  questBoards: []
-  shopQuests: []
+  questDatas: []
 --- !u!4 &1131575984
 Transform:
   m_ObjectHideFlags: 0
@@ -12359,53 +12358,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316870464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a3c9831a144478dae4ad01e9d5e913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopQuests:
-  - boardKey: a
-    beadsPlaceCorrects:
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-    - index: 0
-      beadKey: 
-  curShopQuest:
-    boardKey: 
-    beadsPlaceCorrects: []
+  questDatas: []
 --- !u!224 &1316870466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17878,6 +17836,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985961035}
   m_CullTransparentMesh: 1
+--- !u!1 &1988763467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988763468}
+  - component: {fileID: 1988763469}
+  m_Layer: 0
+  m_Name: BeadsBoardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1988763468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988763467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.524494, y: 1338.0848, z: -8.063437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988763469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988763467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9648ea612dac74f85bb1088bdd0379ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardDatas:
+  - boardKey: A
+    price: 0
+    name: A
+    thum: {fileID: 0}
+    concept: 0
+    placeCount: 11
 --- !u!1 &2008111289
 GameObject:
   m_ObjectHideFlags: 0
@@ -21828,3 +21837,4 @@ SceneRoots:
   - {fileID: 1882516383}
   - {fileID: 730764901}
   - {fileID: 1131575984}
+  - {fileID: 1988763468}

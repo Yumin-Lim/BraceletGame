@@ -40,3 +40,9 @@ public class BeadsBoard : MonoBehaviour
         
     }
 }
+
+[System.Serializable]
+public class BeadsBoardData
+{
+    public string boardKey;
+}

@@ -164,10 +164,8 @@ MonoBehaviour:
       purchased: 0
     - boardKey: 
       purchased: 0
+    userQuestList: []
   selectedBoardKey: 
-  shopQuest:
-    boardKey: 
-    beadsPlaceCorrects: []
 --- !u!4 &58710179
 Transform:
   m_ObjectHideFlags: 0
@@ -388,63 +386,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &725213930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 725213932}
-  - component: {fileID: 725213933}
-  m_Layer: 0
-  m_Name: BeadsBoardManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &725213932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725213930}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 797.81213, y: 1081.3875, z: 1.803361}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &725213933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725213930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9648ea612dac74f85bb1088bdd0379ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boardDatas:
-  - boardKey: A
-    price: 2000
-    name: first
-    thum: {fileID: 21300000, guid: 71ab02403f5f3469db2a7d72efc8728d, type: 3}
-    concept: 0
-    placeCount: 11
-  - boardKey: B
-    price: 2000
-    name: second
-    thum: {fileID: 21300000, guid: 71ab02403f5f3469db2a7d72efc8728d, type: 3}
-    concept: 0
-    placeCount: 12
 --- !u!1 &872551930
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,5 +595,4 @@ SceneRoots:
   - {fileID: 872551932}
   - {fileID: 373585080}
   - {fileID: 1505594341}
-  - {fileID: 725213932}
   - {fileID: 1208865936}

@@ -10,7 +10,7 @@ public class BraceletQuestView : MonoBehaviour
     public Transform parentPanel;
 
     public static BraceletQuestView Instance;
-    public List<ShopQuest> boardQuestList = new List<ShopQuest>();
+    public List<QuestData> boardQuestList = new List<QuestData>();
 
 
     public void Awake()
@@ -20,7 +20,7 @@ public class BraceletQuestView : MonoBehaviour
 
     public void questBoardUpdate()
     {
-        boardQuestList = User.Instance.userData.questList;
+        boardQuestList = User.Instance.userData.userQuestList;
         questBoardMaking();
     }
 
@@ -57,5 +57,5 @@ public class BraceletQuestView : MonoBehaviour
 public class BraceletQuestPanel
 {
     public string name;
-    public ShopQuest shopQuest;
+    public QuestData shopQuest;
 }

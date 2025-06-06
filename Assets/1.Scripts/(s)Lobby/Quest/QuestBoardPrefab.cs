@@ -14,12 +14,14 @@ public class QuestBoardPrefab : MonoBehaviour
     public Image thumImage;
     // Start is called before the first frame update
 
-    public ShopQuest questForBoard;
+    public QuestData questForBoard;
     public int index; // 자신이 몇 번째인지 저장
 
-    public void OnclickedButton()
-    {
-      User.Instance.userData.questList.Add(questForBoard);
+  public void OnclickedButton()
+  {
+    User.Instance.userData.userQuestList.Add(questForBoard);
+  Destroy(gameObject);
+      
     }
 
 

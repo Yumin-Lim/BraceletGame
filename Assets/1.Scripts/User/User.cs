@@ -14,11 +14,12 @@ public class User : MonoBehaviour
     public UserData userData;
     public string selectedBoardKey;
 
-    public ShopQuest shopQuest;
+    //public ShopQuest shopQuest; //이걸 이제 퀘스트를 여러개 받을거니까 리스트로 만들자 
+
 
     public void Awake()
     {
-       
+
 
         if (Instance == null)
         {
@@ -284,6 +285,6 @@ public class UserData
     public List<UserCatData> userCatData = new List<UserCatData>();
     public List<UserBoardData> userBoardData = new List<UserBoardData>(); //사용자가 ㄷ어떤 보드 가지고 있고 안가지고 있고 유저의 보드 보유 상태 
 
-    public List<ShopQuest> questList = new List<ShopQuest>();
+    public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트인데
 }
 
