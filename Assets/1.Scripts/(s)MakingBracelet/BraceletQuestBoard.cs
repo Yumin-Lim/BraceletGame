@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
+using Unity.VisualScripting;
 public class BraceletQuestBoard : MonoBehaviour
 {
 
@@ -10,20 +11,12 @@ public class BraceletQuestBoard : MonoBehaviour
     //   public TMP_Text titleText;
 
     public QuestData questForBraceletBoard;
+
+
     // Start is called before the first frame update
 
     public void OnclickedButton()
     {
-
-
-        if (ShopQuestPreviewBoard.Instance == null)
-        {
-            Debug.LogError("ShopQuestPreviewBoard.Instance가 null");
-            Debug.LogError("beadsPlaceCorrects가 null입니다!");
-            return;
-        }
-        else
-        {
 
 
 
@@ -31,13 +24,16 @@ public class BraceletQuestBoard : MonoBehaviour
 
             ShopQuestPreviewBoard.Instance.UpdatePreviewBoard();
 
+            ShopQuestCanvas.Instance.Show();
+
+
+        
 
 
 
 
 
-
-        }
+        
     }
 
 

@@ -123,3 +123,4 @@ public class BeadsPlaceCorrect
     public int index;
     public string beadKey;
 }
+

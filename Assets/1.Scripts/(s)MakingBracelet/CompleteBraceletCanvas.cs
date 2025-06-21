@@ -3,15 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 public class CompleteBraceletCanvas : MonoBehaviour
 {
-  
+    public static CompleteBraceletCanvas Instance;
+    
+    
     public Image thumImage;
     public TMP_Text nameText;
-    
+
+   public List<QuestData> userQuestList = new List<QuestData>();
+
     // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
+        Instance = this;
+    }
+    void OnEnable()
+    {
+
+
+      
+     
+
         
     }
 

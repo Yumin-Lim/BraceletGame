@@ -19,7 +19,7 @@ public class User : MonoBehaviour
 
     public void Awake()
     {
-
+         
 
         if (Instance == null)
         {
@@ -39,6 +39,7 @@ public class User : MonoBehaviour
             AddBoard("A");
             SaveManger.SaveData("UserData", userData);
         }
+        
 
     }
     public void AddCoin(int c)

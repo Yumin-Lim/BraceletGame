@@ -32,7 +32,7 @@ public class MakeBraceletButton : MonoBehaviour
     MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
     countBeads = 0;
     key = "";
-
+     MakingBraceletManager.Instance.quest();
 
 
     for (int i = 0; i < mgr.currentBeads.Count; i++) //모든비즈

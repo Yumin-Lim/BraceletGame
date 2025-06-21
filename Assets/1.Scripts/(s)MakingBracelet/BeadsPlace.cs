@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeadsPlace : MonoBehaviour
 {
-
+    public BeadsPlaceCorrect beadsPlaceCorrect;
     public Beads beads;
     // Start is called before the first frame update
     void Start()

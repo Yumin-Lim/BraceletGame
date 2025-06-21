@@ -21,6 +21,7 @@ public class BraceletQuestView : MonoBehaviour
     public void questBoardUpdate()
     {
         boardQuestList = User.Instance.userData.userQuestList;
+       
         questBoardMaking();
     }
 
