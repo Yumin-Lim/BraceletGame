@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq; //정리필요 
+using System.Linq;
+using System.ComponentModel.Design; //정리필요 
 
 public class MakeBraceletButton : MonoBehaviour
 {
@@ -21,10 +22,31 @@ public class MakeBraceletButton : MonoBehaviour
   //아니면 그냥 user beads 랑 비교하면 되는거 아닌지..?
   List<string> beadsKeys = new List<string>();
   List<SetUpBeads> setUpBeads = new List<SetUpBeads>();
+  public List<Beads> currentBeads;
+
+  public List<QuestData> userQuestList = new List<QuestData>(); //이거보이게 하려면 어떻게 하더라
+
   //설정된 비즈들의 비율 등 이 여기 있으니까.
+
+  //퀘스트팔찌인지
+  //프리셋 팔찌인지
+  //자유모드인지 
+
+  public void Awake()
+  {
+    userQuestList = User.Instance.userData.userQuestList;
+    currentBeads = MakingBraceletManager.Instance.currentBeads;
+
+    Debug.Log(userQuestList);
+  }
 
   public void OnClickedButton()
   {
+    CheckQuest();
+
+
+
+
     beadsKeys.Clear();
     setUpBeads.Clear();
     Debug.Log("on clicked1");
@@ -32,7 +54,7 @@ public class MakeBraceletButton : MonoBehaviour
     MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
     countBeads = 0;
     key = "";
-     MakingBraceletManager.Instance.quest();
+    MakingBraceletManager.Instance.quest();
 
 
     for (int i = 0; i < mgr.currentBeads.Count; i++) //모든비즈
@@ -106,20 +128,20 @@ public class MakeBraceletButton : MonoBehaviour
     if (makeBraceletData != null) //이게 참이면
     {
 
-
       User.Instance.AddBracelet(makeBraceletData.key, 1);
       //팔찌 데이터 추가 
       //팔찌를 가지고 있는게 0 일때 아래가 실행이 안되니까 문제
       //그 후 해야할 일은 
       //씬상에 보이는 비즈를 안보이게 처리 왜냐면 만들었으니까.
 
-     User.Instance.AddExp(1);
+      User.Instance.AddExp(1);
 
-      completCanvas.SetActive(true);
+
       //위를 가져온다고 아래는 다른것
       CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
-      completeBraceletCanvas.thumImage.sprite = makeBraceletData.thum;
-      completeBraceletCanvas.nameText.text = makeBraceletData.name;
+      completeBraceletCanvas.OpenComplete(makeBraceletData);
+
+
 
       gameObject.SetActive(false);
     }
@@ -127,13 +149,136 @@ public class MakeBraceletButton : MonoBehaviour
     {
       //현재 비즈로 만들 수 있는 팔찌가 없다.
     }
-    
+
 
   }
   //빨간색을 세었으면 빼야하는데 !
   //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝
 
 
+  void CheckQuest()
+  {
+
+    currentBeads = MakingBraceletManager.Instance.currentBeads;
+    int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
+
+    int count = BeadsBoard.Instance.beadsPlaces.Length;
+
+
+    for (int i = 0; i < count; i++)
+    {
+      BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
+      int index = bp.beadsPlaceCorrect.index;
+      string key = bp.beads.beadsKey;
+
+      Debug.Log("현재 놓여진 비즈의 인덱스" + index + "그리고 그 비즈키" + key);
+    }
+
+
+
+
+
+    for (int i = 0; i < userQuestList.Count; i++)
+    {
+
+      for (int j = 0; j < beadsPlaceCount; j++)
+      {
+        string beadskeyvar = userQuestList[i].beadsPlaceCorrects[j].beadKey;
+        int index = userQuestList[i].beadsPlaceCorrects[j].index;
+        Debug.Log($"index: {index}, beadKey: {beadskeyvar}");
+
+
+      }
+
+
+    }
+
+    for (int i = 0; i < currentBeads.Count; i++)
+    {
+      string currentBeadsKey = currentBeads[i].beadsKey;
+      Debug.Log(currentBeadsKey);
+    }
+
+    
+
+for (int i = 0; i < beadsPlaceCount; i++)
+{
+    BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
+    int index = bp.beadsPlaceCorrect.index;
+
+    string key = "";
+    if (bp.beads != null)
+    {
+        key = bp.beads.beadsKey;
+    }
+
+    Debug.Log($"[현재] index: {index}, beadKey: {key}");
+}
+
+
+for (int i = 0; i < userQuestList.Count; i++) 
+{
+    bool isSame = true;
+
+    for (int j = 0; j < userQuestList[i].beadsPlaceCorrects.Length; j++)
+    {
+        int questIndex = userQuestList[i].beadsPlaceCorrects[j].index;
+        string questKey = userQuestList[i].beadsPlaceCorrects[j].beadKey;
+
+        BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[questIndex];
+
+        if (bp.beads == null)
+        {
+            isSame = false;
+            break;
+        }
+
+        string currentKey = bp.beads.beadsKey;
+
+        if (currentKey != questKey)
+        {
+            isSame = false;
+            break;
+        }
+    }
+
+    if (isSame)
+    {
+        Debug.Log($"✅ 퀘스트 {i}와 같다");
+       User.Instance.userData.userQuestList.Remove(userQuestList[i]);
+       
+        //그리고 이제 여기서 퀘스트 보드 업데이트 
+
+        BraceletQuestView.Instance.questBoardUpdate();
+      
+
+        break;
+    }
+}
+
+
+  }
+
+
+  /*
+    bool CheckPrest()
+    {
+      //프리셋이랑 맞는게 있음
+      if ()
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    void FreeMode()
+    {
+      //뭔가 만들어짐
+    }
+  */
 
 
   SetUpBeads GetSetUpBeads(string beadsKey)
@@ -196,10 +341,6 @@ public class MakeBraceletButton : MonoBehaviour
   }*/
 
 
-  void Start()
-  {
-    beadsPlaces = FindObjectsByType<BeadsPlace>(FindObjectsSortMode.None);
-  }
 
   // Update is called once per frame
   void Update()

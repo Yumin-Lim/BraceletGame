@@ -7,7 +7,7 @@ public class BeadsBoard : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    public BeadsBoard Instance;
+    public static BeadsBoard Instance;
     public BeadsPlace[] beadsPlaces;
     public string key;
     public int order;

@@ -219,7 +219,10 @@ public class User : MonoBehaviour
 
 
 
-
+    public void GetUserQuestData()
+    {
+        
+    }
 
 
 

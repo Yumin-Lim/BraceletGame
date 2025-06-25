@@ -20,6 +20,7 @@ public class QuestBoardPrefab : MonoBehaviour
   public void OnclickedButton()
   {
     User.Instance.userData.userQuestList.Add(questForBoard);
+    //업데이트 하는 함수가 필요함 User의 업데이트 하는 
   Destroy(gameObject);
       
     }

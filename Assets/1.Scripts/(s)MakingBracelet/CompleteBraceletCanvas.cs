@@ -12,7 +12,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
     public Image thumImage;
     public TMP_Text nameText;
 
-   public List<QuestData> userQuestList = new List<QuestData>();
+    public List<QuestData> currentQuestData = new List<QuestData>();
 
     // Start is called before the first frame update
 
@@ -29,7 +29,13 @@ public class CompleteBraceletCanvas : MonoBehaviour
 
         
     }
+    public void OpenComplete(BraceletData makeBraceletData)
+    {
+        gameObject.SetActive(true);
+        thumImage.sprite = makeBraceletData.thum;
+      nameText.text = makeBraceletData.name;
 
+    }
     // Update is called once per frame
     void Update()
     {

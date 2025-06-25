@@ -1,12 +1,8 @@
 {
-    "coin": 80,
-    "level": 1,
+    "coin": 9680,
+    "level": 0,
     "exp": 5,
     "userBracelets": [
-        {
-            "key": "pink",
-            "count": 9
-        },
         {
             "key": "pearlpink",
             "count": 5
@@ -15,15 +11,15 @@
     "userBeads": [
         {
             "key": "pink",
-            "count": 857
+            "count": 20
         },
         {
             "key": "pearl",
-            "count": 999999962
+            "count": 19
         },
         {
             "key": "purple",
-            "count": 991
+            "count": 15
         }
     ],
     "userCatData": [],
@@ -35,64 +31,13 @@
     ],
     "userQuestList": [
         {
-            "name": "Daily Quest 0",
-            "des": "Contents 0",
-            "boardKey": "A",
-            "beadsPlaceCorrects": [
-                {
-                    "index": 0,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 1,
-                    "beadKey": "pink"
-                },
-                {
-                    "index": 2,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 3,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 4,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 5,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 6,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 7,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 8,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 9,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 10,
-                    "beadKey": "pearl"
-                }
-            ]
-        },
-        {
             "name": "Daily Quest 1",
             "des": "Contents 1",
             "boardKey": "A",
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 1,
@@ -100,11 +45,11 @@
                 },
                 {
                     "index": 2,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 3,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 4,
@@ -116,7 +61,7 @@
                 },
                 {
                     "index": 6,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 7,
@@ -128,7 +73,7 @@
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
@@ -143,15 +88,15 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 1,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 2,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 3,
@@ -159,11 +104,11 @@
                 },
                 {
                     "index": 4,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 5,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 6,
@@ -171,19 +116,19 @@
                 },
                 {
                     "index": 7,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 8,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 10,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 }
             ]
         }
