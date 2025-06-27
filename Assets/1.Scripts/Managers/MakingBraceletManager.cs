@@ -50,7 +50,7 @@ public class MakingBraceletManager : MonoBehaviour
             {
                 beadsBoards[i].gameObject.SetActive(false);
             }
-            quest();
+            //quest();
         }
 
         currentBeads = new List<Beads>(MakingBraceletManager.Instance.currentBeads);
@@ -182,6 +182,7 @@ public class MakingBraceletManager : MonoBehaviour
     }
 
 
+/*
     public void quest()
     {
         for (int i = 0; i < currentQuestData.Count; i++)
@@ -191,6 +192,6 @@ public class MakingBraceletManager : MonoBehaviour
         }
     }
 
-
+*/
 
 }

@@ -113,8 +113,15 @@ public class User : MonoBehaviour
         SaveManger.SaveData("UserData", userData);
     }
 
+    public void AddBracelet(int count) //퀘스트랑 프리셋 위한 코드
+    {
+        UserBracelet userBracelet = new UserBracelet();
+        userData.userBracelets.Add(userBracelet);
+        userBracelet.count += count;
+        SaveManger.SaveData("UserData", userData);
+    }
 
-
+    
 
 
 

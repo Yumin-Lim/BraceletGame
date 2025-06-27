@@ -9,7 +9,7 @@ public class MakeBraceletButton : MonoBehaviour
 {
   // Start is called before the first frame update
 
-
+  public static MakeBraceletButton  Instance;
   public GameObject completCanvas;
 
   public BeadsPlace[] beadsPlaces;
@@ -26,6 +26,8 @@ public class MakeBraceletButton : MonoBehaviour
 
   public List<QuestData> userQuestList = new List<QuestData>(); //이거보이게 하려면 어떻게 하더라
 
+
+
   //설정된 비즈들의 비율 등 이 여기 있으니까.
 
   //퀘스트팔찌인지
@@ -34,6 +36,7 @@ public class MakeBraceletButton : MonoBehaviour
 
   public void Awake()
   {
+    Instance = this;
     userQuestList = User.Instance.userData.userQuestList;
     currentBeads = MakingBraceletManager.Instance.currentBeads;
 
@@ -42,10 +45,128 @@ public class MakeBraceletButton : MonoBehaviour
 
   public void OnClickedButton()
   {
+
     CheckQuest();
+    CheckPrest();
+    FreeMode();
 
 
 
+  }
+  //빨간색을 세었으면 빼야하는데 !
+  //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝
+
+
+  void CheckQuest()
+  {
+    BraceletData makeBraceletData = null;
+    currentBeads = MakingBraceletManager.Instance.currentBeads;
+    int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
+
+    int count = BeadsBoard.Instance.beadsPlaces.Length;
+
+    /*
+        for (int i = 0; i < count; i++)
+        {
+          BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
+          int index = bp.beadsPlaceCorrect.index;
+          string key = bp.beads.beadsKey;
+
+          Debug.Log("현재 놓여진 비즈의 인덱스" + index + "그리고 그 비즈키" + key);
+        }
+    */
+
+
+
+
+    for (int i = 0; i < userQuestList.Count; i++)
+    {
+
+      for (int j = 0; j < beadsPlaceCount; j++)
+      {
+        string beadskeyvar = userQuestList[i].beadsPlaceCorrects[j].beadKey;
+        int index = userQuestList[i].beadsPlaceCorrects[j].index;
+        Debug.Log($"index: {index}, beadKey: {beadskeyvar}");
+
+
+      }
+
+
+    }
+
+    for (int i = 0; i < currentBeads.Count; i++)
+    {
+      string currentBeadsKey = currentBeads[i].beadsKey;
+      Debug.Log(currentBeadsKey);
+    }
+
+
+
+    for (int i = 0; i < beadsPlaceCount; i++)
+    {
+      BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
+      int index = bp.beadsPlaceCorrect.index;
+
+      string key = "";
+      if (bp.beads != null)
+      {
+        key = bp.beads.beadsKey;
+      }
+
+      Debug.Log($"[현재] index: {index}, beadKey: {key}");
+    }
+
+
+    for (int i = 0; i < userQuestList.Count; i++)
+    {
+      bool isSame = true;
+
+      for (int j = 0; j < userQuestList[i].beadsPlaceCorrects.Length; j++)
+      {
+        int questIndex = userQuestList[i].beadsPlaceCorrects[j].index;
+        string questKey = userQuestList[i].beadsPlaceCorrects[j].beadKey;
+
+        BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[questIndex];
+
+        if (bp.beads == null)
+        {
+          isSame = false;
+          break;
+        }
+
+        string currentKey = bp.beads.beadsKey;
+
+        if (currentKey != questKey)
+        {
+          isSame = false;
+          break;
+        }
+      }
+
+      if (isSame)
+      {
+
+
+        Debug.Log($"퀘스트 {i}와 같다");
+        //User.Instance.userData.userQuestList.Remove(userQuestList[i]); -> 이거 퀘스트 창으로 옮기기 
+        User.Instance.AddBracelet("퀘스트모드", 1);
+        //그리고 이제 여기서 퀘스트 보드 업데이트 
+
+        BraceletQuestView.Instance.questBoardUpdate();
+        User.Instance.AddExp(1);
+        //CompleteBraceletCanvas.questPopUp();
+        CompleteBraceletCanvas.flag = true;
+
+      }
+    }
+
+
+  }
+
+
+
+  public void CheckPrest()
+  {
 
     beadsKeys.Clear();
     setUpBeads.Clear();
@@ -54,7 +175,7 @@ public class MakeBraceletButton : MonoBehaviour
     MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
     countBeads = 0;
     key = "";
-    MakingBraceletManager.Instance.quest();
+    //MakingBraceletManager.Instance.quest();
 
 
     for (int i = 0; i < mgr.currentBeads.Count; i++) //모든비즈
@@ -101,10 +222,7 @@ public class MakeBraceletButton : MonoBehaviour
       for (int j = 0; j < braceletList[i].braceletNeeds.Length; j++)
       {
         SetUpBeads setUp = GetSetUpBeads(braceletList[i].braceletNeeds[j].beadsKey);
-        //set up 이 10 이면 지금 보고있는 비즈의 갯수니까 
 
-        //if(); 여기부터 시작! (12/3)
-        //
         if (setUp.count < braceletList[i].braceletNeeds[j].count)
         {
           break; //
@@ -144,201 +262,86 @@ public class MakeBraceletButton : MonoBehaviour
 
 
       gameObject.SetActive(false);
-    }
-    else
-    {
-      //현재 비즈로 만들 수 있는 팔찌가 없다.
-    }
 
-
-  }
-  //빨간색을 세었으면 빼야하는데 !
-  //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝
-
-
-  void CheckQuest()
-  {
-
-    currentBeads = MakingBraceletManager.Instance.currentBeads;
-    int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
-
-    int count = BeadsBoard.Instance.beadsPlaces.Length;
-
-
-    for (int i = 0; i < count; i++)
-    {
-      BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
-      int index = bp.beadsPlaceCorrect.index;
-      string key = bp.beads.beadsKey;
-
-      Debug.Log("현재 놓여진 비즈의 인덱스" + index + "그리고 그 비즈키" + key);
     }
 
 
 
 
 
-    for (int i = 0; i < userQuestList.Count; i++)
+    SetUpBeads GetSetUpBeads(string beadsKey)
     {
-
-      for (int j = 0; j < beadsPlaceCount; j++)
+      MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
+      SetUpBeads setUp = null;
+      for (int j = 0; j < setUpBeads.Count; j++)
       {
-        string beadskeyvar = userQuestList[i].beadsPlaceCorrects[j].beadKey;
-        int index = userQuestList[i].beadsPlaceCorrects[j].index;
-        Debug.Log($"index: {index}, beadKey: {beadskeyvar}");
-
-
+        if (setUpBeads[j].key == beadsKey)
+        {
+          setUp = setUpBeads[j];
+          break;
+        }
       }
 
+      if (setUp == null)
+      {
+        setUp = new SetUpBeads();
+        setUp.key = beadsKey;
+        setUpBeads.Add(setUp);
+        beadsKeys.Add(beadsKey);
+      }
+      return setUp;
 
     }
+  }
 
-    for (int i = 0; i < currentBeads.Count; i++)
-    {
-      string currentBeadsKey = currentBeads[i].beadsKey;
-      Debug.Log(currentBeadsKey);
-    }
+  public void FreeMode()
+  {
 
-    
+    // 버튼 생기는 거랑 같은 부분으로 체크하기 즉 다 차여 있을지 
 
-for (int i = 0; i < beadsPlaceCount; i++)
-{
-    BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
-    int index = bp.beadsPlaceCorrect.index;
-
-    string key = "";
-    if (bp.beads != null)
-    {
-        key = bp.beads.beadsKey;
-    }
-
-    Debug.Log($"[현재] index: {index}, beadKey: {key}");
-}
-
-
-for (int i = 0; i < userQuestList.Count; i++) 
-{
-    bool isSame = true;
-
-    for (int j = 0; j < userQuestList[i].beadsPlaceCorrects.Length; j++)
-    {
-        int questIndex = userQuestList[i].beadsPlaceCorrects[j].index;
-        string questKey = userQuestList[i].beadsPlaceCorrects[j].beadKey;
-
-        BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[questIndex];
-
-        if (bp.beads == null)
-        {
-            isSame = false;
-            break;
-        }
-
-        string currentKey = bp.beads.beadsKey;
-
-        if (currentKey != questKey)
-        {
-            isSame = false;
-            break;
-        }
-    }
-
-    if (isSame)
-    {
-        Debug.Log($"✅ 퀘스트 {i}와 같다");
-       User.Instance.userData.userQuestList.Remove(userQuestList[i]);
-       
+    User.Instance.AddBracelet("프리모드", 1);
+    User.Instance.AddExp(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
 
-        BraceletQuestView.Instance.questBoardUpdate();
-      
-
-        break;
-    }
-}
-
-
+        User.Instance.AddExp(1);
+        //CompleteBraceletCanvas.questPopUp();
+        CompleteBraceletCanvas.flag = true;
+    
   }
 
-
   /*
-    bool CheckPrest()
+원래코드
+  public BeadsPlace[] beadsPlaces;
+[SerializeField]
+public int countBeads;
+public string key;
+
+
+public void OnClickedButton()
+{
+   MakingBraceletManager mgr =FindObjectOfType<MakingBraceletManager>();
+
+
+
+   for (int i=0; i<mgr.currentBeads.Count;i++ )
+   {
+     int countBeads = 0;
+     string key = mgr.currentBeads[i].beadsKey;
+
+    for (int j = 0; j<mgr.currentBeads.Count;j++ )   
     {
-      //프리셋이랑 맞는게 있음
-      if ()
+      if(mgr.currentBeads[j].beadsKey== key)
       {
-        return true;
+        countBeads++;
       }
-      else
-      {
-        return false;
-      }
-    }
-
-    void FreeMode()
-    {
-      //뭔가 만들어짐
-    }
-  */
+    }  
 
 
-  SetUpBeads GetSetUpBeads(string beadsKey)
-  {
-    MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
-    SetUpBeads setUp = null;
-    for (int j = 0; j < setUpBeads.Count; j++)
-    {
-      if (setUpBeads[j].key == beadsKey)
-      {
-        setUp = setUpBeads[j];
-        break;
-      }
-    }
+   }
 
-    if (setUp == null)
-    {
-      setUp = new SetUpBeads();
-      setUp.key = beadsKey;
-      setUpBeads.Add(setUp);
-      beadsKeys.Add(beadsKey);
-    }
-    return setUp;
-
-  }
-
-
-  /*
-  원래코드
-    public BeadsPlace[] beadsPlaces;
-  [SerializeField]
-  public int countBeads;
-  public string key;
-
-
-  public void OnClickedButton()
-  {
-     MakingBraceletManager mgr =FindObjectOfType<MakingBraceletManager>();
-
-
-
-     for (int i=0; i<mgr.currentBeads.Count;i++ )
-     {
-       int countBeads = 0;
-       string key = mgr.currentBeads[i].beadsKey;
-
-      for (int j = 0; j<mgr.currentBeads.Count;j++ )   
-      {
-        if(mgr.currentBeads[j].beadsKey== key)
-        {
-          countBeads++;
-        }
-      }  
-
-
-     }
-
-      Debug.Log(countBeads);
-      Debug.Log(key);           
-  }*/
+    Debug.Log(countBeads);
+    Debug.Log(key);           
+}*/
 
 
 
