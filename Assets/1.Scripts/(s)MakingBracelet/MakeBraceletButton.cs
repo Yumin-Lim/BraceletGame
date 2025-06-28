@@ -9,7 +9,7 @@ public class MakeBraceletButton : MonoBehaviour
 {
   // Start is called before the first frame update
 
-  public static MakeBraceletButton  Instance;
+  public static MakeBraceletButton Instance;
   public GameObject completCanvas;
 
   public BeadsPlace[] beadsPlaces;
@@ -47,8 +47,7 @@ public class MakeBraceletButton : MonoBehaviour
   {
 
     CheckQuest();
-    CheckPrest();
-    FreeMode();
+   
 
 
 
@@ -64,7 +63,7 @@ public class MakeBraceletButton : MonoBehaviour
     int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
 
     int count = BeadsBoard.Instance.beadsPlaces.Length;
-
+    
     /*
         for (int i = 0; i < count; i++)
         {
@@ -145,18 +144,26 @@ public class MakeBraceletButton : MonoBehaviour
 
       if (isSame)
       {
-
-
+       
         Debug.Log($"퀘스트 {i}와 같다");
-        //User.Instance.userData.userQuestList.Remove(userQuestList[i]); -> 이거 퀘스트 창으로 옮기기 
-        User.Instance.AddBracelet("퀘스트모드", 1);
+
+        
+        User.Instance.userData.userQuestList.Remove(userQuestList[i]); //이게 닫기 버튼 누른 후에 반영된다 왜지 
+        User.Instance.AddBracelet(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
+       // QuestComp.Instance.data(userQuestList[i]); 아진짜 뭐냐 이거 어쩌지 
 
         BraceletQuestView.Instance.questBoardUpdate();
         User.Instance.AddExp(1);
-        //CompleteBraceletCanvas.questPopUp();
+  
         CompleteBraceletCanvas.flag = true;
+        CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
+        completeBraceletCanvas.OpenComplete();
 
+      }
+      else
+      {
+        CheckPrest();
       }
     }
 
@@ -264,6 +271,10 @@ public class MakeBraceletButton : MonoBehaviour
       gameObject.SetActive(false);
 
     }
+    else
+    {
+      FreeMode();
+    }
 
 
 
@@ -301,12 +312,10 @@ public class MakeBraceletButton : MonoBehaviour
 
     User.Instance.AddBracelet("프리모드", 1);
     User.Instance.AddExp(1);
-        //그리고 이제 여기서 퀘스트 보드 업데이트 
+    //그리고 이제 여기서 퀘스트 보드 업데이트 
+    CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
+    completeBraceletCanvas.OpenCompleteFreeMode();
 
-        User.Instance.AddExp(1);
-        //CompleteBraceletCanvas.questPopUp();
-        CompleteBraceletCanvas.flag = true;
-    
   }
 
   /*

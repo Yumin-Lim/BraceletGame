@@ -41,6 +41,25 @@ public class CompleteBraceletCanvas : MonoBehaviour
         nameText.text = makeBraceletData.name;
 
     }
+
+     public void OpenComplete() //퀘스트를 우해서 
+    {
+        gameObject.SetActive(true);
+       // thumImage.sprite = makeBraceletData.thum;
+        nameText.text = "퀘스트 성공";
+
+    }
+     public void OpenCompleteFreeMode() //프리모드 우해서 
+    {
+        gameObject.SetActive(true);
+       // thumImage.sprite = makeBraceletData.thum;
+        nameText.text = "나만의 팔찌 만들기 성공";
+
+    }
+
+
+
+
     // Update is called once per frame
     void Update()
     {
