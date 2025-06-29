@@ -47,9 +47,6 @@ public class MakeBraceletButton : MonoBehaviour
   {
 
     CheckQuest();
-   
-
-
 
   }
   //빨간색을 세었으면 빼야하는데 !
@@ -63,7 +60,7 @@ public class MakeBraceletButton : MonoBehaviour
     int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
 
     int count = BeadsBoard.Instance.beadsPlaces.Length;
-    
+
     /*
         for (int i = 0; i < count; i++)
         {
@@ -144,18 +141,18 @@ public class MakeBraceletButton : MonoBehaviour
 
       if (isSame)
       {
-       
+
         Debug.Log($"퀘스트 {i}와 같다");
 
-        
+
         User.Instance.userData.userQuestList.Remove(userQuestList[i]); //이게 닫기 버튼 누른 후에 반영된다 왜지 
         User.Instance.AddBracelet(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
-       // QuestComp.Instance.data(userQuestList[i]); 아진짜 뭐냐 이거 어쩌지 
+        // QuestComp.Instance.data(userQuestList[i]); 아진짜 뭐냐 이거 어쩌지 
 
         BraceletQuestView.Instance.questBoardUpdate();
         User.Instance.AddExp(1);
-  
+
         CompleteBraceletCanvas.flag = true;
         CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
         completeBraceletCanvas.OpenComplete();
@@ -310,7 +307,15 @@ public class MakeBraceletButton : MonoBehaviour
 
     // 버튼 생기는 거랑 같은 부분으로 체크하기 즉 다 차여 있을지 
 
-    User.Instance.AddBracelet("프리모드", 1);
+
+    UserBeadsPlaceData[] userBeadsPlaceDatas = new UserBeadsPlaceData[MakingBraceletManager.Instance.beadsBoard.beadsPlaces.Length];
+    for (int i = 0; i < userBeadsPlaceDatas.Length; i++)
+    {
+      userBeadsPlaceDatas[i] = new UserBeadsPlaceData();
+      userBeadsPlaceDatas[i].beadsKey = MakingBraceletManager.Instance.beadsBoard.beadsPlaces[i].beads.beadsKey;
+      userBeadsPlaceDatas[i].index = i;
+    }
+    User.Instance.AddFreeBracelet(userBeadsPlaceDatas, MakingBraceletManager.Instance.beadsBoard.key);
     User.Instance.AddExp(1);
     //그리고 이제 여기서 퀘스트 보드 업데이트 
     CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();

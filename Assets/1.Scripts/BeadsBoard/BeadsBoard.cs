@@ -22,12 +22,6 @@ public class BeadsBoard : MonoBehaviour
     }
 
 
-   
-   
-    public void StartBeadsBoard()
-    {
-        MakingBraceletManager.Instance.beadsBoard = this;
-    }
     
     void Start()
     {

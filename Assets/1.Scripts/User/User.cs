@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
+using JetBrains.Annotations;
 
 public class User : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class User : MonoBehaviour
 
     public void Awake()
     {
-         
+
 
         if (Instance == null)
         {
@@ -39,7 +40,7 @@ public class User : MonoBehaviour
             AddBoard("A");
             SaveManger.SaveData("UserData", userData);
         }
-        
+
 
     }
     public void AddCoin(int c)
@@ -121,7 +122,14 @@ public class User : MonoBehaviour
         SaveManger.SaveData("UserData", userData);
     }
 
-    
+    public void AddFreeBracelet(UserBeadsPlaceData[] userBeadsPlaceDatas, string boardKey) //멤버변수 접근시 this
+    {
+        UserFreeBraceletData userFreeBraceletData= new UserFreeBraceletData(); //
+        userFreeBraceletData.boardKey = boardKey;
+        userFreeBraceletData.userBeadsPlaceDatas = userBeadsPlaceDatas;
+        userData.userFreeBraceletDatas.Add(userFreeBraceletData);
+    }
+
 
 
 
@@ -195,31 +203,31 @@ public class User : MonoBehaviour
 
     }
 
-   public UserBoardData GetBoard(string BoardKey)
-{
-    for (int i = 0; i < userData.userBoardData.Count; i++)
+    public UserBoardData GetBoard(string BoardKey)
     {
-        if (userData.userBoardData[i].boardKey == BoardKey)
+        for (int i = 0; i < userData.userBoardData.Count; i++)
         {
-            return userData.userBoardData[i];
+            if (userData.userBoardData[i].boardKey == BoardKey)
+            {
+                return userData.userBoardData[i];
+            }
         }
+
+        // 없으면 새로 생성
+        UserBoardData newBoard = new UserBoardData();
+        newBoard.boardKey = BoardKey;
+        userData.userBoardData.Add(newBoard);
+
+        return newBoard;
     }
 
-    // 없으면 새로 생성
-    UserBoardData newBoard = new UserBoardData();
-    newBoard.boardKey = BoardKey;
-    userData.userBoardData.Add(newBoard);
-
-    return newBoard;
-}
 
 
 
-    
-    public void AddBoard(String BoardKey)
+    public void AddBoard(string BoardKey)
     {
         UserBoardData board = GetBoard(BoardKey);
-        board.purchased = true; 
+        board.purchased = true;
         SaveManger.SaveData("UserData", userData);
 
     }
@@ -228,7 +236,7 @@ public class User : MonoBehaviour
 
     public void GetUserQuestData()
     {
-        
+
     }
 
 
@@ -239,7 +247,7 @@ public class User : MonoBehaviour
 
 
         SceneManager.LoadScene("Lobby");
-       
+
 
 
     }
@@ -257,7 +265,7 @@ public class UserBeads
 }
 
 [System.Serializable]
-public class UserBracelet
+public class UserBracelet //프리셋위한 
 {
     public string key;
     public int count;
@@ -275,7 +283,7 @@ public class UserCatData
 public class UserBoardData
 {
     public string boardKey;
-    public bool purchased; 
+    public bool purchased;
 
 }
 
@@ -291,6 +299,7 @@ public class UserData
     public int exp;
 
 
+    public List<UserFreeBraceletData> userFreeBraceletDatas = new List<UserFreeBraceletData>();
     public List<UserBracelet> userBracelets = new List<UserBracelet>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserBeads> userBeads = new List<UserBeads>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserCatData> userCatData = new List<UserCatData>();
@@ -298,4 +307,20 @@ public class UserData
 
     public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트인데
 }
+//유저가 자유롭게 만든 팔찌 데이터
+[System.Serializable]
+public class UserFreeBraceletData
+{
+    //여러개의 객체를 만드닌까 
+    public string boardKey;
+    public UserBeadsPlaceData[] userBeadsPlaceDatas;
 
+
+
+}
+[System.Serializable]
+public class UserBeadsPlaceData
+{
+    public int index;
+    public string beadsKey;
+}
