@@ -6,10 +6,11 @@ using TMPro;
 using System.Linq;
 using System.Data.Common;
 using System.Data;
+using UnityEditor.Rendering;
 public class SellbraceletPanel : MonoBehaviour
 {
- 
-  
+
+
   public Image thumImage;
 
 
@@ -23,9 +24,9 @@ public class SellbraceletPanel : MonoBehaviour
     BraceletData data = BraceletManager.Instance.GetBraceletData(Key);
     thumImage.sprite = data.thum;
     UserBracelet userBracelet = User.Instance.GetUserBracelet(Key);
-   
+
     maxBraceletCount = userBracelet.count;
-    currentSellCount = 1;
+  
 
 
   }
@@ -33,23 +34,43 @@ public class SellbraceletPanel : MonoBehaviour
   public void sellButton()
   {
 
-      Debug.Log("팔렸습니다.");
-      Debug.Log(key);
-      UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
+    Debug.Log("팔렸습니다.");
+    Debug.Log(key);
+    UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
 
-      //User.Instance.GetUserBracelet(braceletKey);
-      // userBracelet.count -= currentSellCount;
-      User.Instance.SubBracelet(key, currentSellCount);
+    //User.Instance.GetUserBracelet(braceletKey);
+    // userBracelet.count -= currentSellCount;
+    User.Instance.SubBracelet(key);
 
-      BraceletData braceletData = BraceletManager.Instance.GetBraceletData(key);
+    BraceletData braceletData = BraceletManager.Instance.GetBraceletData(key);
+    
+
+    if (key == "freeBraceletKey")
+    {
+      for (int i = 0; i < User.Instance.userData.userFreeBraceletDatas.Count; i++)
+      {
+        User.Instance.AddCoin(User.Instance.userData.userFreeBraceletDatas[i].price);
+        User.Instance.userData.userFreeBraceletDatas.RemoveAt(i);
+      }
+    }
+    else if (key == "questKey")
+    {
+      for (int i = 0; i < User.Instance.userData.userQuestList.Count; i++)
+      {
+        User.Instance.AddCoin(User.Instance.userData.userQuestList[i].price);
+        User.Instance.userData.userQuestList.RemoveAt(i);
+      }
+    }
+    else
+    {
       User.Instance.AddCoin(braceletData.price);
-
-     //이거 왜 오류? 이거한다고 왜 왜 지 아
+    }
+    //이거 왜 오류? 이거한다고 왜 왜 지 아
     //판매 상저 닫을대? 
-     //destroy 하지 말고 그냥 비활성화 ->왜냐면 
+    //destroy 하지 말고 그냥 비활성화 ->왜냐면 
 
-     gameObject.SetActive(false);
+    gameObject.SetActive(false);
 
   }
 

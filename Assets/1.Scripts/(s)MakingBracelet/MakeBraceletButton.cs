@@ -55,70 +55,29 @@ public class MakeBraceletButton : MonoBehaviour
 
   void CheckQuest()
   {
+    Debug.Log("퀘스트모드 진입");
+
+
+    if (userQuestList.Count == 0)
+    {
+      CheckPrest();
+    }
+
     BraceletData makeBraceletData = null;
     currentBeads = MakingBraceletManager.Instance.currentBeads;
     int beadsPlaceCount = BeadsBoard.Instance.beadsPlaces.Length;
 
     int count = BeadsBoard.Instance.beadsPlaces.Length;
 
-    /*
-        for (int i = 0; i < count; i++)
-        {
-          BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
-          int index = bp.beadsPlaceCorrect.index;
-          string key = bp.beads.beadsKey;
-
-          Debug.Log("현재 놓여진 비즈의 인덱스" + index + "그리고 그 비즈키" + key);
-        }
-    */
-
-
-
 
     for (int i = 0; i < userQuestList.Count; i++)
     {
-
-      for (int j = 0; j < beadsPlaceCount; j++)
-      {
-        string beadskeyvar = userQuestList[i].beadsPlaceCorrects[j].beadKey;
-        int index = userQuestList[i].beadsPlaceCorrects[j].index;
-        Debug.Log($"index: {index}, beadKey: {beadskeyvar}");
-
-
-      }
-
-
-    }
-
-    for (int i = 0; i < currentBeads.Count; i++)
-    {
-      string currentBeadsKey = currentBeads[i].beadsKey;
-      Debug.Log(currentBeadsKey);
-    }
-
-
-
-    for (int i = 0; i < beadsPlaceCount; i++)
-    {
-      BeadsPlace bp = BeadsBoard.Instance.beadsPlaces[i];
-      int index = bp.beadsPlaceCorrect.index;
-
-      string key = "";
-      if (bp.beads != null)
-      {
-        key = bp.beads.beadsKey;
-      }
-
-      Debug.Log($"[현재] index: {index}, beadKey: {key}");
-    }
-
-
-    for (int i = 0; i < userQuestList.Count; i++)
-    {
+      Debug.Log("f1");
       bool isSame = true;
 
       for (int j = 0; j < userQuestList[i].beadsPlaceCorrects.Length; j++)
       {
+        Debug.Log("f2");
         int questIndex = userQuestList[i].beadsPlaceCorrects[j].index;
         string questKey = userQuestList[i].beadsPlaceCorrects[j].beadKey;
 
@@ -126,6 +85,7 @@ public class MakeBraceletButton : MonoBehaviour
 
         if (bp.beads == null)
         {
+          Debug.Log("f3");
           isSame = false;
           break;
         }
@@ -134,6 +94,7 @@ public class MakeBraceletButton : MonoBehaviour
 
         if (currentKey != questKey)
         {
+          Debug.Log("f4");
           isSame = false;
           break;
         }
@@ -141,12 +102,12 @@ public class MakeBraceletButton : MonoBehaviour
 
       if (isSame)
       {
-
+        Debug.Log("f5");
         Debug.Log($"퀘스트 {i}와 같다");
 
 
         User.Instance.userData.userQuestList.Remove(userQuestList[i]); //이게 닫기 버튼 누른 후에 반영된다 왜지 
-        User.Instance.AddBracelet(1);
+        //User.Instance.AddBracelet(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
         // QuestComp.Instance.data(userQuestList[i]); 아진짜 뭐냐 이거 어쩌지 
 
@@ -157,21 +118,47 @@ public class MakeBraceletButton : MonoBehaviour
         CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
         completeBraceletCanvas.OpenComplete();
 
+
+        UserQuestBraceletData[] userQuestBraceletDatas = new UserQuestBraceletData[User.Instance.userData.userQuestList.Count()];
+
+        for (int j = 0; j < userQuestBraceletDatas.Length; i++)
+        {
+          userQuestBraceletDatas[j] = new UserQuestBraceletData();
+          userQuestBraceletDatas[j].price = 1000;
+        }
+        User.Instance.AddQuestBracelet(userQuestBraceletDatas);
+        User.Instance.AddExp(1);
+        //그리고 이제 여기서 퀘스트 보드 업데이트 
+
+        completeBraceletCanvas.OpenCompleteFreeMode();
+
       }
+
+
+
+
+
+
+
+
+
+
+
       else
       {
+        Debug.Log("f6");
         CheckPrest();
       }
+      }
+
+
     }
-
-
-  }
 
 
 
   public void CheckPrest()
   {
-
+    Debug.Log("프리셋 모드 진입");
     beadsKeys.Clear();
     setUpBeads.Clear();
     Debug.Log("on clicked1");
@@ -306,7 +293,7 @@ public class MakeBraceletButton : MonoBehaviour
   {
 
     // 버튼 생기는 거랑 같은 부분으로 체크하기 즉 다 차여 있을지 
-
+    Debug.Log("프리모드 진입");
 
     UserBeadsPlaceData[] userBeadsPlaceDatas = new UserBeadsPlaceData[MakingBraceletManager.Instance.beadsBoard.beadsPlaces.Length];
     for (int i = 0; i < userBeadsPlaceDatas.Length; i++)

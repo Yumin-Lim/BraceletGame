@@ -1,33 +1,31 @@
 {
-    "coin": 9920,
-    "level": 2,
+    "coin": 20,
+    "level": 0,
     "exp": 2,
-    "userBracelets": [
+    "userBracelets": [],
+    "userQuestBraceletDatas": [
         {
-            "key": "퀘스트모드",
-            "count": 6
-        },
-        {
-            "key": "프리모드",
-            "count": 7
-        },
-        {
-            "key": "pink",
-            "count": 3
+            "boardKey": "",
+            "thum": {
+                "instanceID": 0
+            },
+            "QuestBraceletKey": "questBraceletKey",
+            "price": 1000
         }
     ],
+    "userFreeBraceletDatas": [],
     "userBeads": [
         {
             "key": "pink",
-            "count": 59
+            "count": 197
         },
         {
             "key": "pearl",
-            "count": 30
+            "count": 198
         },
         {
             "key": "purple",
-            "count": 68
+            "count": 194
         }
     ],
     "userCatData": [],

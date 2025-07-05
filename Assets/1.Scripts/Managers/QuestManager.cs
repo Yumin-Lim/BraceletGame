@@ -61,8 +61,8 @@ public class QuestManager : MonoBehaviour
 
             questDatas[i].name = $"Daily Quest {i}"; //퀘스트의 번호 부여하는 코드로 i 랑 같음 (이거 i+1로 해야 1부터 시작하지)
             questDatas[i].des = $"Contents {i}"; //그리고 이거는 퀘스트의 내용을 부여하기 위해서 일단 만든코드로 나중에 수정해야함 
-
-
+            questDatas[i].questKey = "questKey";
+            questDatas[i].price = 100;
             questDatas[i].boardKey = canBoardKeys[Random.Range(0, canBoardKeys.Count)]; //여기 문제 이다 보유중인 보드 중 하나다 
             BoardData boardData = BeadsBoardManager.Instance.GetBoardData(questDatas[i].boardKey);
 
@@ -92,6 +92,7 @@ public class QuestManager : MonoBehaviour
             QuestBoardPrefab script = questBoard.GetComponent<QuestBoardPrefab>();
             script.titleText.text = questDatas[i].name;
             script.descriptionText.text = questDatas[i].des;
+            
           
             script.questForBoard = questDatas[i];
         }
@@ -115,6 +116,10 @@ public class QuestData
 
     public string boardKey;
     public BeadsPlaceCorrect[] beadsPlaceCorrects;
+
+    public int price;
+
+    public string questKey;
 }
 
 [System.Serializable]

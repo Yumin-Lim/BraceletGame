@@ -32,8 +32,7 @@ public class BraceletManager : MonoBehaviour
        
     }
     
-    
-    
+
     
     void Start()
     {
@@ -65,3 +64,4 @@ public class BraceletNeed
     public float rate; 
     public int count;
 }
+

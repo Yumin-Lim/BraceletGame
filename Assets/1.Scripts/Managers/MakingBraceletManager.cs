@@ -105,6 +105,12 @@ public class MakingBraceletManager : MonoBehaviour
                         BeadsPlace place = cols[i].gameObject.GetComponent<BeadsPlace>();
                         if (place.beads != null) //만약 비즈 플레이스가 널이 아니다 즉 차여 있다마면  //그니까 이 근처에서 이제 
                         {
+                            string key = place.beads.beadsKey;
+                            Destroy(place.beads.gameObject);
+                            place.SetBeads(null);
+                            User.Instance.AddBeads(key, 1);
+
+
                             continue;
                         }
 
@@ -182,16 +188,16 @@ public class MakingBraceletManager : MonoBehaviour
     }
 
 
-/*
-    public void quest()
-    {
-        for (int i = 0; i < currentQuestData.Count; i++)
+    /*
+        public void quest()
         {
-            QuestData quest = currentQuestData[i];
-            BeadsPlaceCorrect[] corrects = quest.beadsPlaceCorrects;
+            for (int i = 0; i < currentQuestData.Count; i++)
+            {
+                QuestData quest = currentQuestData[i];
+                BeadsPlaceCorrect[] corrects = quest.beadsPlaceCorrects;
+            }
         }
-    }
 
-*/
+    */
 
 }
