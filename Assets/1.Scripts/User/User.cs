@@ -65,7 +65,10 @@ public class User : MonoBehaviour
         userData.level++;
     }
 
-
+    public void SaveData(QuestData questData)
+    {
+         SaveManger.SaveData("UserData", questData);
+    }
 
 
 
@@ -245,13 +248,6 @@ public class User : MonoBehaviour
 
 
 
-    public void GetUserQuestData()
-    {
-
-    }
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -309,7 +305,7 @@ public class UserData
     public int level;
     public int exp;
 
-
+    
     public List<UserBracelet> userBracelets = new List<UserBracelet>();
     public List<UserQuestBraceletData> userQuestBraceletDatas = new List<UserQuestBraceletData>();
     public List<UserFreeBraceletData> userFreeBraceletDatas = new List<UserFreeBraceletData>();

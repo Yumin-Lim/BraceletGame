@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     // list 느ㄴ 크긱ㅏ 유동적이다 근ㅔ 배열은 Array는  크ㄱㅣ가 고정적이다
     void Start()
     {
-        soundInfos = Resources.LoadAll<SoundInfo>("Sound"); //Resoutecde     flie sound 
+        soundInfos = Resources.LoadAll<SoundInfo>("Sound"); //Resoutecde     flie sound  LoadAll 은 특정 폴더안에 있는 파일을 싹 가지고오는거니까 폴더명 특정을 해라 <어떤파일>("폴더명")
     }
    void Awake()
 {
@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
       AudioSource audio =   GetAudioSource();
       audio.clip = info.clip;
       audio.Play();
-
+   
     }
 
    AudioSource GetAudioSource()
