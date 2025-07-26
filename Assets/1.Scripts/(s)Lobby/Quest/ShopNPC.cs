@@ -14,11 +14,11 @@ public class ShopNPC : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        makingQuest();
+     
     }
     private void Start()
     {
-        makingQuest(); //이걸 하루에 한번 호출으로 바꾸면
+        
     }
 
     private void makingQuest()

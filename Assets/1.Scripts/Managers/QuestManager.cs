@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using System;
 using Random = UnityEngine.Random;
-
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance;
@@ -14,7 +12,8 @@ public class QuestManager : MonoBehaviour
     public GameObject questBoardPrefab;
     public Transform parentPanel;
 
-    public QuestData[] questDatas;
+    public QuestData[] questDatas; //오늘 받을 수 있는 퀘스트 목록 
+
 
 
     void Awake()
@@ -26,57 +25,58 @@ public class QuestManager : MonoBehaviour
     }
 
 
-  void Start()
+    void Start()
     {
-       
-        
-       
-       
-       
-       
-       
-       
-       
+
         string questLastTime = PlayerPrefs.GetString("QuestLastTime");
         //questLastTime 이라는 이름의 락커에서 물건을 꺼내오는데 그 타입이 스트링이다.
 
-        Debug.Log(questLastTime);
+        Debug.Log("QuestManager start() questLastTime" + questLastTime);
 
+        //유저가 해당 퀘스트를 가지고 있는지 판별하고
+        //가지고 있는 경우에는: 노출안함
+        //가지고 있지 않는 경우: 노출함
 
-
-        if (questLastTime != null) // 저장된게 있다이미 그럼 기존유저다
+        if (string.IsNullOrEmpty(questLastTime) == false)
         {
-            if (questLastTime == DateTime.Now.Date.ToString()) //오늘을 저장을 하는거고 
+            if (questLastTime == DateTime.Now.Date.ToString()) //오늘 다시 접속한 상태 
             {
-                //퀘스트를 받은게 오늘이다 
-                User.Instance.userData.userQuestList.Clear();
+                Debug.Log("QuestManager start() 기존유저 같은날");
+                QuestSaveData questSaveData = SaveManger.LoadData<QuestSaveData>("QuestSaveData");
+                questDatas = questSaveData.questDatas;
+                //이미 설정된 퀘스트 데이터를 다시 불러오는 코드 ?
                 UpdateUi();
 
 
-               
 
 
             }
-            else //데이터가 있기는 한데 그 저장 시간이 오늘은 아닐떄 -> 하루가 지났다는 의미?
+            else //며칠 이따가 다시 접속했다 
             {
-                 MakeQuestBoards();
+                Debug.Log("QuestManager start() 기존유저 다른날");
+                User.Instance.userData.userQuestList.Clear();
+                MakeQuestBoards();
+
+
 
 
                 // 퀘스트 받아둔거 리셋하기 
             }
         }
-        else // 신규유저이다 이게 잘 안돼고 있네 흠흠흠흠흠흠  
+        else //접속한적이 없다.
         {
+
+            Debug.Log("QuestManager start() 신규유저");
             MakeQuestBoards();
 
 
         }
 
         DateTime today = DateTime.Now.Date; //today 라는 데이트 타임에 오늘 날짜를 저장했다
- 
+
 
         PlayerPrefs.SetString("QuestLastTime", today.ToString());
-        PlayerPrefs.Save(); 
+        PlayerPrefs.Save();
 
     }
 
@@ -112,7 +112,7 @@ public class QuestManager : MonoBehaviour
 
             questDatas[i].name = $"Daily Quest {i}"; //퀘스트의 번호 부여하는 코드로 i 랑 같음 (이거 i+1로 해야 1부터 시작하지)
             questDatas[i].des = $"Contents {i}"; //그리고 이거는 퀘스트의 내용을 부여하기 위해서 일단 만든코드로 나중에 수정해야함 
-            questDatas[i].questKey = "questKey";
+            questDatas[i].questKey = $"questKey{i}";
             questDatas[i].price = 100;
             questDatas[i].boardKey = canBoardKeys[Random.Range(0, canBoardKeys.Count)]; //여기 문제 이다 보유중인 보드 중 하나다 
             BoardData boardData = BeadsBoardManager.Instance.GetBoardData(questDatas[i].boardKey);
@@ -130,6 +130,11 @@ public class QuestManager : MonoBehaviour
             }
 
         }
+        //배열자체가 저장이 안되니까 이렇게 
+        QuestSaveData questSaveData = new QuestSaveData();
+        questSaveData.questDatas = questDatas;
+
+        SaveManger.SaveData("QuestSaveData", questSaveData);
 
 
         //   BraceletQuestView.Instance.questBoardUpdate();
@@ -141,6 +146,22 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = 0; i < questDatas.Length; i++)
         {
+            bool isHas = false;
+            int k = questDatas.Length;
+            for (int j = 0; j < User.Instance.userData.userQuestList.Count; j++)
+            {
+                if (User.Instance.userData.userQuestList[j].questKey == questDatas[i].questKey)
+                {
+                    isHas = true;
+                    break;
+                }
+
+
+            }
+
+            if (isHas)
+                continue;
+
             GameObject questBoard = Instantiate(questBoardPrefab, parentPanel);
 
             QuestBoardPrefab script = questBoard.GetComponent<QuestBoardPrefab>();
@@ -149,7 +170,6 @@ public class QuestManager : MonoBehaviour
 
 
             script.questForBoard = questDatas[i];
-
 
         }
     }
@@ -184,4 +204,11 @@ public class BeadsPlaceCorrect
     public int index;
     public string beadKey;
 }
+
+[System.Serializable]
+public class QuestSaveData
+{
+    public QuestData[] questDatas;
+}
+
 

@@ -35,6 +35,7 @@ public class User : MonoBehaviour
         userData = SaveManger.LoadData<UserData>("UserData");
         if (userData == null) // 신규유저
         {
+            PlayerPrefs.DeleteAll(); 
             userData = new UserData();
             AddCoin(100);
             AddBoard("A");
@@ -315,7 +316,9 @@ public class UserData
     public List<UserCatData> userCatData = new List<UserCatData>();
     public List<UserBoardData> userBoardData = new List<UserBoardData>(); //사용자가 ㄷ어떤 보드 가지고 있고 안가지고 있고 유저의 보드 보유 상태 
 
-    public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트인데
+
+
+    public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트
 }
 //유저가 자유롭게 만든 팔찌 데이터
 [System.Serializable]
