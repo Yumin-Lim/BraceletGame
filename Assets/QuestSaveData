@@ -11,15 +11,15 @@
                 },
                 {
                     "index": 1,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 2,
                     "beadKey": "pearl"
                 },
                 {
+                    "index": 2,
+                    "beadKey": "purple"
+                },
+                {
                     "index": 3,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 4,
@@ -27,31 +27,31 @@
                 },
                 {
                     "index": 5,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 6,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 7,
-                    "beadKey": "purple"
-                },
-                {
-                    "index": 8,
                     "beadKey": "pink"
                 },
                 {
-                    "index": 9,
+                    "index": 6,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 7,
                     "beadKey": "pearl"
                 },
                 {
+                    "index": 8,
+                    "beadKey": "pearl"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "pink"
+                },
+                {
                     "index": 10,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey0"
         },
         {
             "name": "Daily Quest 1",
@@ -60,27 +60,27 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 1,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 2,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 3,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 4,
                     "beadKey": "pink"
                 },
                 {
-                    "index": 5,
+                    "index": 3,
+                    "beadKey": "purple"
+                },
+                {
+                    "index": 4,
                     "beadKey": "pearl"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "purple"
                 },
                 {
                     "index": 6,
@@ -96,15 +96,15 @@
                 },
                 {
                     "index": 9,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 10,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey1"
         },
         {
             "name": "Daily Quest 2",
@@ -113,7 +113,7 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 1,
@@ -121,19 +121,19 @@
                 },
                 {
                     "index": 2,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 3,
-                    "beadKey": "pearl"
-                },
-                {
-                    "index": 4,
                     "beadKey": "pink"
                 },
                 {
+                    "index": 3,
+                    "beadKey": "pink"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "purple"
+                },
+                {
                     "index": 5,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 6,
@@ -145,11 +145,11 @@
                 },
                 {
                     "index": 8,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 9,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 10,
@@ -157,7 +157,7 @@
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey2"
         },
         {
             "name": "Daily Quest 3",
@@ -166,19 +166,19 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 1,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 2,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 3,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 4,
@@ -186,11 +186,11 @@
                 },
                 {
                     "index": 5,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 6,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 7,
@@ -202,15 +202,15 @@
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey3"
         },
         {
             "name": "Daily Quest 4",
@@ -219,11 +219,11 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 1,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 2,
@@ -231,15 +231,15 @@
                 },
                 {
                     "index": 3,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 4,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 5,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 6,
@@ -247,7 +247,7 @@
                 },
                 {
                     "index": 7,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 8,
@@ -255,15 +255,15 @@
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey4"
         },
         {
             "name": "Daily Quest 5",
@@ -276,7 +276,7 @@
                 },
                 {
                     "index": 1,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 2,
@@ -288,35 +288,35 @@
                 },
                 {
                     "index": 4,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 5,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 6,
-                    "beadKey": "pink"
-                },
-                {
-                    "index": 7,
                     "beadKey": "pearl"
                 },
                 {
-                    "index": 8,
+                    "index": 7,
                     "beadKey": "purple"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey5"
         },
         {
             "name": "Daily Quest 6",
@@ -333,7 +333,7 @@
                 },
                 {
                     "index": 2,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 3,
@@ -345,19 +345,19 @@
                 },
                 {
                     "index": 5,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 6,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 7,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 8,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 9,
@@ -369,7 +369,7 @@
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey6"
         },
         {
             "name": "Daily Quest 7",
@@ -378,7 +378,7 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 1,
@@ -386,7 +386,7 @@
                 },
                 {
                     "index": 2,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 3,
@@ -394,7 +394,7 @@
                 },
                 {
                     "index": 4,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 5,
@@ -406,15 +406,15 @@
                 },
                 {
                     "index": 7,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 8,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
@@ -422,7 +422,7 @@
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey7"
         },
         {
             "name": "Daily Quest 8",
@@ -431,11 +431,11 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 1,
-                    "beadKey": "pearl"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 2,
@@ -443,11 +443,11 @@
                 },
                 {
                     "index": 3,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 4,
-                    "beadKey": "pearl"
+                    "beadKey": "pink"
                 },
                 {
                     "index": 5,
@@ -459,7 +459,7 @@
                 },
                 {
                     "index": 7,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 8,
@@ -467,15 +467,15 @@
                 },
                 {
                     "index": 9,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 10,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey8"
         },
         {
             "name": "Daily Quest 9",
@@ -484,19 +484,19 @@
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "purple"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 1,
-                    "beadKey": "pink"
+                    "beadKey": "purple"
                 },
                 {
                     "index": 2,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 3,
-                    "beadKey": "pink"
+                    "beadKey": "pearl"
                 },
                 {
                     "index": 4,
@@ -524,11 +524,11 @@
                 },
                 {
                     "index": 10,
-                    "beadKey": "purple"
+                    "beadKey": "pink"
                 }
             ],
             "price": 100,
-            "questKey": "questKey"
+            "questKey": "questKey9"
         }
     ]
 }
