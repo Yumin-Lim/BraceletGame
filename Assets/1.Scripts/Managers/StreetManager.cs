@@ -16,15 +16,16 @@ public class StreetManager : MonoBehaviour
        
        for(int i=0; i<streets.Length; i++)
        {
-        if(streets[i].streetType == type)
-        {
-            mainCamera.transform.position = streets[i].transform.position;
-            streets[i].StartStreet();
+            if (streets[i].streetType == type)
+            {
+                mainCamera.transform.position = streets[i].transform.position;
+                streets[i].StartStreet();
+                
         }
-        else
-        {
-           streets[i].EndStreet();
-        }
+            else
+            {
+                streets[i].EndStreet();
+            }
         
        } 
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Street : MonoBehaviour
@@ -13,6 +14,7 @@ public class Street : MonoBehaviour
     public void StartStreet()
     {
         mainCanvas.gameObject.SetActive(true);
+        CatMaker.Instance.StartStreet(streetType);  
     }
     public void EndStreet()
     {
