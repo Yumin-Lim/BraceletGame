@@ -29,6 +29,8 @@ public class BeadsProductPanel : MonoBehaviour
     void Start()
     {
 
+
+
         BeadsManager mgr = FindObjectOfType<BeadsManager>();
         beadsData = mgr.GetBeadsData(beadsKey);
 

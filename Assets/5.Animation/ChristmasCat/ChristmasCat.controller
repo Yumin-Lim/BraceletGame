@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Christmas_Run
+  m_Name: Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -33,7 +33,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChristmasCat_idle
+  m_Name: idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -81,7 +81,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChristmastCat_Jump
+  m_Name: Jump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -111,19 +111,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3323746553565297346}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 240, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5869229924826867581}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 250, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6055230258307847775}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 240, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8535863302668114186}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 240, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8783075695041644791}
-    m_Position: {x: 340, y: 260, z: 0}
+    m_Position: {x: 240, y: 230, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -141,7 +141,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Christmas_Sitting
+  m_Name: Sit
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -167,7 +167,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Christmas_Sleep
+  m_Name: Sleep
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

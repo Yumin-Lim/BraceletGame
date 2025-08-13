@@ -13,17 +13,17 @@ using UnityEngine;
 
 public class BeadsManager : MonoBehaviour
 {
-     
-     
-      public static BeadsManager Instance;
-     
-     public BeadsData[] beadsDatas; //array 사용했다
 
- public void Awake()
+
+    public static BeadsManager Instance;
+
+    public BeadsData[] beadsDatas; //array 사용했다
+
+    public void Awake()
     {
         DontDestroyOnLoad(gameObject);//씬 ㅈ ㅓㄴ환되어도 제거되지 않는다 
-        
-        
+        beadsDatas = Resources.LoadAll<BeadsData>("BeadsData");
+
         Instance = this;
     }
 
@@ -33,15 +33,17 @@ public class BeadsManager : MonoBehaviour
 
     public BeadsData GetBeadsData(string key)
     {
-        for (int i=0;i<beadsDatas.Length;i++)
+        for (int i = 0; i < beadsDatas.Length; i++)
+        {
+            if (beadsDatas[i].key == key)
             {
-                if(beadsDatas[i].key ==  key)
-                {
+                Debug.Log("겟비즈데이터" + beadsDatas[i]);
                 return beadsDatas[i];
-                
-                }
+               
+
             }
-            return null;
+        }
+        return null;
 
     }
 
@@ -49,23 +51,11 @@ public class BeadsManager : MonoBehaviour
 
 
 }
-[System.Serializable]
-public class BeadsData //객체를 만들기 위한 설계도 : class
 
-{
-    public int price;
-    public string key;
-    public string name;
-    public string des;
-    public Concept concept; //이렇게 하면 아래 에서 있는 것들을 선택 가능
-    public Sprite thum;
-    public int openLv;
 
-}
 public enum Concept
 {
     Basic,
     Gothic,
     Cute,
 }
- 

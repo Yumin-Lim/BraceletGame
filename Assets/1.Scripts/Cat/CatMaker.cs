@@ -19,11 +19,7 @@ public class CatMaker : MonoBehaviour
     {
         Instance = this;
 
-        cats = new Cat[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            cats[i] = transform.GetChild(i).GetComponent<Cat>();
-        }
+       
         canSelectPositions.AddRange(catPositions);
     }
 

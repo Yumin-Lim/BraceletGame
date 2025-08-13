@@ -157,6 +157,8 @@ MonoBehaviour:
     level: 0
     exp: 0
     userBracelets: []
+    userQuestBraceletDatas: []
+    userFreeBraceletDatas: []
     userBeads: []
     userCatData: []
     userBoardData:
@@ -210,30 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cef15ef78f6a4903bbaf249519ce004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  braceletDatas:
-  - price: 100
-    key: pink
-    name: 
-    des: 
-    concept: 0
-    thum: {fileID: 1930443635, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    braceletNeeds:
-    - beadsKey: pink
-      rate: 1
-      count: 0
-  - price: 200
-    key: pearlpink
-    name: 
-    des: 
-    concept: 0
-    thum: {fileID: 0}
-    braceletNeeds:
-    - beadsKey: pearl
-      rate: 0
-      count: 1
-    - beadsKey: pink
-      rate: 0.9
-      count: 0
+  braceletDatas: []
 --- !u!4 &373585080
 Transform:
   m_ObjectHideFlags: 0
@@ -415,56 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abb229acd2bf417598cdb14068f8101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beadsDatas:
-  - price: 20
-    key: pink
-    name: pink
-    des: 
-    concept: 0
-    thum: {fileID: 1930443635, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 0
-  - price: 40
-    key: pearl
-    name: pearl
-    des: 
-    concept: 0
-    thum: {fileID: -2118108103, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 0
-  - price: 40
-    key: black
-    name: black
-    des: 
-    concept: 1
-    thum: {fileID: -1866338616, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 2
-  - price: 40
-    key: web
-    name: web
-    des: 
-    concept: 1
-    thum: {fileID: 77868999, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 2
-  - price: 20
-    key: purple
-    name: purple
-    des: 
-    concept: 0
-    thum: {fileID: 94934279, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 0
-  - price: 45
-    key: spider
-    name: spider
-    des: 
-    concept: 1
-    thum: {fileID: 1812442318, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 2
-  - price: 45
-    key: heart_1
-    name: heart_1
-    des: 
-    concept: 2
-    thum: {fileID: -1376140397, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-    openLv: 2
+  beadsDatas: []
 --- !u!4 &872551932
 Transform:
   m_ObjectHideFlags: 0

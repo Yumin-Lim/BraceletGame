@@ -11,66 +11,84 @@ public class Cat : MonoBehaviour
     public float position = 1;
     public Animator animator;
 
-    public AnimationClip[] christmasCatAni;
-//자동으로 애니메이션 들어가게 하려면?
-    public Transform catPos;
+    //자동으로 애니메이션 들어가게 하려면?
+    public Transform catPos; //목적지
 
+
+    //목적지가 설정되면
+    //body 게임 오브젝트의 scale x 값을 1혹은 -1로 설정하기 
+    public float waitTimer;
     void Start()
     {
         catPos = CatMaker.Instance.GetTransformPosition();
+        SetDirection();
+
+        moving = true;
 
     }
+    bool moving;
 
 
+    void SetDirection()
+    {
+        //목적지 설정
+        if (catPos.position.x > transform.position.x) //오른쪽으로 간다
+        {
+            Transform bodyTr = transform.Find("Body"); //하위 중 바디
+            bodyTr.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {   
+            Transform bodyTr = transform.Find("Body"); //하위 중 바디
+            bodyTr.localScale = new Vector3(1, 1, 1);
+        }
+    }
 
+    void IdleMoving()
+    {
+        animator.Play("idle");
+        waitTimer = 10;
+    }
+    void RunMoving()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, catPos.position, speed * Time.deltaTime);
+        animator.Play("Run");
+        float distance = Vector2.Distance(transform.position, catPos.position);
+        if (distance < 0.1f) //목적지에 도착함
+        {
+            IdleMoving();
+            moving = false;
+        }
 
-
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //캣포지션중 하나를 뽑아서 하나를 랜덤하게 
-        //그쪽으로 이동하면
-        //다시 다른 위치를 뽑아서 이동 시키게 반복한다 
-
-
-
-        transform.position = Vector2.MoveTowards(transform.position, catPos.position, speed * Time.deltaTime);
-
-        float distance = Vector2.Distance(transform.position, catPos.position);
-        if (distance < 0.1f)
+        if (moving) //움직이는 상태 
         {
-            CatMaker.Instance.canSelectPositions.Add(catPos);
-            catPos = CatMaker.Instance.GetTransformPosition();
-
-
+            RunMoving();
 
         }
-
-
-
-        if (catKey == "Christmas")
+        else //움직이지 않고 있음
         {
-            christmasCatMoving();
+            if (waitTimer <= 0) //10초가 지났다
+            {
+                NextPosition();//목적지 설정
+
+            }
+            waitTimer -= Time.deltaTime;
         }
-
-        if (catKey == "Brown")
-        {
-            brownCatMoving();
-
-        }
-
-        if (catKey == "Black")
-        {
-            blackCatMoving();
-
-        }
-
-
-
 
     }
+    void NextPosition()
+    {
+        CatMaker.Instance.canSelectPositions.Add(catPos);
+        catPos = CatMaker.Instance.GetTransformPosition();
+        SetDirection();
 
+        moving = true;
+    }
 
 
 
@@ -88,6 +106,7 @@ public class Cat : MonoBehaviour
         }
 
     }
+    //고양이의 행동에 따라서 달라지게 처리해야한다!
 
     public void christmasCatMoving()
     {
@@ -110,22 +129,22 @@ public class Cat : MonoBehaviour
             transform.position += Vector3.right * speed * Time.deltaTime;
             animator.Play("Run");
         }
-      
-        else if ( Time.time> 20f)
+
+        else if (Time.time > 20f)
         {
             transform.position += Vector3.right * speed * 1.5f * Time.deltaTime;
             animator.Play("Jump");
         }
 
-        else if (Time.time >25f)
+        else if (Time.time > 25f)
         {
             animator.Play("Sit");
         }
-       
-      else
-       {
-          animator.Play("Sleep");
-       }
+
+        else
+        {
+            animator.Play("Sleep");
+        }
 
     }
 
