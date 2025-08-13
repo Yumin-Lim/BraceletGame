@@ -47,7 +47,9 @@ public class MakeBraceletButton : MonoBehaviour
   {
 
     CheckQuest();
-
+    //capture component 의 OnCapture 함수를 호출해야하는 곳
+    Capture.Instance.OnCapture("Bracelet");
+    //팔찌 현재 상황에 맞게 이름을 설정해야하는데 흠
   }
   //빨간색을 세었으면 빼야하는데 !
   //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝

@@ -2,53 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System;
+
 
 public class Capture : MonoBehaviour
 {
-    private void Update()
+    public static Capture Instance;
+    public string fileName;
+    public Camera subCamera;
+
+    public void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        Instance = this;
+    }
+
+    //팔찌가 다 만들어졌을때 capture ㅁ컴포넌트 onCapture 함수 호출
+    public void OnCapture(string fName)
+
+    {
+        Debug.Log("Capture onCapture() fName" + fName);
+        fileName = fName;
+        StartCoroutine(CaptureScreen(fName));
+    }
+
+
+    IEnumerator CaptureScreen(string name)
+    {
+        yield return new WaitForEndOfFrame();
+
+        // 화면 크기 가져오기
+        int width = subCamera.targetTexture.width;
+        int height = subCamera.targetTexture.height;
+
+        // RenderTexture 생성
+        RenderTexture rt = new RenderTexture(width, height, 24);
+        subCamera.targetTexture = rt;
+        Camera.main.Render();
+
+        // Texture2D로 변환
+        Texture2D screenshot = new Texture2D(width, height, TextureFormat.RGBA32, false);
+        RenderTexture.active = subCamera.targetTexture;
+        screenshot.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        screenshot.Apply();
+
+        // 파일 저장
+#if UNITY_EDITOR
+        //유니티에디터에서 써야되는 코드
+        string directory = Path.Combine(Application.dataPath, "Capture");
+
+#else
+        //빌드된 다른 플랫폼에서 써야되는 코드
+        string directory = Path.Combine(Application.persistentDataPath, "Capture");
+#endif
+        if (!Directory.Exists(directory))
         {
+            Directory.CreateDirectory(directory);
+        }
 
-            Texture2D t2d = toTexture2D(Camera.main.targetTexture);
+        string fileName = $"{name}.png";
+        string filePath = Path.Combine(directory, fileName);
 
-            string _imgFileName = Application.dataPath + $"/Capture/thum_{Time.deltaTime}.png"; //파일 경로
-            byte[] bytes = Texture2DToByte(t2d);
-            File.WriteAllBytes(_imgFileName, bytes);
-
+        byte[] bytes = screenshot.EncodeToPNG();
+        File.WriteAllBytes(filePath, bytes);
 
 #if UNITY_EDITOR
-            UnityEditor.AssetDatabase.Refresh(); //Asset 데이터 업데이트
+        UnityEditor.AssetDatabase.Refresh();
 #endif
-
-        }
     }
 
-    Texture2D toTexture2D(RenderTexture rTex)
-    {
-        Texture2D tex = new Texture2D(rTex.width, rTex.height, TextureFormat.RGBA32, false);
-        // ReadPixels looks at the active RenderTexture.
-        RenderTexture.active = rTex;
-        tex.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
-        tex.Apply();
-        return tex;
-    }
-
-    byte[] Texture2DToByte(Texture2D tex2d)
-    {
-        RenderTexture curRenderTex = RenderTexture.active;
-        RenderTexture copiedTex = new RenderTexture(tex2d.width, tex2d.height, 0);
-
-        Graphics.Blit(tex2d, copiedTex);
-
-        RenderTexture.active = copiedTex;
-        Texture2D newTex2d = new Texture2D(tex2d.width, tex2d.height, TextureFormat.RGBA32, false);
-        newTex2d.ReadPixels(new Rect(0, 0, tex2d.width, tex2d.height), 0, 0);
-        newTex2d.Apply();
-        RenderTexture.active = curRenderTex;
-
-        byte[] tPNGBytes = newTex2d.EncodeToPNG();
-        return tPNGBytes;
-    }
-
+    //이미지 불러오기
 }

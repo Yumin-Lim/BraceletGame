@@ -37,7 +37,6 @@ public class BeadsManager : MonoBehaviour
         {
             if (beadsDatas[i].key == key)
             {
-                Debug.Log("겟비즈데이터" + beadsDatas[i]);
                 return beadsDatas[i];
                
 
