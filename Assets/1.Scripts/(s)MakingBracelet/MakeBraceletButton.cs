@@ -13,6 +13,8 @@ public class MakeBraceletButton : MonoBehaviour
   public GameObject completCanvas;
 
   public BeadsPlace[] beadsPlaces;
+
+  
   [SerializeField]
   public int countBeads;
   public string key;
@@ -122,13 +124,14 @@ public class MakeBraceletButton : MonoBehaviour
 
 
         UserQuestBraceletData[] userQuestBraceletDatas = new UserQuestBraceletData[User.Instance.userData.userQuestList.Count()];
+        UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
         for (int j = 0; j < userQuestBraceletDatas.Length; i++)
         {
           userQuestBraceletDatas[j] = new UserQuestBraceletData();
           userQuestBraceletDatas[j].price = 1000;
         }
-        User.Instance.AddQuestBracelet(userQuestBraceletDatas);
+        User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
         User.Instance.AddExp(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
 
@@ -151,10 +154,10 @@ public class MakeBraceletButton : MonoBehaviour
         Debug.Log("f6");
         CheckPrest();
       }
-      }
-
-
     }
+
+
+  }
 
 
 
@@ -164,6 +167,8 @@ public class MakeBraceletButton : MonoBehaviour
     beadsKeys.Clear();
     setUpBeads.Clear();
     Debug.Log("on clicked1");
+
+    UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
     MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
     countBeads = 0;
@@ -239,7 +244,7 @@ public class MakeBraceletButton : MonoBehaviour
     if (makeBraceletData != null) //이게 참이면
     {
 
-      User.Instance.AddBracelet(makeBraceletData.key, 1);
+      User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
       //팔찌 데이터 추가 
       //팔찌를 가지고 있는게 0 일때 아래가 실행이 안되니까 문제
       //그 후 해야할 일은 
@@ -293,6 +298,7 @@ public class MakeBraceletButton : MonoBehaviour
 
   public void FreeMode()
   {
+    UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
     // 버튼 생기는 거랑 같은 부분으로 체크하기 즉 다 차여 있을지 
     Debug.Log("프리모드 진입");
@@ -304,7 +310,7 @@ public class MakeBraceletButton : MonoBehaviour
       userBeadsPlaceDatas[i].beadsKey = MakingBraceletManager.Instance.beadsBoard.beadsPlaces[i].beads.beadsKey;
       userBeadsPlaceDatas[i].index = i;
     }
-    User.Instance.AddFreeBracelet(userBeadsPlaceDatas, MakingBraceletManager.Instance.beadsBoard.key);
+    User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
     User.Instance.AddExp(1);
     //그리고 이제 여기서 퀘스트 보드 업데이트 
     CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();

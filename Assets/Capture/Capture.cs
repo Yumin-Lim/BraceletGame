@@ -37,7 +37,7 @@ public class Capture : MonoBehaviour
         // RenderTexture 생성
         RenderTexture rt = new RenderTexture(width, height, 24);
         subCamera.targetTexture = rt;
-        Camera.main.Render();
+         subCamera.Render();
 
         // Texture2D로 변환
         Texture2D screenshot = new Texture2D(width, height, TextureFormat.RGBA32, false);

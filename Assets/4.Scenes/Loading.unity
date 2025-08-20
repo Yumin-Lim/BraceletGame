@@ -157,8 +157,6 @@ MonoBehaviour:
     level: 0
     exp: 0
     userBracelets: []
-    userQuestBraceletDatas: []
-    userFreeBraceletDatas: []
     userBeads: []
     userCatData: []
     userBoardData:

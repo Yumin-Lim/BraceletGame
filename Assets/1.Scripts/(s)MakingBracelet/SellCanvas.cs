@@ -91,7 +91,7 @@ Debug.Log("셀캔버스 진입");
             {
                 Debug.Log("셀캔버스 진입3");
                 SellbraceletPanel panel = GetSellbraceletPanel();
-                panel.SetBracelet(User.Instance.userData.userQuestList[j].questKey);
+              //  panel.SetBracelet(User.Instance.userData.userQuestList[j].questKey);
                 //이게 문제임 이게 이제 팔려면 그 팔려는 팔찌의 키가 있어야 하는데 하나가 있어야 하는건데 흠...
 
             }

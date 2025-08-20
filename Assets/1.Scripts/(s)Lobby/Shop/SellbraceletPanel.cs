@@ -16,56 +16,29 @@ public class SellbraceletPanel : MonoBehaviour
 
   public int maxBraceletCount; //보유한 팔찌 갯수
   public int currentSellCount; //판매할 갯수 
-
-  public string key;
-  public void SetBracelet(string Key)
+  public UserBracelet userBracelet;
+  public void SetBracelet(UserBracelet userBracelet)
   {
-    this.key = Key;
-    BraceletData data = BraceletManager.Instance.GetBraceletData(Key);
-    thumImage.sprite = data.thum;
-    UserBracelet userBracelet = User.Instance.GetUserBracelet(Key);
-
-    maxBraceletCount = userBracelet.count;
-  
-
-
+    this.userBracelet = userBracelet;
   }
 
   public void sellButton()
   {
 
     Debug.Log("팔렸습니다.");
-    Debug.Log(key);
-    UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
+  
+  //  UserBracelet userBracelet = User.Instance.GetUserBracelet(userBracelet.key);
 
 
     //User.Instance.GetUserBracelet(braceletKey);
     // userBracelet.count -= currentSellCount;
-    User.Instance.SubBracelet(key);
+    User.Instance.SubBracelet(userBracelet);
 
-    BraceletData braceletData = BraceletManager.Instance.GetBraceletData(key);
-    
+    BraceletData braceletData = BraceletManager.Instance.GetBraceletData(userBracelet.key);
 
-    if (key == "freeBraceletKey")
-    {
-      for (int i = 0; i < User.Instance.userData.userFreeBraceletDatas.Count; i++)
-      {
-        User.Instance.AddCoin(User.Instance.userData.userFreeBraceletDatas[i].price);
-        User.Instance.userData.userFreeBraceletDatas.RemoveAt(i);
-      }
-    }
-    else if (key == "questKey")
-    {
-      for (int i = 0; i < User.Instance.userData.userQuestList.Count; i++)
-      {
-        User.Instance.AddCoin(User.Instance.userData.userQuestList[i].price);
-        User.Instance.userData.userQuestList.RemoveAt(i);
-      }
-    }
-    else
-    {
+
       User.Instance.AddCoin(braceletData.price);
-    }
+    
     //이거 왜 오류? 이거한다고 왜 왜 지 아
     //판매 상저 닫을대? 
     //destroy 하지 말고 그냥 비활성화 ->왜냐면 
