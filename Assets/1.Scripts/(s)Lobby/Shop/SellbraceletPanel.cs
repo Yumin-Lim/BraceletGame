@@ -7,6 +7,7 @@ using System.Linq;
 using System.Data.Common;
 using System.Data;
 using UnityEditor.Rendering;
+using System;
 public class SellbraceletPanel : MonoBehaviour
 {
 
@@ -59,5 +60,10 @@ public class SellbraceletPanel : MonoBehaviour
   {
 
   }
-  //멤버변수와 함수 갯수 
+
+    internal void SetBracelet(string questKey)
+    {
+        throw new NotImplementedException();
+    }
+    //멤버변수와 함수 갯수 
 }

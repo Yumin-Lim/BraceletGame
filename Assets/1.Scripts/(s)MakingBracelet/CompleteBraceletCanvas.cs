@@ -15,7 +15,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
     [SerializeField] private GameObject questCompleteBtn;
     public List<QuestData> currentQuestData = new List<QuestData>();
 
-    [SerializeField]  public static bool flag; 
+    [SerializeField] public static bool flag;
 
     // Start is called before the first frame update
 
@@ -34,25 +34,23 @@ public class CompleteBraceletCanvas : MonoBehaviour
 
 
     }
-    public void OpenComplete(BraceletData makeBraceletData)
+   
+
+    public void OpenCompleteQuest(string braceletKey) //퀘스트를 우해서 
     {
         gameObject.SetActive(true);
-        thumImage.sprite = makeBraceletData.thum;
-        nameText.text = makeBraceletData.name;
-
-    }
-
-     public void OpenComplete() //퀘스트를 우해서 
-    {
-        gameObject.SetActive(true);
-       // thumImage.sprite = makeBraceletData.thum;
+        thumImage.sprite = Capture.Instance.LoadSpriteFromFile(braceletKey);
         nameText.text = "퀘스트 성공";
 
     }
-     public void OpenCompleteFreeMode() //프리모드 우해서 
+    public void OpenCompleteFreeMode(string braceletKey) //프리모드 우해서 
     {
         gameObject.SetActive(true);
-       // thumImage.sprite = makeBraceletData.thum;
+
+
+        thumImage.sprite = Capture.Instance.LoadSpriteFromFile(braceletKey);
+
+
         nameText.text = "나만의 팔찌 만들기 성공";
 
     }

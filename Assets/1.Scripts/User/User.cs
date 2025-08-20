@@ -35,7 +35,7 @@ public class User : MonoBehaviour
         userData = SaveManger.LoadData<UserData>("UserData");
         if (userData == null) // 신규유저
         {
-            PlayerPrefs.DeleteAll(); 
+            PlayerPrefs.DeleteAll();
             userData = new UserData();
             AddCoin(100);
             AddBoard("A");
@@ -68,7 +68,7 @@ public class User : MonoBehaviour
 
     public void SaveData(QuestData questData)
     {
-         SaveManger.SaveData("UserData", questData);
+        SaveManger.SaveData("UserData", questData);
     }
 
 
@@ -111,18 +111,18 @@ public class User : MonoBehaviour
 
 
 
-   public void AddBracelet(UserBeadsPlaceData[] userBeadsPlaceDatas, string boardKey)
-{
-    UserBracelet userBracelet = new UserBracelet();
-    userBracelet.userBeadsPlaceDatas = userBeadsPlaceDatas;
+    public void AddBracelet(string braceletKey, UserBeadsPlaceData[] userBeadsPlaceDatas, string boardKey)
+    {
+        UserBracelet userBracelet = new UserBracelet();
+        userBracelet.userBeadsPlaceDatas = userBeadsPlaceDatas;
 
-    //팔찌가 제작된 이름 자체가 키가 됌 - 이 부분 고민 필요
-    userBracelet.key = DateTime.Now.ToString(); 
-    userBracelet.boardKey = boardKey;
-    userData.userBracelets.Add(userBracelet);
+        //팔찌가 제작된 이름 자체가 키가 됌 - 이 부분 고민 필요
+        userBracelet.key = braceletKey;
+        userBracelet.boardKey = boardKey;
+        userData.userBracelets.Add(userBracelet);
 
-    SaveManger.SaveData("UserData", userData);
-}
+        SaveManger.SaveData("UserData", userData);
+    }
 
     public UserBracelet GetUserBracelet(string key)
     {
@@ -141,63 +141,63 @@ public class User : MonoBehaviour
 
     }
 
-/*
+    /*
 
-    public void AddFreeBracelet(UserBeadsPlaceData[] userBeadsPlaceDatas, string boardKey) //멤버변수 접근시 this
-    {
-        UserBracelet userBraceletData = new UserBracelet(); //
-        userFreeBraceletData.boardKey = boardKey;
-        userFreeBraceletData.userBeadsPlaceDatas = userBeadsPlaceDatas;
-        userFreeBraceletData.freeBraceletKey = "freeBraceletKey";
-        userFreeBraceletData.price = 1000;
-        userData.userFreeBraceletDatas.Add(userFreeBraceletData);
-    }
-
-
-    public void AddQuestBracelet(UserQuestBraceletData[] userQuestBraceletDatas) //멤버변수 접근시 this
-    {
-        UserQuestBraceletData userQuestBraceletData = new UserQuestBraceletData(); //
-        userQuestBraceletData.QuestBraceletKey = "questBraceletKey";
-        userQuestBraceletData.price = 1000;
-        userData.userQuestBraceletDatas.Add(userQuestBraceletData);
-    }
-
-
-
-
-    public UserBracelet GetUserBracelet(string key)
-    {
-        for (int i = 0; i < userData.userBracelets.Count; i++)
+        public void AddFreeBracelet(UserBeadsPlaceData[] userBeadsPlaceDatas, string boardKey) //멤버변수 접근시 this
         {
-            if (userData.userBracelets[i].key == key)
+            UserBracelet userBraceletData = new UserBracelet(); //
+            userFreeBraceletData.boardKey = boardKey;
+            userFreeBraceletData.userBeadsPlaceDatas = userBeadsPlaceDatas;
+            userFreeBraceletData.freeBraceletKey = "freeBraceletKey";
+            userFreeBraceletData.price = 1000;
+            userData.userFreeBraceletDatas.Add(userFreeBraceletData);
+        }
+
+
+        public void AddQuestBracelet(UserQuestBraceletData[] userQuestBraceletDatas) //멤버변수 접근시 this
+        {
+            UserQuestBraceletData userQuestBraceletData = new UserQuestBraceletData(); //
+            userQuestBraceletData.QuestBraceletKey = "questBraceletKey";
+            userQuestBraceletData.price = 1000;
+            userData.userQuestBraceletDatas.Add(userQuestBraceletData);
+        }
+
+
+
+
+        public UserBracelet GetUserBracelet(string key)
+        {
+            for (int i = 0; i < userData.userBracelets.Count; i++)
             {
-                return userData.userBracelets[i];
+                if (userData.userBracelets[i].key == key)
+                {
+                    return userData.userBracelets[i];
+                }
+
             }
+            UserBracelet userBracelet = new UserBracelet();
+            userBracelet.key = key;
+            userData.userBracelets.Add(userBracelet);
+            return userBracelet;
 
         }
-        UserBracelet userBracelet = new UserBracelet();
-        userBracelet.key = key;
-        userData.userBracelets.Add(userBracelet);
-        return userBracelet;
-
-    }
 
 
-    public UserFreeBraceletData GetFreeUserBracelet(UserFreeBraceletData userFreeBraceletData)
-    {
-        return null;
+        public UserFreeBraceletData GetFreeUserBracelet(UserFreeBraceletData userFreeBraceletData)
+        {
+            return null;
 
 
-    }
+        }
 
 
 
 
-*/
+    */
 
     public void SubBracelet(UserBracelet userBracelet)
     {
-         userData.userBracelets.Remove(userBracelet);
+        userData.userBracelets.Remove(userBracelet);
 
         // UserBracelet userBracelet=GetUserBracelet(key);
         // userBracelet.count -= count;
@@ -316,9 +316,9 @@ public class UserData
     public int level;
     public int exp;
 
-    
+
     public List<UserBracelet> userBracelets = new List<UserBracelet>();
-   // public List<UserQuestBraceletData> userQuestBraceletDatas = new List<UserQuestBraceletData>();
+    // public List<UserQuestBraceletData> userQuestBraceletDatas = new List<UserQuestBraceletData>();
     //public List<UserFreeBraceletData> userFreeBraceletDatas = new List<UserFreeBraceletData>();
     //UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
 

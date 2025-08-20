@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Linq;
-using System.ComponentModel.Design; //정리필요 
-
+using System;
 public class MakeBraceletButton : MonoBehaviour
 {
   // Start is called before the first frame update
@@ -14,7 +12,7 @@ public class MakeBraceletButton : MonoBehaviour
 
   public BeadsPlace[] beadsPlaces;
 
-  
+
   [SerializeField]
   public int countBeads;
   public string key;
@@ -44,17 +42,25 @@ public class MakeBraceletButton : MonoBehaviour
 
     Debug.Log(userQuestList);
   }
-
+  string braceletKey;
   public void OnClickedButton()
   {
 
-    CheckQuest();
+    
     //capture component 의 OnCapture 함수를 호출해야하는 곳
-    Capture.Instance.OnCapture("Bracelet");
-    //팔찌 현재 상황에 맞게 이름을 설정해야하는데 흠
+    braceletKey = DateTime.Now.ToString();
+    Capture.Instance.OnCapture(braceletKey, AfterCapture); //얘를 통해 캡쳐를 딴다
+                                                           //그리고 캡쳐된 이미지 파일의 이름을 설정하고
+                                                           //그 이름이 키 값으로 
+                                                           //팔찌 현재 상황에 맞게 이름을 설정해야하는데 흠
   }
   //빨간색을 세었으면 빼야하는데 !
   //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝
+
+  void AfterCapture()
+  {
+    CheckQuest();
+  }
 
 
   void CheckQuest()
@@ -64,7 +70,8 @@ public class MakeBraceletButton : MonoBehaviour
 
     if (userQuestList.Count == 0)
     {
-      CheckPrest();
+      FreeMode();
+      return;
     }
 
     BraceletData makeBraceletData = null;
@@ -106,8 +113,6 @@ public class MakeBraceletButton : MonoBehaviour
 
       if (isSame)
       {
-        Debug.Log("f5");
-        Debug.Log($"퀘스트 {i}와 같다");
 
 
         User.Instance.userData.userQuestList.Remove(userQuestList[i]); //이게 닫기 버튼 누른 후에 반영된다 왜지 
@@ -120,43 +125,11 @@ public class MakeBraceletButton : MonoBehaviour
 
         CompleteBraceletCanvas.flag = true;
         CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
-        completeBraceletCanvas.OpenComplete();
-
-
-        UserQuestBraceletData[] userQuestBraceletDatas = new UserQuestBraceletData[User.Instance.userData.userQuestList.Count()];
-        UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
-
-        for (int j = 0; j < userQuestBraceletDatas.Length; i++)
-        {
-          userQuestBraceletDatas[j] = new UserQuestBraceletData();
-          userQuestBraceletDatas[j].price = 1000;
-        }
-        User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
-        User.Instance.AddExp(1);
-        //그리고 이제 여기서 퀘스트 보드 업데이트 
-
-        completeBraceletCanvas.OpenCompleteFreeMode();
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-      else
-      {
-        Debug.Log("f6");
-        CheckPrest();
+        completeBraceletCanvas.OpenCompleteQuest(braceletKey);
+        return;
       }
     }
-
-
+    FreeMode();
   }
 
 
@@ -166,14 +139,12 @@ public class MakeBraceletButton : MonoBehaviour
     Debug.Log("프리셋 모드 진입");
     beadsKeys.Clear();
     setUpBeads.Clear();
-    Debug.Log("on clicked1");
 
     UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
     MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
     countBeads = 0;
     key = "";
-    //MakingBraceletManager.Instance.quest();
 
 
     for (int i = 0; i < mgr.currentBeads.Count; i++) //모든비즈
@@ -244,7 +215,7 @@ public class MakeBraceletButton : MonoBehaviour
     if (makeBraceletData != null) //이게 참이면
     {
 
-      User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
+      //User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
       //팔찌 데이터 추가 
       //팔찌를 가지고 있는게 0 일때 아래가 실행이 안되니까 문제
       //그 후 해야할 일은 
@@ -255,7 +226,7 @@ public class MakeBraceletButton : MonoBehaviour
 
       //위를 가져온다고 아래는 다른것
       CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
-      completeBraceletCanvas.OpenComplete(makeBraceletData);
+    
 
 
 
@@ -298,9 +269,7 @@ public class MakeBraceletButton : MonoBehaviour
 
   public void FreeMode()
   {
-    UserBracelet userBracelet = User.Instance.GetUserBracelet(key);
 
-    // 버튼 생기는 거랑 같은 부분으로 체크하기 즉 다 차여 있을지 
     Debug.Log("프리모드 진입");
 
     UserBeadsPlaceData[] userBeadsPlaceDatas = new UserBeadsPlaceData[MakingBraceletManager.Instance.beadsBoard.beadsPlaces.Length];
@@ -310,48 +279,14 @@ public class MakeBraceletButton : MonoBehaviour
       userBeadsPlaceDatas[i].beadsKey = MakingBraceletManager.Instance.beadsBoard.beadsPlaces[i].beads.beadsKey;
       userBeadsPlaceDatas[i].index = i;
     }
-    User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
+
+    User.Instance.AddBracelet(braceletKey, userBeadsPlaceDatas, MakingBraceletManager.Instance.beadsBoard.key);
     User.Instance.AddExp(1);
     //그리고 이제 여기서 퀘스트 보드 업데이트 
     CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
-    completeBraceletCanvas.OpenCompleteFreeMode();
+    completeBraceletCanvas.OpenCompleteFreeMode(braceletKey);
 
   }
-
-  /*
-원래코드
-  public BeadsPlace[] beadsPlaces;
-[SerializeField]
-public int countBeads;
-public string key;
-
-
-public void OnClickedButton()
-{
-   MakingBraceletManager mgr =FindObjectOfType<MakingBraceletManager>();
-
-
-
-   for (int i=0; i<mgr.currentBeads.Count;i++ )
-   {
-     int countBeads = 0;
-     string key = mgr.currentBeads[i].beadsKey;
-
-    for (int j = 0; j<mgr.currentBeads.Count;j++ )   
-    {
-      if(mgr.currentBeads[j].beadsKey== key)
-      {
-        countBeads++;
-      }
-    }  
-
-
-   }
-
-    Debug.Log(countBeads);
-    Debug.Log(key);           
-}*/
-
 
 
   // Update is called once per frame

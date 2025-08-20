@@ -17,16 +17,16 @@ public class Capture : MonoBehaviour
     }
 
     //팔찌가 다 만들어졌을때 capture ㅁ컴포넌트 onCapture 함수 호출
-    public void OnCapture(string fName)
+    public void OnCapture(string fName, Action endCallback)
 
     {
         Debug.Log("Capture onCapture() fName" + fName);
         fileName = fName;
-        StartCoroutine(CaptureScreen(fName));
+        StartCoroutine(CaptureScreen(fName, endCallback));
     }
 
 
-    IEnumerator CaptureScreen(string name)
+    IEnumerator CaptureScreen(string name, Action endCallback)
     {
         yield return new WaitForEndOfFrame();
 
@@ -37,7 +37,7 @@ public class Capture : MonoBehaviour
         // RenderTexture 생성
         RenderTexture rt = new RenderTexture(width, height, 24);
         subCamera.targetTexture = rt;
-         subCamera.Render();
+        subCamera.Render();
 
         // Texture2D로 변환
         Texture2D screenshot = new Texture2D(width, height, TextureFormat.RGBA32, false);
@@ -68,7 +68,45 @@ public class Capture : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
 #endif
+        endCallback.Invoke();
     }
 
-    //이미지 불러오기
+
+    public Sprite LoadSpriteFromFile(string fileName)
+    {
+#if UNITY_EDITOR
+        //유니티에디터에서 써야되는 코드
+        string directory = Path.Combine(Application.dataPath, "Capture");
+
+#else
+        //빌드된 다른 플랫폼에서 써야되는 코드
+        string directory = Path.Combine(Application.persistentDataPath, "Capture");
+#endif
+        string filePath = Path.Combine(directory, fileName + ".png");
+
+        if (!File.Exists(filePath))
+        {
+            Debug.LogError($"파일을 찾을 수 없습니다: {filePath}");
+            return null;
+        }
+
+        // 파일을 바이트 배열로 읽기
+        byte[] fileData = File.ReadAllBytes(filePath);
+
+        // Texture2D 생성
+        Texture2D texture = new Texture2D(2, 2);
+
+        // 이미지 데이터 로드
+        if (texture.LoadImage(fileData))
+        {
+            // Sprite 생성
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            return sprite;
+        }
+        else
+        {
+            Debug.LogError($"이미지 로드 실패: {filePath}");
+            return null;
+        }
+    }
 }
