@@ -46,13 +46,19 @@ public class MakeBraceletButton : MonoBehaviour
   public void OnClickedButton()
   {
 
-    
+
     //capture component 의 OnCapture 함수를 호출해야하는 곳
-    braceletKey = DateTime.Now.ToString();
-    Capture.Instance.OnCapture(braceletKey, AfterCapture); //얘를 통해 캡쳐를 딴다
-                                                           //그리고 캡쳐된 이미지 파일의 이름을 설정하고
-                                                           //그 이름이 키 값으로 
-                                                           //팔찌 현재 상황에 맞게 이름을 설정해야하는데 흠
+    braceletKey = DateTime.Now.ToString("yyyyMMddHHmmss");
+    Capture.Instance.OnCapture(braceletKey, AfterCapture);
+
+
+
+
+
+    //얘를 통해 캡쳐를 딴다
+    //그리고 캡쳐된 이미지 파일의 이름을 설정하고
+    //그 이름이 키 값으로 
+    //팔찌 현재 상황에 맞게 이름을 설정해야하는데 흠
   }
   //빨간색을 세었으면 빼야하는데 !
   //빨간색이 먼지 세는거 -> 빨간색만 세고 그게 역할 끝
@@ -60,6 +66,7 @@ public class MakeBraceletButton : MonoBehaviour
   void AfterCapture()
   {
     CheckQuest();
+
   }
 
 
@@ -126,6 +133,10 @@ public class MakeBraceletButton : MonoBehaviour
         CompleteBraceletCanvas.flag = true;
         CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
         completeBraceletCanvas.OpenCompleteQuest(braceletKey);
+
+
+        Capture.Instance.pictureSet(braceletKey);
+
         return;
       }
     }
@@ -226,7 +237,7 @@ public class MakeBraceletButton : MonoBehaviour
 
       //위를 가져온다고 아래는 다른것
       CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
-    
+
 
 
 
@@ -278,6 +289,7 @@ public class MakeBraceletButton : MonoBehaviour
       userBeadsPlaceDatas[i] = new UserBeadsPlaceData();
       userBeadsPlaceDatas[i].beadsKey = MakingBraceletManager.Instance.beadsBoard.beadsPlaces[i].beads.beadsKey;
       userBeadsPlaceDatas[i].index = i;
+
     }
 
     User.Instance.AddBracelet(braceletKey, userBeadsPlaceDatas, MakingBraceletManager.Instance.beadsBoard.key);
@@ -285,6 +297,12 @@ public class MakeBraceletButton : MonoBehaviour
     //그리고 이제 여기서 퀘스트 보드 업데이트 
     CompleteBraceletCanvas completeBraceletCanvas = completCanvas.GetComponent<CompleteBraceletCanvas>();
     completeBraceletCanvas.OpenCompleteFreeMode(braceletKey);
+
+
+    Capture.Instance.pictureSet(braceletKey); //이 뒤로 세이브를 해야할듯 ?
+
+
+
 
   }
 

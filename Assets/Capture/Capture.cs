@@ -24,7 +24,18 @@ public class Capture : MonoBehaviour
         fileName = fName;
         StartCoroutine(CaptureScreen(fName, endCallback));
     }
+    public void pictureSet(string key)
+    {
+        for (int i = 0; i< User.Instance.userData.userBracelets.Count; i++)
+        {
+            if (User.Instance.userData.userBracelets[i].key == key)
+            {
 
+                User.Instance.userData.userBracelets[i].thum = LoadSpriteFromFile(key);
+                SaveManger.SaveData("UserData", User.Instance.userData); //이렇게 했는데 껏다 켜니까 missing이 된다 왜지 
+            }
+        }
+    }
 
     IEnumerator CaptureScreen(string name, Action endCallback)
     {

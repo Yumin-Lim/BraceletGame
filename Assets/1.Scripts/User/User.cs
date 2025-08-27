@@ -119,6 +119,7 @@ public class User : MonoBehaviour
         //팔찌가 제작된 이름 자체가 키가 됌 - 이 부분 고민 필요
         userBracelet.key = braceletKey;
         userBracelet.boardKey = boardKey;
+    
         userData.userBracelets.Add(userBracelet);
 
         SaveManger.SaveData("UserData", userData);
@@ -136,6 +137,8 @@ public class User : MonoBehaviour
         }
         UserBracelet userBracelet = new UserBracelet();
         userBracelet.key = key;
+    
+
         userData.userBracelets.Add(userBracelet);
         return userBracelet;
 
@@ -344,7 +347,6 @@ public class UserBracelet
 
     public Sprite thum;
 
-    public string freeBraceletKey;
     public int price;
 
 }

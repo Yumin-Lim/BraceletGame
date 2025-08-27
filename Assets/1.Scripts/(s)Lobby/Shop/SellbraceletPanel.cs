@@ -13,46 +13,47 @@ public class SellbraceletPanel : MonoBehaviour
 
 
   public Image thumImage;
-
-
-  public int maxBraceletCount; //보유한 팔찌 갯수
-  public int currentSellCount; //판매할 갯수 
+  public static SellbraceletPanel Instance;
   public UserBracelet userBracelet;
+
+  public void Awake()
+  {
+    Instance = this;
+
+
+    Capture.Instance.pictureSet(userBracelet.key); //이건 어차피 의미가 없다 늦게 불려지니까 
+    
+    
+  }
+
   public void SetBracelet(UserBracelet userBracelet)
   {
     this.userBracelet = userBracelet;
+      thumImage.sprite = userBracelet.thum;
   }
 
   public void sellButton()
   {
 
     Debug.Log("팔렸습니다.");
-  
-  //  UserBracelet userBracelet = User.Instance.GetUserBracelet(userBracelet.key);
 
-
-    //User.Instance.GetUserBracelet(braceletKey);
-    // userBracelet.count -= currentSellCount;
     User.Instance.SubBracelet(userBracelet);
-
+    
     BraceletData braceletData = BraceletManager.Instance.GetBraceletData(userBracelet.key);
 
 
-      User.Instance.AddCoin(braceletData.price);
-    
-    //이거 왜 오류? 이거한다고 왜 왜 지 아
-    //판매 상저 닫을대? 
-    //destroy 하지 말고 그냥 비활성화 ->왜냐면 
+    // User.Instance.AddCoin(User.Instance.GetUserBracelet.price);
+
 
     gameObject.SetActive(false);
 
   }
 
-
+ 
 
   void Start()
   {
-
+    thumImage.sprite = userBracelet.thum;
   }
 
   // Update is called once per frame
@@ -61,9 +62,9 @@ public class SellbraceletPanel : MonoBehaviour
 
   }
 
-    internal void SetBracelet(string questKey)
-    {
-        throw new NotImplementedException();
-    }
-    //멤버변수와 함수 갯수 
+  internal void SetBracelet(string questKey)
+  {
+    throw new NotImplementedException();
+  }
+  //멤버변수와 함수 갯수 
 }

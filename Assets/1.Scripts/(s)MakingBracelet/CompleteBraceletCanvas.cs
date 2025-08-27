@@ -34,7 +34,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
 
 
     }
-   
+
 
     public void OpenCompleteQuest(string braceletKey) //퀘스트를 우해서 
     {
@@ -79,16 +79,20 @@ public class CompleteBraceletCanvas : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        MakingBraceletManager mgr = FindObjectOfType<MakingBraceletManager>();
-        // mgr.currentBeads
-        for (int i = 0; i < mgr.currentBeads.Count; i++)
+        var mgr = FindObjectOfType<MakingBraceletManager>();
+
+        for (int i = mgr.currentBeads.Count - 1; i >= 0; i--)
         {
-            Destroy(mgr.currentBeads[i].gameObject);
+            var bead = mgr.currentBeads[i];
+            if (bead != null) Destroy(bead.gameObject);  // 이미 Destroy된 항목은 건너뜀
+            mgr.currentBeads.RemoveAt(i);                 // 리스트에서도 제거
         }
-        mgr.currentBeads.Clear();
+
         for (int i = 0; i < mgr.beadsBoard.beadsPlaces.Length; i++)
         {
             mgr.beadsBoard.beadsPlaces[i].beads = null;
         }
+
     }
 }
+
