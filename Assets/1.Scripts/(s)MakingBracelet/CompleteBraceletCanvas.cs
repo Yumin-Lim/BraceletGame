@@ -39,7 +39,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
     public void OpenCompleteQuest(string braceletKey) //퀘스트를 우해서 
     {
         gameObject.SetActive(true);
-        thumImage.sprite = Capture.Instance.LoadSpriteFromFile(braceletKey);
+        thumImage.sprite = Capture.LoadSpriteFromFile(braceletKey);
         nameText.text = "퀘스트 성공";
 
     }
@@ -48,7 +48,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
         gameObject.SetActive(true);
 
 
-        thumImage.sprite = Capture.Instance.LoadSpriteFromFile(braceletKey);
+        thumImage.sprite = Capture.LoadSpriteFromFile(braceletKey);
 
 
         nameText.text = "나만의 팔찌 만들기 성공";

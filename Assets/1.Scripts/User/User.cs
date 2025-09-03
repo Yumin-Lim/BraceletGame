@@ -336,6 +336,10 @@ public class UserData
 
 
 
+
+
+
+
 //유저가 자유롭게 만든 팔찌 데이터
 [System.Serializable]
 public class UserBracelet
@@ -345,11 +349,18 @@ public class UserBracelet
     public string key;
     public UserBeadsPlaceData[] userBeadsPlaceDatas;
 
-    public Sprite thum;
+    public Sprite GetBraceletThum()
+    {
+        return Capture.LoadSpriteFromFile(key);
+    }
+    
 
     public int price;
 
 }
+
+
+
 [System.Serializable]
 public class UserBeadsPlaceData
 {

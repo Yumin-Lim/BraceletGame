@@ -24,18 +24,7 @@ public class Capture : MonoBehaviour
         fileName = fName;
         StartCoroutine(CaptureScreen(fName, endCallback));
     }
-    public void pictureSet(string key)
-    {
-        for (int i = 0; i< User.Instance.userData.userBracelets.Count; i++)
-        {
-            if (User.Instance.userData.userBracelets[i].key == key)
-            {
 
-                User.Instance.userData.userBracelets[i].thum = LoadSpriteFromFile(key);
-                SaveManger.SaveData("UserData", User.Instance.userData); //이렇게 했는데 껏다 켜니까 missing이 된다 왜지 
-            }
-        }
-    }
 
     IEnumerator CaptureScreen(string name, Action endCallback)
     {
@@ -83,7 +72,7 @@ public class Capture : MonoBehaviour
     }
 
 
-    public Sprite LoadSpriteFromFile(string fileName)
+    public static Sprite LoadSpriteFromFile(string fileName)
     {
 #if UNITY_EDITOR
         //유니티에디터에서 써야되는 코드
@@ -118,6 +107,24 @@ public class Capture : MonoBehaviour
         {
             Debug.LogError($"이미지 로드 실패: {filePath}");
             return null;
+        }
+    }
+
+    public static void Delete(string fName)
+    {
+#if UNITY_EDITOR
+        //유니티에디터에서 써야되는 코드
+        string directory = Path.Combine(Application.dataPath, "Capture");
+
+#else
+        //빌드된 다른 플랫폼에서 써야되는 코드
+        string directory = Path.Combine(Application.persistentDataPath, "Capture");
+#endif
+        string filePath = Path.Combine(directory, fName + ".png");
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
         }
     }
 }

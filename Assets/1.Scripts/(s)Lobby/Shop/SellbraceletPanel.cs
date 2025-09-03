@@ -21,15 +21,17 @@ public class SellbraceletPanel : MonoBehaviour
     Instance = this;
 
 
-    Capture.Instance.pictureSet(userBracelet.key); //이건 어차피 의미가 없다 늦게 불려지니까 
+   
     
     
   }
 
   public void SetBracelet(UserBracelet userBracelet)
   {
+    
+
     this.userBracelet = userBracelet;
-      thumImage.sprite = userBracelet.thum;
+    thumImage.sprite = userBracelet.GetBraceletThum();
   }
 
   public void sellButton()
@@ -41,8 +43,9 @@ public class SellbraceletPanel : MonoBehaviour
     
     BraceletData braceletData = BraceletManager.Instance.GetBraceletData(userBracelet.key);
 
+    Destroy(thumImage.sprite); //팔았으니까 캡쳐 이미지 지우기
+    Capture.Delete(userBracelet.key);  //파일도 지우기 
 
-    // User.Instance.AddCoin(User.Instance.GetUserBracelet.price);
 
 
     gameObject.SetActive(false);
@@ -53,7 +56,7 @@ public class SellbraceletPanel : MonoBehaviour
 
   void Start()
   {
-    thumImage.sprite = userBracelet.thum;
+  
   }
 
   // Update is called once per frame

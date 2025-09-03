@@ -1,31 +1,31 @@
 {
-    "coin": 50,
-    "level": 100,
-    "exp": 9,
+    "coin": 80600,
+    "level": 15,
+    "exp": 3,
     "userBracelets": [
         {
             "boardKey": "A",
-            "key": "20250826211812",
+            "key": "20250827172312",
             "userBeadsPlaceDatas": [
                 {
                     "index": 0,
-                    "beadsKey": "Pink"
+                    "beadsKey": "Pearl"
                 },
                 {
                     "index": 1,
-                    "beadsKey": "Pearl"
+                    "beadsKey": "Pink"
                 },
                 {
                     "index": 2,
-                    "beadsKey": "Pearl"
+                    "beadsKey": "Pink"
                 },
                 {
                     "index": 3,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Pearl"
                 },
                 {
                     "index": 4,
-                    "beadsKey": "Pearl"
+                    "beadsKey": "Pink"
                 },
                 {
                     "index": 5,
@@ -33,15 +33,15 @@
                 },
                 {
                     "index": 6,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Pink"
                 },
                 {
                     "index": 7,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Pink"
                 },
                 {
                     "index": 8,
-                    "beadsKey": "Pink"
+                    "beadsKey": "Pearl"
                 },
                 {
                     "index": 9,
@@ -49,466 +49,91 @@
                 },
                 {
                     "index": 10,
-                    "beadsKey": "Pink"
+                    "beadsKey": "Pearl"
                 }
             ],
-            "thum": {
-                "instanceID": 0
-            },
             "price": 120
         },
         {
             "boardKey": "A",
-            "key": "20250826212206",
+            "key": "20250827183238",
             "userBeadsPlaceDatas": [
                 {
                     "index": 0,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Dice3"
                 },
                 {
                     "index": 1,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 2,
+                    "beadsKey": "Dice3"
+                },
+                {
+                    "index": 3,
+                    "beadsKey": "Dice3"
+                },
+                {
+                    "index": 4,
+                    "beadsKey": "Pink"
+                },
+                {
+                    "index": 5,
+                    "beadsKey": "Pink"
+                },
+                {
+                    "index": 6,
+                    "beadsKey": "Pink"
+                },
+                {
+                    "index": 7,
                     "beadsKey": "Pearl"
                 },
                 {
-                    "index": 2,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
                     "index": 8,
-                    "beadsKey": "Pink"
+                    "beadsKey": "Strawberry"
                 },
                 {
                     "index": 9,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Strawberry"
                 },
                 {
                     "index": 10,
-                    "beadsKey": "Purple"
+                    "beadsKey": "Summer Pink"
                 }
             ],
-            "thum": {
-                "instanceID": -61410
-            },
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826213032",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Purple"
-                }
-            ],
-            "thum": {
-                "instanceID": -70570
-            },
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826213556",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pink"
-                }
-            ],
-            "thum": {
-                "instanceID": -79226
-            },
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826213912",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pink"
-                }
-            ],
-            "thum": {
-                "instanceID": -86864
-            },
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826214342",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pink"
-                }
-            ],
-            "thum": {
-                "instanceID": -96998
-            },
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826214547",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Black"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Black"
-                }
-            ],
-            "thum": {
-                "instanceID": -104682
-            },
-            "price": 0
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826214704",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pink"
-                }
-            ],
-            "thum": {
-                "instanceID": -111402
-            },
-            "price": 0
-        },
-        {
-            "boardKey": "A",
-            "key": "20250826221023",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Purple"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pink"
-                }
-            ],
-            "thum": {
-                "instanceID": -121716
-            },
             "price": 0
         }
     ],
     "userBeads": [
         {
             "key": "Pink",
-            "count": 51
+            "count": 94
         },
         {
             "key": "Pearl",
             "count": 0
         },
         {
-            "key": "Purple",
-            "count": 0
+            "key": "Dice3",
+            "count": 17
         },
         {
-            "key": "Black",
+            "key": "Strawberry",
+            "count": 8
+        },
+        {
+            "key": "Summer Pink",
+            "count": 8
+        }
+    ],
+    "userCatData": [
+        {
+            "CatKey": "Christmas",
             "count": 0
         }
     ],
-    "userCatData": [],
     "userBoardData": [
         {
             "boardKey": "A",

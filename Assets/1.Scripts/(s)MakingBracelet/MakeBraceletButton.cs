@@ -135,7 +135,6 @@ public class MakeBraceletButton : MonoBehaviour
         completeBraceletCanvas.OpenCompleteQuest(braceletKey);
 
 
-        Capture.Instance.pictureSet(braceletKey);
 
         return;
       }
@@ -299,7 +298,7 @@ public class MakeBraceletButton : MonoBehaviour
     completeBraceletCanvas.OpenCompleteFreeMode(braceletKey);
 
 
-    Capture.Instance.pictureSet(braceletKey); //이 뒤로 세이브를 해야할듯 ?
+  
 
 
 

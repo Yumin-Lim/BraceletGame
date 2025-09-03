@@ -46,7 +46,10 @@ public class Cat : MonoBehaviour
 
     void IdleMoving()
     {
-        animator.Play("idle");
+        CatPosition catPosition = catPos.GetComponent<CatPosition>();
+        CatAnimation randomAnim = catPosition.catAnimations[Random.Range(0,catPosition.catAnimations.Length)];
+
+        animator.Play(randomAnim.ToString());
         waitTimer = 10;
     }
     void RunMoving()
@@ -56,7 +59,10 @@ public class Cat : MonoBehaviour
         float distance = Vector2.Distance(transform.position, catPos.position);
         if (distance < 0.1f) //목적지에 도착함
         {
-            IdleMoving();
+            IdleMoving(); //목적지에 도착했을때 지정된 애니메이션
+                          //판별시점
+                          //그 위치가 어딘지 catposition.
+            
             moving = false;
         }
 
