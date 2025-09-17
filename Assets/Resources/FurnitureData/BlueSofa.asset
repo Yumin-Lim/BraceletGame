@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a9144defa551410f9a8456ea493121b, type: 3}
-  m_Name: RedSofa
+  m_Name: BlueSofa
   m_EditorClassIdentifier: 
-  key: RedSofa
+  key: BlueSofa
   furnitureName: 
   arrange: 1
   price: 0
   sprite: {fileID: 0}
-  prefab: {fileID: -530875089295417503, guid: 73c968d16c33544e8b37714da84355ea, type: 3}
+  prefab: {fileID: 4826223723398140062, guid: 7463f5b183b5e47cbb80869a048af5e4, type: 3}

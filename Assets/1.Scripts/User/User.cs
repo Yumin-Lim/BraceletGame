@@ -42,6 +42,9 @@ public class User : MonoBehaviour
             SaveManger.SaveData("UserData", userData);
         }
 
+          userData.userFurnitures.Clear();
+        userData.userFurnitures.Add(new UserFurniture() { key = "RedSofa" });
+        userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
 
     }
     public void AddCoin(int c)
@@ -308,6 +311,16 @@ public class UserBoardData
 
 }
 
+[System.Serializable]
+public class UserFurniture
+{
+    public string key;
+    //설치여부
+    public bool setUp;
+    //설치 위치
+    public Vector2 position;
+
+}
 
 
 [System.Serializable] //객체를 만들려면 class 가 필요하다 
@@ -328,10 +341,9 @@ public class UserData
     public List<UserBeads> userBeads = new List<UserBeads>();//UserBeads 라는 데이터를 담을 수 이ㅣㅆ는 바구니를 만들겠다. 변수는 바구니 이름일뿐
     public List<UserCatData> userCatData = new List<UserCatData>();
     public List<UserBoardData> userBoardData = new List<UserBoardData>(); //사용자가 ㄷ어떤 보드 가지고 있고 안가지고 있고 유저의 보드 보유 상태 
-
-
-
     public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트
+
+    public List<UserFurniture> userFurnitures = new List<UserFurniture>(); //어느 가구를 가지고 있는지 
 }
 
 

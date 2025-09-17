@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947786162752367182}
   - component: {fileID: 6220394562595051314}
+  - component: {fileID: -530875089295417503}
   m_Layer: 0
   m_Name: RedSofa
   m_TagString: Untagged
@@ -213,6 +214,20 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 1
+--- !u!114 &-530875089295417503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934665217584906983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de2c411715ec43849c9bf7aa6567168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: RedSofa
+  furnitureData: {fileID: 0}
 --- !u!1 &9124183777485777290
 GameObject:
   m_ObjectHideFlags: 0

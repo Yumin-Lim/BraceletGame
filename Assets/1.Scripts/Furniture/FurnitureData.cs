@@ -10,6 +10,8 @@ public class FurnitureData : ScriptableObject
     public FurnitureArrange arrange;
     public int price;
     public Sprite sprite;
+
+    public Furniture prefab;
 }
 
 public enum FurnitureArrange

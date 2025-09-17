@@ -4,7 +4,23 @@ using UnityEngine;
 
 public class FurnitureManager : MonoBehaviour
 {
+
+
+    public Transform furniturePr;
+
+    public static FurnitureManager Instance;
     // Start is called before the first frame update
+
+    public void Awake()
+    {
+        Instance = this;
+    }
+
+
+
+
+
+
     void Start()
     {
 
@@ -12,8 +28,13 @@ public class FurnitureManager : MonoBehaviour
 
     // Update is called once per frame
     public Furniture targetFurniture; //타깃
-    void Update()
-    {
+    bool editMode;
+    void Update(){
+        if (editMode == false)
+        {
+            return;
+        }
+    
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 screenPoint = Input.mousePosition;
@@ -27,9 +48,9 @@ public class FurnitureManager : MonoBehaviour
         }
         else if (Input.GetMouseButton(0)) //클릳중
         {
-             Vector2 screenPoint = Input.mousePosition;
+            Vector2 screenPoint = Input.mousePosition;
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
-            targetFurniture.transform.position = worldPoint; 
+            targetFurniture.transform.position = worldPoint;
         }
         else if (Input.GetMouseButtonUp(0)) //클릭 해제 
         {
