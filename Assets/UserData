@@ -140,5 +140,23 @@
             "purchased": true
         }
     ],
-    "userQuestList": []
+    "userQuestList": [],
+    "userFurnitures": [
+        {
+            "key": "RedSofa",
+            "setUp": true,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        },
+        {
+            "key": "BlueSofa",
+            "setUp": true,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
 }

@@ -8,9 +8,14 @@ public class FurniturePanel : MonoBehaviour
     public string key;
     public Image thumb;
 
-    FurnitureData furnitureData;
+    public GameObject buttonOn;
+    public GameObject buttonOff;
 
-    
+    public FurnitureData furnitureData;
+
+    public UserFurniture curFurniture;
+
+
 
 
 
@@ -20,15 +25,24 @@ public class FurniturePanel : MonoBehaviour
 
     public void SetData(UserFurniture userFurniture)
     {
-        this.key = key;
+        this.key = userFurniture.key;
+
+        curFurniture = userFurniture;
+
 
 
         if (userFurniture.setUp)
         {
-            userFurniture.setUp = true;
+            //장착 되어있는 상태
+
+            buttonOn.SetActive(false);
+            buttonOff.SetActive(true);
+
         }
-        else{
-            //장착하기 버튼 표시!
+        else
+        {
+            buttonOn.SetActive(true);
+            buttonOff.SetActive(false);
         }
 
 
@@ -37,20 +51,35 @@ public class FurniturePanel : MonoBehaviour
 
     }
 
-    void Start()
+
+    public void UpdatePanel()
     {
+        if (curFurniture.setUp)
+        {
+            //장착 되어있는 상태
+
+            buttonOn.SetActive(false);
+            buttonOff.SetActive(true);
+
+        }
+        else
+        {
+            buttonOn.SetActive(true);
+            buttonOff.SetActive(false);
+        }
+
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     public void onCliked()
     {
-        Instantiate(furnitureData.prefab, FurnitureManager.Instance.furniturePr);
+        User.Instance.SetUpFurniture(curFurniture, true);
+        Furniture furniture = Instantiate(furnitureData.prefab, FurnitureManager.Instance.furniturePr);
+        UpdatePanel();
+
+        furniture.Apply(curFurniture);
+        User.Instance.SetFurniturePosition(curFurniture, curFurniture.position);   
+ 
+
     }
 }

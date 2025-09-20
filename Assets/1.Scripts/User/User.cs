@@ -265,10 +265,17 @@ public class User : MonoBehaviour
     {
         UserBoardData board = GetBoard(BoardKey);
         board.purchased = true;
+        
         SaveManger.SaveData("UserData", userData);
 
     }
 
+    //보유중인 특정 가구설치 혹은 해제
+    public void SetUpFurniture(UserFurniture userFurniture, bool setUp)
+    {
+        userFurniture.setUp = setUp;
+        SaveManger.SaveData("UserData", userData);
+    }
 
 
     // Start is called before the first frame update
