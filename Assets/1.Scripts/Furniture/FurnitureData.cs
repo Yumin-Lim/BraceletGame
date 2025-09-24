@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FurnitureData", menuName = "FurnitureData")]
 public class FurnitureData : ScriptableObject
 {
+
+
     public string key;
     public string furnitureName;
     public FurnitureArrange arrange;

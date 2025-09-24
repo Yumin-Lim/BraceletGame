@@ -143,19 +143,30 @@
     "userQuestList": [],
     "userFurnitures": [
         {
-            "key": "RedSofa",
+            "furnitureName": "RedSofa",
+            "key": "8e8e113a-fe22-4f78-8146-98666d570a2c",
             "setUp": true,
             "position": {
-                "x": 0.0,
-                "y": 0.0
+                "x": -1.5955555438995362,
+                "y": -2.319999933242798
             }
         },
         {
-            "key": "BlueSofa",
+            "furnitureName": "RedSofa",
+            "key": "dbb445b8-2989-499d-82d7-23786fa1ea71",
             "setUp": true,
             "position": {
-                "x": 0.0,
-                "y": 0.0
+                "x": 0.044444359838962558,
+                "y": 2.2444443702697756
+            }
+        },
+        {
+            "furnitureName": "RedSofa",
+            "key": "07cccfcc-244c-4cab-b73b-1e87b505a56c",
+            "setUp": true,
+            "position": {
+                "x": -1.8533333539962769,
+                "y": 2.2311110496520998
             }
         }
     ]

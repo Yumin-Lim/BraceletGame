@@ -41,10 +41,18 @@ public class User : MonoBehaviour
             AddBoard("A");
             SaveManger.SaveData("UserData", userData);
         }
+        
+        
 
-          userData.userFurnitures.Clear();
-        userData.userFurnitures.Add(new UserFurniture() { key = "RedSofa" });
-        userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
+       // userData.userFurnitures.Clear();
+        //  userData.userFurnitures.Add(new UserFurniture() { key = "RedSofa" });
+        // userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
+
+        // AddFurniture("RedSofa");
+        //  AddFurniture("RedSofa");
+        //   AddFurniture("RedSofa");
+
+
 
     }
     public void AddCoin(int c)
@@ -122,7 +130,7 @@ public class User : MonoBehaviour
         //팔찌가 제작된 이름 자체가 키가 됌 - 이 부분 고민 필요
         userBracelet.key = braceletKey;
         userBracelet.boardKey = boardKey;
-    
+
         userData.userBracelets.Add(userBracelet);
 
         SaveManger.SaveData("UserData", userData);
@@ -140,7 +148,7 @@ public class User : MonoBehaviour
         }
         UserBracelet userBracelet = new UserBracelet();
         userBracelet.key = key;
-    
+
 
         userData.userBracelets.Add(userBracelet);
         return userBracelet;
@@ -258,14 +266,33 @@ public class User : MonoBehaviour
         return newBoard;
     }
 
+    public void AddFurniture(string furnitureName)
+    {
+        UserFurniture userfurniture = new UserFurniture();
+        userfurniture.furnitureName = furnitureName;
+        userData.userFurnitures.Add(userfurniture);
+
+        userfurniture.key = System.Guid.NewGuid().ToString();
+        SaveManger.SaveData("UserData", userData);
+
+    }
 
 
+    //특정 가구의 위치를 저장하는 함수
+    // 처음 생성될떄랑
+    // 드래그하다가 손가락을 해제했을떄
+    public void SetFurniturePosition(UserFurniture userFurniture, Vector2 position)
+    {
+        userFurniture.position = position;
+        SaveManger.SaveData("UserData", userData);
+
+    }
 
     public void AddBoard(string BoardKey)
     {
         UserBoardData board = GetBoard(BoardKey);
         board.purchased = true;
-        
+
         SaveManger.SaveData("UserData", userData);
 
     }
@@ -321,6 +348,8 @@ public class UserBoardData
 [System.Serializable]
 public class UserFurniture
 {
+
+    public string furnitureName;
     public string key;
     //설치여부
     public bool setUp;
@@ -372,7 +401,7 @@ public class UserBracelet
     {
         return Capture.LoadSpriteFromFile(key);
     }
-    
+
 
     public int price;
 

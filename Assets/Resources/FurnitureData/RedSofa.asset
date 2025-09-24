@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedSofa
   m_EditorClassIdentifier: 
   key: RedSofa
-  furnitureName: 
+  furnitureName: RedSofa
   arrange: 1
   price: 0
   sprite: {fileID: 0}

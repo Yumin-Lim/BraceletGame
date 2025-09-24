@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FurniturePanel : MonoBehaviour
 {
-    public string key;
+    public string furnitrueName;
     public Image thumb;
 
     public GameObject buttonOn;
@@ -25,7 +25,7 @@ public class FurniturePanel : MonoBehaviour
 
     public void SetData(UserFurniture userFurniture)
     {
-        this.key = userFurniture.key;
+        this.furnitrueName= userFurniture.furnitureName;
 
         curFurniture = userFurniture;
 
@@ -46,7 +46,7 @@ public class FurniturePanel : MonoBehaviour
         }
 
 
-        furnitureData = Resources.Load<FurnitureData>($"FurnitureData/{key}");
+        furnitureData = Resources.Load<FurnitureData>($"FurnitureData/{furnitrueName}");
         thumb.sprite = furnitureData.sprite;
 
     }

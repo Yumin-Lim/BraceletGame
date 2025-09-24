@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3911937844317379826}
   - component: {fileID: 2960507148058924310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: couches16x16_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884959270379803670}
   - component: {fileID: 5928555132612453142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: couches16x16_56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,8 @@ GameObject:
   - component: {fileID: 947786162752367182}
   - component: {fileID: 6220394562595051314}
   - component: {fileID: -530875089295417503}
-  m_Layer: 0
+  - component: {fileID: 5556615631192941164}
+  m_Layer: 7
   m_Name: RedSofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +229,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: RedSofa
   furnitureData: {fileID: 0}
+  userFurniture:
+    furnitureName: 
+    key: 
+    setUp: 0
+    position: {x: 0, y: 0}
+--- !u!61 &5556615631192941164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934665217584906983}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.032396436, y: -0.021597624}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9070995, y: 0.95680475}
+  m_EdgeRadius: 0
 --- !u!1 &9124183777485777290
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8524185230154212081}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
