@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class FurniturePanel : MonoBehaviour
     public FurnitureData furnitureData;
 
     public UserFurniture curFurniture;
-
+    public Transform floorPr;
 
 
 
@@ -25,7 +26,7 @@ public class FurniturePanel : MonoBehaviour
 
     public void SetData(UserFurniture userFurniture)
     {
-        this.furnitrueName= userFurniture.furnitureName;
+        this.furnitrueName = userFurniture.furnitureName;
 
         curFurniture = userFurniture;
 
@@ -73,13 +74,28 @@ public class FurniturePanel : MonoBehaviour
 
     public void onCliked()
     {
+
+
         User.Instance.SetUpFurniture(curFurniture, true);
         Furniture furniture = Instantiate(furnitureData.prefab, FurnitureManager.Instance.furniturePr);
-        UpdatePanel();
+        //해야하는게 
+        if (furnitureData.arrange == FurnitureArrange.Floor)
+        {
 
+            furniture.transform.position = FurnitureManager.Instance.floorPr.position;
+
+
+        }
+        if (furnitureData.arrange == FurnitureArrange.Wall)
+        {
+            furniture.transform.position = FurnitureManager.Instance.wallPr.position;
+
+
+        }
+        UpdatePanel();
         furniture.Apply(curFurniture);
-        User.Instance.SetFurniturePosition(curFurniture, curFurniture.position);   
- 
+        User.Instance.SetFurniturePosition(curFurniture, curFurniture.position);
+
 
     }
 }

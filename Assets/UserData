@@ -1,7 +1,7 @@
 {
     "coin": 80600,
     "level": 15,
-    "exp": 3,
+    "exp": 4,
     "userBracelets": [
         {
             "boardKey": "A",
@@ -104,6 +104,57 @@
                 }
             ],
             "price": 0
+        },
+        {
+            "boardKey": "A",
+            "key": "20250924185445",
+            "userBeadsPlaceDatas": [
+                {
+                    "index": 0,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 1,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 2,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 3,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 4,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 5,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 6,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 7,
+                    "beadsKey": "Summer Pink"
+                },
+                {
+                    "index": 8,
+                    "beadsKey": "Dice3"
+                },
+                {
+                    "index": 9,
+                    "beadsKey": "Dice3"
+                },
+                {
+                    "index": 10,
+                    "beadsKey": "Dice3"
+                }
+            ],
+            "price": 0
         }
     ],
     "userBeads": [
@@ -117,7 +168,7 @@
         },
         {
             "key": "Dice3",
-            "count": 17
+            "count": 14
         },
         {
             "key": "Strawberry",
@@ -125,7 +176,7 @@
         },
         {
             "key": "Summer Pink",
-            "count": 8
+            "count": 0
         }
     ],
     "userCatData": [
@@ -144,29 +195,29 @@
     "userFurnitures": [
         {
             "furnitureName": "RedSofa",
-            "key": "8e8e113a-fe22-4f78-8146-98666d570a2c",
-            "setUp": true,
+            "key": "7eacc2db-2d10-4813-ac60-ea4a7b4b673a",
+            "setUp": false,
             "position": {
-                "x": -1.5955555438995362,
-                "y": -2.319999933242798
+                "x": 0.0,
+                "y": 0.0
             }
         },
         {
             "furnitureName": "RedSofa",
-            "key": "dbb445b8-2989-499d-82d7-23786fa1ea71",
-            "setUp": true,
+            "key": "a6eda2bb-b393-4de2-8386-f03d06b096b6",
+            "setUp": false,
             "position": {
-                "x": 0.044444359838962558,
-                "y": 2.2444443702697756
+                "x": 0.0,
+                "y": 0.0
             }
         },
         {
-            "furnitureName": "RedSofa",
-            "key": "07cccfcc-244c-4cab-b73b-1e87b505a56c",
-            "setUp": true,
+            "furnitureName": "BlueSofa",
+            "key": "fcf30bf9-9e1a-4ecd-9105-cbb161fbbbcc",
+            "setUp": false,
             "position": {
-                "x": -1.8533333539962769,
-                "y": 2.2311110496520998
+                "x": 0.0,
+                "y": 0.0
             }
         }
     ]

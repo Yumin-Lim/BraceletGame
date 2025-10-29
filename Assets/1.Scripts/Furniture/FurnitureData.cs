@@ -20,4 +20,7 @@ public enum FurnitureArrange
 {
     Wall,
     Floor,
+    Wallpaper, //벽지
+    Flooring, //바닥 마루
+
 }

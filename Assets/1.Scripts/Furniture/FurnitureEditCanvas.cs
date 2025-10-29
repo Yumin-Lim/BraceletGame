@@ -7,6 +7,8 @@ public class FurnitureEditCanvas : MonoBehaviour
     public GameObject furniturePanelPrefab;
     public Transform parentTr;
 
+    public List<FurniturePanel> furniturePanels = new List<FurniturePanel>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +17,25 @@ public class FurnitureEditCanvas : MonoBehaviour
 
         for (int i = 0; User.Instance.userData.userFurnitures.Count > i; i++)
         {
-            GameObject panel = Instantiate(furniturePanelPrefab, parentTr);
-            panel.GetComponent<FurniturePanel>().SetData(User.Instance.userData.userFurnitures[i]);
+            GameObject panelObject = Instantiate(furniturePanelPrefab, parentTr);
+            FurniturePanel panel = panelObject.GetComponent<FurniturePanel>();
+            panel.SetData(User.Instance.userData.userFurnitures[i]);
+
+            furniturePanels.Add(panel);
 
             Debug.Log(i);
 
+
         }
-    
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+ public void UpdateCanvas() 
     {
-        
+        for(int i =0;i< furniturePanels.Count; i++)
+        {
+            furniturePanels[i].UpdatePanel();
+        }
     }
 }

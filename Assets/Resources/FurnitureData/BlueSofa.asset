@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BlueSofa
   m_EditorClassIdentifier: 
   key: BlueSofa
-  furnitureName: 
-  arrange: 1
+  furnitureName: BlueSofa
+  arrange: 0
   price: 0
   sprite: {fileID: 0}
   prefab: {fileID: 4826223723398140062, guid: 7463f5b183b5e47cbb80869a048af5e4, type: 3}

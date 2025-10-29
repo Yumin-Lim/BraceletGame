@@ -8,7 +8,7 @@ public class FurnitureManager : MonoBehaviour
 {
 
 
-    public Transform furniturePr;
+    public Transform furniturePr;  //생성되어야 하는 위치 (부모 오브젝트) -> 게임 킬때부터 있어야 함 
 
     public static FurnitureManager Instance;
     // Start is called before the first frame update
@@ -17,6 +17,10 @@ public class FurnitureManager : MonoBehaviour
 
     public GameObject offButton;
     public GameObject onButton;
+
+    public Transform floorPr;
+    public Transform wallPr;
+    
 
     public void Awake()
     {
@@ -41,8 +45,8 @@ public class FurnitureManager : MonoBehaviour
         editMode = false;
         canvas.SetActive(false);
         offButton.SetActive(false);
-        onButton.SetActive(true); 
-        
+        onButton.SetActive(true);
+
 
     }
 
@@ -88,6 +92,7 @@ public class FurnitureManager : MonoBehaviour
                 return;
             targetFurniture = col.GetComponent<Furniture>();
 
+
         }
         else if (Input.GetMouseButton(0)) //클릳중
         {
@@ -96,7 +101,29 @@ public class FurnitureManager : MonoBehaviour
 
             Vector2 screenPoint = Input.mousePosition;
             Vector2 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
-            targetFurniture.transform.position = worldPoint;
+
+
+            if (targetFurniture.furnitureData.arrange == FurnitureArrange.Floor)
+            {
+
+
+                Collider2D col = Physics2D.OverlapPoint(worldPoint, LayerMask.GetMask("Floor"));
+                if (col != null)
+                {
+                    targetFurniture.transform.position = worldPoint;
+                }
+
+            }
+            else
+            {
+                Collider2D col = Physics2D.OverlapPoint(worldPoint, LayerMask.GetMask("Wall"));
+                if( col != null)
+                {
+                    targetFurniture.transform.position = worldPoint;
+                }
+            }
+
+
         }
         else if (Input.GetMouseButtonUp(0)) //클릭 해제 
         {

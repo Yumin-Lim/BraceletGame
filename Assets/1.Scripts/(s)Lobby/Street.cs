@@ -38,5 +38,6 @@ public enum StreetType
 {
     Lobby,
     Cat,
-    Shop
+    Shop,
+    Furniture
 }
