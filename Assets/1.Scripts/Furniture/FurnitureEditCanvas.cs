@@ -10,9 +10,27 @@ public class FurnitureEditCanvas : MonoBehaviour
     public List<FurniturePanel> furniturePanels = new List<FurniturePanel>();
 
     // Start is called before the first frame update
+
     void Start()
     {
+        
+    }
 
+    public void OnEnable()
+    {
+        CreatPanel();
+    }
+
+
+    void CreatPanel()
+    {
+
+        for (int i = 0; i < furniturePanels.Count; i++)
+        {
+            Destroy(furniturePanels[i].gameObject);
+        }   
+        
+        furniturePanels.Clear();
         Debug.Log("현재 보유 중인 가구 갯수 " + User.Instance.userData.userFurnitures.Count);
 
         for (int i = 0; User.Instance.userData.userFurnitures.Count > i; i++)
@@ -27,6 +45,8 @@ public class FurnitureEditCanvas : MonoBehaviour
 
 
         }
+
+
 
     }
 

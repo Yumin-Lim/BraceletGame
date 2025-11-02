@@ -195,30 +195,33 @@
     "userFurnitures": [
         {
             "furnitureName": "RedSofa",
-            "key": "7eacc2db-2d10-4813-ac60-ea4a7b4b673a",
+            "key": "69ca742e-9ca9-486c-9c0e-31c42ed460a7",
             "setUp": false,
             "position": {
                 "x": 0.0,
                 "y": 0.0
-            }
+            },
+            "rotationZ": 0.0
         },
         {
             "furnitureName": "RedSofa",
-            "key": "a6eda2bb-b393-4de2-8386-f03d06b096b6",
+            "key": "4ae7727e-1031-4ea9-9fa9-c8152b2bf45c",
             "setUp": false,
             "position": {
                 "x": 0.0,
                 "y": 0.0
-            }
+            },
+            "rotationZ": 0.0
         },
         {
             "furnitureName": "BlueSofa",
-            "key": "fcf30bf9-9e1a-4ecd-9105-cbb161fbbbcc",
+            "key": "26b1eb07-7dff-4593-9879-515ebb5d323c",
             "setUp": false,
             "position": {
                 "x": 0.0,
                 "y": 0.0
-            }
+            },
+            "rotationZ": 0.0
         }
     ]
 }

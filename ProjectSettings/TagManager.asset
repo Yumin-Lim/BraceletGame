@@ -12,6 +12,7 @@ TagManager:
   - CatShop
   - Shop_2
   - shopNpc
+  - FurnitureShop
   layers:
   - Default
   - TransparentFX

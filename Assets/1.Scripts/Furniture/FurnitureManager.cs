@@ -9,7 +9,7 @@ public class FurnitureManager : MonoBehaviour
 
 
     public Transform furniturePr;  //생성되어야 하는 위치 (부모 오브젝트) -> 게임 킬때부터 있어야 함 
-
+    public GameObject LobbyCanvas; //로비 캔버스        
     public static FurnitureManager Instance;
     // Start is called before the first frame update
 
@@ -20,8 +20,10 @@ public class FurnitureManager : MonoBehaviour
 
     public Transform floorPr;
     public Transform wallPr;
-    
 
+
+    //furnitureEditCanvas 켜지면 로비캔버스 비활성화
+    //꺼지면 활성화 
     public void Awake()
     {
         Instance = this;
@@ -35,6 +37,8 @@ public class FurnitureManager : MonoBehaviour
         offButton.SetActive(true);
         onButton.SetActive(false);
 
+        LobbyCanvas.SetActive(false);
+
 
     }
 
@@ -46,6 +50,8 @@ public class FurnitureManager : MonoBehaviour
         canvas.SetActive(false);
         offButton.SetActive(false);
         onButton.SetActive(true);
+
+        LobbyCanvas.SetActive(true);
 
 
     }
@@ -59,12 +65,12 @@ public class FurnitureManager : MonoBehaviour
             if (User.Instance.userData.userFurnitures[i].setUp == true)
             {
 
-                FurnitureData furniture = Resources.Load<FurnitureData>($"FurnitureData/{User.Instance.userData.userFurnitures[i].furnitureName}");
+                FurnitureData furnitureData = Resources.Load<FurnitureData>($"FurnitureData/{User.Instance.userData.userFurnitures[i].furnitureName}");
 
 
-                Instantiate(furniture.prefab);
-                furniture.prefab.transform.position = (User.Instance.userData.userFurnitures[i].position);
-
+               Furniture furniture = Instantiate(furnitureData.prefab);
+                furniture.transform.position = (User.Instance.userData.userFurnitures[i].position);
+                furniture.Apply(User.Instance.userData.userFurnitures[i]);
 
             }
         }

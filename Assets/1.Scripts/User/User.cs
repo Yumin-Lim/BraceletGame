@@ -14,8 +14,8 @@ public class User : MonoBehaviour
 
     public UserData userData;
     public string selectedBoardKey;
-    
-    
+
+
 
     //public ShopQuest shopQuest; //이걸 이제 퀘스트를 여러개 받을거니까 리스트로 만들자 
 
@@ -51,8 +51,8 @@ public class User : MonoBehaviour
         // userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
 
         AddFurniture("RedSofa");
-      AddFurniture("RedSofa");
-           AddFurniture("BlueSofa");
+        AddFurniture("RedSofa");
+        AddFurniture("BlueSofa");
 
 
 
@@ -290,6 +290,12 @@ public class User : MonoBehaviour
 
     }
 
+    public void SetFurnitureZ(UserFurniture userFurniture, float z)
+    {
+        userFurniture.rotationZ = z;
+        SaveManger.SaveData("UserData", userData);
+
+    }
     public void AddBoard(string BoardKey)
     {
         UserBoardData board = GetBoard(BoardKey);
@@ -357,6 +363,8 @@ public class UserFurniture
     public bool setUp;
     //설치 위치
     public Vector2 position;
+
+    public float rotationZ;
 
 }
 
