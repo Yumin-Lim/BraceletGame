@@ -27,8 +27,8 @@ public class FurnitureShop : MonoBehaviour
             {
                 if (cols[i].tag == "FurnitureShop")
                 {
-                    Debug.Log("FurnitureShop!");
-                     FurnitureShopCanvas.SetActive(true);
+                   
+                    FurnitureShopCanvas.SetActive(true);
 
                 }
             }

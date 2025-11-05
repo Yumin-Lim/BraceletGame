@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class FurniturePanel : MonoBehaviour
 {
+   
+
+   
     public string furnitrueName;
     public Image thumb;
 
@@ -17,7 +20,7 @@ public class FurniturePanel : MonoBehaviour
     public UserFurniture curFurniture;
     public Transform floorPr;
 
-
+    
 
 
 

@@ -13,6 +13,8 @@ public class FurnitureData : ScriptableObject
     public int price;
     public Sprite sprite;
 
+    public int order; //쇼핑몰에서 보여지는 순서
+
     public Furniture prefab;
 }
 

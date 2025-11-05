@@ -22,6 +22,7 @@ public class FurnitureManager : MonoBehaviour
     public Transform wallPr;
 
 
+
     //furnitureEditCanvas 켜지면 로비캔버스 비활성화
     //꺼지면 활성화 
     public void Awake()
@@ -40,6 +41,11 @@ public class FurnitureManager : MonoBehaviour
         LobbyCanvas.SetActive(false);
 
 
+
+
+
+
+
     }
 
     public void OnClickToEditModeClose()
@@ -52,6 +58,9 @@ public class FurnitureManager : MonoBehaviour
         onButton.SetActive(true);
 
         LobbyCanvas.SetActive(true);
+
+
+
 
 
     }
@@ -80,7 +89,7 @@ public class FurnitureManager : MonoBehaviour
 
     // Update is called once per frame
     public Furniture targetFurniture; //타깃
-    bool editMode;
+    public bool editMode;
     void Update()
     {
         if (editMode == false)

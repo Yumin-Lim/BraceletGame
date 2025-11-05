@@ -50,9 +50,9 @@ public class User : MonoBehaviour
         //  userData.userFurnitures.Add(new UserFurniture() { key = "RedSofa" });
         // userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
 
-        AddFurniture("RedSofa");
-        AddFurniture("RedSofa");
-        AddFurniture("BlueSofa");
+      //  AddFurniture("RedSofa");
+       // AddFurniture("RedSofa");
+        //AddFurniture("BlueSofa");
 
 
 
@@ -268,10 +268,12 @@ public class User : MonoBehaviour
         return newBoard;
     }
 
-    public void AddFurniture(string furnitureName)
+    public void AddFurniture(FurnitureData furnitureData)
     {
+        
         UserFurniture userfurniture = new UserFurniture();
-        userfurniture.furnitureName = furnitureName;
+        userfurniture.furnitureName = furnitureData.furnitureName;
+    
         userData.userFurnitures.Add(userfurniture);
 
         userfurniture.key = System.Guid.NewGuid().ToString();
@@ -303,6 +305,13 @@ public class User : MonoBehaviour
 
         SaveManger.SaveData("UserData", userData);
 
+    }
+
+    public void AddFurniture()
+    {
+        
+        
+        SaveManger.SaveData("UserData", userData);
     }
 
     //보유중인 특정 가구설치 혹은 해제

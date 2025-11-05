@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9144defa551410f9a8456ea493121b, type: 3}
   m_Name: BlueSofa
   m_EditorClassIdentifier: 
-  key: BlueSofa
+  key: 
   furnitureName: BlueSofa
   arrange: 0
-  price: 0
+  price: 1000
   sprite: {fileID: 0}
+  order: 0
   prefab: {fileID: 4826223723398140062, guid: 7463f5b183b5e47cbb80869a048af5e4, type: 3}

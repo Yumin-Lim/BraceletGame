@@ -1,190 +1,10 @@
 {
-    "coin": 80600,
-    "level": 15,
-    "exp": 4,
-    "userBracelets": [
-        {
-            "boardKey": "A",
-            "key": "20250827172312",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Pearl"
-                }
-            ],
-            "price": 120
-        },
-        {
-            "boardKey": "A",
-            "key": "20250827183238",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Dice3"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Dice3"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Dice3"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Pearl"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Strawberry"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Strawberry"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Summer Pink"
-                }
-            ],
-            "price": 0
-        },
-        {
-            "boardKey": "A",
-            "key": "20250924185445",
-            "userBeadsPlaceDatas": [
-                {
-                    "index": 0,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 1,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 2,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 3,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 4,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 5,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 6,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 7,
-                    "beadsKey": "Summer Pink"
-                },
-                {
-                    "index": 8,
-                    "beadsKey": "Dice3"
-                },
-                {
-                    "index": 9,
-                    "beadsKey": "Dice3"
-                },
-                {
-                    "index": 10,
-                    "beadsKey": "Dice3"
-                }
-            ],
-            "price": 0
-        }
-    ],
-    "userBeads": [
-        {
-            "key": "Pink",
-            "count": 94
-        },
-        {
-            "key": "Pearl",
-            "count": 0
-        },
-        {
-            "key": "Dice3",
-            "count": 14
-        },
-        {
-            "key": "Strawberry",
-            "count": 8
-        },
-        {
-            "key": "Summer Pink",
-            "count": 0
-        }
-    ],
-    "userCatData": [
-        {
-            "CatKey": "Christmas",
-            "count": 0
-        }
-    ],
+    "coin": 76000,
+    "level": 0,
+    "exp": 0,
+    "userBracelets": [],
+    "userBeads": [],
+    "userCatData": [],
     "userBoardData": [
         {
             "boardKey": "A",
@@ -195,7 +15,7 @@
     "userFurnitures": [
         {
             "furnitureName": "RedSofa",
-            "key": "69ca742e-9ca9-486c-9c0e-31c42ed460a7",
+            "key": "1b3796e3-3651-4b28-8625-18fbb1805491",
             "setUp": false,
             "position": {
                 "x": 0.0,
@@ -205,21 +25,21 @@
         },
         {
             "furnitureName": "RedSofa",
-            "key": "4ae7727e-1031-4ea9-9fa9-c8152b2bf45c",
+            "key": "bff9e2d6-c390-41a2-92e5-bcd3b9f4c3fb",
             "setUp": false,
             "position": {
-                "x": 0.0,
-                "y": 0.0
+                "x": -1.177777647972107,
+                "y": 1.7955554723739625
             },
             "rotationZ": 0.0
         },
         {
-            "furnitureName": "BlueSofa",
-            "key": "26b1eb07-7dff-4593-9879-515ebb5d323c",
+            "furnitureName": "RedSofa",
+            "key": "0b606684-59a2-423c-824b-9d56932d51f5",
             "setUp": false,
             "position": {
-                "x": 0.0,
-                "y": 0.0
+                "x": -0.7999999523162842,
+                "y": 2.3333334922790529
             },
             "rotationZ": 0.0
         }

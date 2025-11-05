@@ -14,12 +14,17 @@ public class Cat : MonoBehaviour
     //자동으로 애니메이션 들어가게 하려면?
     public Transform catPos; //목적지
 
+    public Transform bodyTr;
+
 
     //목적지가 설정되면
     //body 게임 오브젝트의 scale x 값을 1혹은 -1로 설정하기 
     public float waitTimer;
     void Start()
     {
+
+
+        bodyTr = transform.Find("Body");
         catPos = CatMaker.Instance.GetTransformPosition();
         SetDirection();
 
@@ -34,12 +39,12 @@ public class Cat : MonoBehaviour
         //목적지 설정
         if (catPos.position.x > transform.position.x) //오른쪽으로 간다
         {
-            Transform bodyTr = transform.Find("Body"); //하위 중 바디
+            //하위 중 바디
             bodyTr.localScale = new Vector3(-1, 1, 1);
         }
         else
-        {   
-            Transform bodyTr = transform.Find("Body"); //하위 중 바디
+        {
+
             bodyTr.localScale = new Vector3(1, 1, 1);
         }
     }
@@ -47,7 +52,7 @@ public class Cat : MonoBehaviour
     void IdleMoving()
     {
         CatPosition catPosition = catPos.GetComponent<CatPosition>();
-        CatAnimation randomAnim = catPosition.catAnimations[Random.Range(0,catPosition.catAnimations.Length)];
+        CatAnimation randomAnim = catPosition.catAnimations[Random.Range(0, catPosition.catAnimations.Length)];
 
         animator.Play(randomAnim.ToString());
         waitTimer = 10;
@@ -62,7 +67,7 @@ public class Cat : MonoBehaviour
             IdleMoving(); //목적지에 도착했을때 지정된 애니메이션
                           //판별시점
                           //그 위치가 어딘지 catposition.
-            
+
             moving = false;
         }
 
