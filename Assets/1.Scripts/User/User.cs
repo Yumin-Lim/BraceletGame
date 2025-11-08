@@ -46,13 +46,6 @@ public class User : MonoBehaviour
 
 
 
-        userData.userFurnitures.Clear();
-        //  userData.userFurnitures.Add(new UserFurniture() { key = "RedSofa" });
-        // userData.userFurnitures.Add(new UserFurniture() { key = "BlueSofa" });
-
-      //  AddFurniture("RedSofa");
-       // AddFurniture("RedSofa");
-        //AddFurniture("BlueSofa");
 
 
 
@@ -292,7 +285,7 @@ public class User : MonoBehaviour
 
     }
 
-    public void SetFurnitureZ(UserFurniture userFurniture, float z)
+    public void SetFurnitureZ(UserFurniture userFurniture, int z)
     {
         userFurniture.rotationZ = z;
         SaveManger.SaveData("UserData", userData);
@@ -373,7 +366,7 @@ public class UserFurniture
     //설치 위치
     public Vector2 position;
 
-    public float rotationZ;
+    public int rotationZ;
 
 }
 

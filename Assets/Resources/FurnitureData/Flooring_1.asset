@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a9144defa551410f9a8456ea493121b, type: 3}
-  m_Name: CoffeeMachine
+  m_Name: Flooring_1
   m_EditorClassIdentifier: 
   key: 
-  furnitureName: CoffeeMachine
-  arrange: 1
+  furnitureName: Flooring_1
+  arrange: 2
   price: 1000
   sprite: {fileID: 0}
   order: 0
-  prefab: {fileID: -530875089295417503, guid: 73c968d16c33544e8b37714da84355ea, type: 3}
+  prefab: {fileID: -2219248156624225839, guid: 0c044c32c14184098a6b610a76a55631, type: 3}

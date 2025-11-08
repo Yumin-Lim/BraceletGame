@@ -21,6 +21,9 @@ public class FurnitureManager : MonoBehaviour
     public Transform floorPr;
     public Transform wallPr;
 
+    public Transform wallpaperPr;
+    public Transform FlooringPr;
+
 
 
     //furnitureEditCanvas 켜지면 로비캔버스 비활성화

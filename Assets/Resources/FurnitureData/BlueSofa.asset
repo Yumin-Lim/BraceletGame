@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 
   furnitureName: BlueSofa
-  arrange: 0
+  arrange: 1
   price: 1000
   sprite: {fileID: 0}
   order: 0

@@ -14,10 +14,17 @@ public class Furniture : MonoBehaviour
     public GameObject removeButton;
     public GameObject rotateButton;
 
-    void Start()
-    {
 
-        spriteTr = transform.Find("Sprites");
+    public FurnitureDirection[] directions;
+
+    void Awake()
+    {
+        directions = GetComponentsInChildren<FurnitureDirection>(true);
+        if (spriteTr == null)
+        {
+            spriteTr = transform.Find("Sprites");
+        }
+
         furnitureData = Resources.Load<FurnitureData>($"FurnitureData/{key}");
 
 
@@ -25,9 +32,10 @@ public class Furniture : MonoBehaviour
 
     void Update()
     {
-       if(FurnitureManager.Instance.editMode)
+        if (FurnitureManager.Instance.editMode)
         {
             removeButton.SetActive(true);
+            
             rotateButton.SetActive(true);
         }
         else
@@ -38,8 +46,8 @@ public class Furniture : MonoBehaviour
     }
     public void OnclikedRemove()
     {
-       Debug.Log("가구 제거 클릭됨");
-       
+        Debug.Log("가구 제거 클릭됨");
+
         Destroy(gameObject); //씬상에 가구 제거
         User.Instance.SetUpFurniture(userFurniture, false); // 사용자가 세팅 안하고있음으로 변경
 
@@ -54,8 +62,13 @@ public class Furniture : MonoBehaviour
 
     public void Apply(UserFurniture userFurniture)
     {
-        this.userFurniture = userFurniture;
-        spriteTr.localRotation = Quaternion.Euler(new Vector3(0, 0, userFurniture.rotationZ));
+        if (spriteTr == null)
+        {
+            spriteTr = transform.Find("Sprites");
+        }
+
+        this.userFurniture = userFurniture; 
+        SetRotation();
     }
 
     public void OnClickedRotate()
@@ -63,12 +76,32 @@ public class Furniture : MonoBehaviour
 
 
     {
-        Debug.Log("회전 클릭됨");   
-        
-        spriteTr.Rotate(0, 0, 90);
+        Debug.Log("회전 클릭됨");
+
+        int z = (userFurniture.rotationZ + 1) % 4;
 
 
-        User.Instance.SetFurnitureZ(userFurniture, spriteTr.localRotation.z);
+        User.Instance.SetFurnitureZ(userFurniture, z);
+        SetRotation();
+    }
+
+
+
+    void SetRotation()
+    {
+
+        for (int i = 0; i < directions.Length; i++)
+        {
+            if (directions[i].index == userFurniture.rotationZ)
+            {
+                directions[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                directions[i].gameObject.SetActive(false);
+            }
+
+        }
     }
 
     // Update is called once per frame

@@ -19,6 +19,8 @@ public class RemoveFurniture : MonoBehaviour
         Furniture furniture = GetComponentInParent<Furniture>();
         furniture.OnclikedRemove();
 
+       
+
         
     }
     // Update is called once per frame

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a9144defa551410f9a8456ea493121b, type: 3}
-  m_Name: CoffeeMachine
+  m_Name: Chairs_1
   m_EditorClassIdentifier: 
   key: 
-  furnitureName: CoffeeMachine
+  furnitureName: Chairs_1
   arrange: 1
   price: 1000
   sprite: {fileID: 0}
   order: 0
-  prefab: {fileID: -530875089295417503, guid: 73c968d16c33544e8b37714da84355ea, type: 3}
+  prefab: {fileID: 8734736458907070005, guid: 554c8a630dbf44fa497cd20a922440a3, type: 3}
