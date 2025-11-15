@@ -1,9 +1,30 @@
 {
-    "coin": 9000,
-    "level": 0,
-    "exp": 0,
+    "coin": 4300,
+    "level": 112,
+    "exp": 3,
     "userBracelets": [],
-    "userBeads": [],
+    "userBeads": [
+        {
+            "key": "Pink",
+            "count": 26
+        },
+        {
+            "key": "Pearl",
+            "count": 4
+        },
+        {
+            "key": "Purple",
+            "count": 10
+        },
+        {
+            "key": "Black",
+            "count": 29
+        },
+        {
+            "key": "Dice3",
+            "count": 28
+        }
+    ],
     "userCatData": [],
     "userBoardData": [
         {
@@ -11,17 +32,81 @@
             "purchased": true
         }
     ],
-    "userQuestList": [],
+    "userQuestList": [
+        {
+            "name": "Daily Quest 1",
+            "des": "Contents 1",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Purple"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey1"
+        }
+    ],
     "userFurnitures": [
         {
             "furnitureName": "Chairs_1",
             "key": "f41beedc-da21-4949-b00b-65197f55f300",
-            "setUp": true,
+            "setUp": false,
             "position": {
                 "x": 1.693333387374878,
                 "y": 0.4755553901195526
             },
             "rotationZ": 2
+        },
+        {
+            "furnitureName": "Flooring_1",
+            "key": "118d41ff-b842-473f-bdc9-7da79530799e",
+            "setUp": false,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "rotationZ": 0
         }
     ]
 }

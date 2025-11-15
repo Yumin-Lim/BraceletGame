@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class shop_2 : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class shop_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            // UI 클릭 중 → 월드 클릭 무시
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
 

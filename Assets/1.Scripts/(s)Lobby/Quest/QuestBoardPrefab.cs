@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
+
 
 public class QuestBoardPrefab : MonoBehaviour
 {

@@ -22,7 +22,7 @@ public class User : MonoBehaviour
 
     public void Awake()
     {
-
+        Application.targetFrameRate = 60;
 
         if (Instance == null)
         {
