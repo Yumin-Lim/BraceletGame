@@ -1,7 +1,7 @@
 {
     "coin": 13800,
     "level": 10,
-    "exp": 8,
+    "exp": 9,
     "userBracelets": [
         {
             "boardKey": "A",
@@ -52,7 +52,7 @@
                     "beadsKey": "Pearl"
                 }
             ],
-            "price": 0
+            "price": 120
         },
         {
             "boardKey": "A",
@@ -103,7 +103,58 @@
                     "beadsKey": "CupCake_1"
                 }
             ],
-            "price": 0
+            "price": 120
+        },
+        {
+            "boardKey": "A",
+            "key": "20251126164954",
+            "userBeadsPlaceDatas": [
+                {
+                    "index": 0,
+                    "beadsKey": "CinnamonRoll"
+                },
+                {
+                    "index": 1,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 2,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 3,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 4,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 5,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 6,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 7,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 8,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 9,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 10,
+                    "beadsKey": "Pearl"
+                }
+            ],
+            "price": 120
         }
     ],
     "userBeads": [
@@ -113,7 +164,7 @@
         },
         {
             "key": "Pearl",
-            "count": 1383
+            "count": 1373
         },
         {
             "key": "Purple",
@@ -138,6 +189,10 @@
         {
             "key": "CupCake_1",
             "count": 85
+        },
+        {
+            "key": "CinnamonRoll",
+            "count": 9
         }
     ],
     "userCatData": [],
@@ -518,6 +573,165 @@
             ],
             "price": 100,
             "questKey": "questKey9"
+        },
+        {
+            "name": "Daily Quest 0",
+            "des": "Contents 0",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Purple"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey0"
+        },
+        {
+            "name": "Daily Quest 1",
+            "des": "Contents 1",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Black"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey1"
+        },
+        {
+            "name": "Daily Quest 2",
+            "des": "Contents 2",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Dice3"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey2"
         }
     ],
     "userFurnitures": [],
