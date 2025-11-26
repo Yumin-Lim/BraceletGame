@@ -13,6 +13,7 @@ TagManager:
   - Shop_2
   - shopNpc
   - FurnitureShop
+  - FairyShop
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: World UI
+    uniqueID: 3175978853
     locked: 0

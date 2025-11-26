@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b00ea9de06fd422da7c47693015dc33, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: 
-  price: 1000
+  price: 3
   key: Strawberry
   beadsName: 
   des: 
-  concept: 2
+  concept: 1
   thum: {fileID: 1352238350, guid: 002d187ea03c047fa91698720af6dbd4, type: 3}
-  openLv: 2
+  openLv: 0

@@ -49,12 +49,13 @@ public class BeadsManager : MonoBehaviour
 
 
 
+
+
 }
 
 
 public enum Concept
 {
     Basic,
-    Gothic,
-    Cute,
+    Fairy,
 }

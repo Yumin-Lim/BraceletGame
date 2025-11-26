@@ -16,6 +16,6 @@ MonoBehaviour:
   key: Dice3
   beadsName: 
   des: 
-  concept: 2
+  concept: 0
   thum: {fileID: -1676686347, guid: 816f9123e466042b8a86b425dda1bfb5, type: 3}
   openLv: 0

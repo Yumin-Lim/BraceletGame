@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -697,15 +697,6 @@ MonoBehaviour:
   userBeads:
     key: 
     count: 0
-  beadsPrefabList:
-  - {fileID: 8212463772612593914}
-  - {fileID: 2427758068378153099}
-  - {fileID: 7505321418138425116}
-  - {fileID: 1099473544817045739}
-  - {fileID: 694835425181949566}
-  - {fileID: 6166478007356196624}
-  - {fileID: 5566778102152531970}
-  - {fileID: 4059214112407520359}
 --- !u!114 &7780440677838181772
 MonoBehaviour:
   m_ObjectHideFlags: 0

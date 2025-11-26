@@ -1,28 +1,143 @@
 {
-    "coin": 4300,
-    "level": 112,
-    "exp": 3,
-    "userBracelets": [],
+    "coin": 13800,
+    "level": 10,
+    "exp": 8,
+    "userBracelets": [
+        {
+            "boardKey": "A",
+            "key": "20251126144744",
+            "userBeadsPlaceDatas": [
+                {
+                    "index": 0,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 1,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 2,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 3,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 4,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 5,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 6,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 7,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 8,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 9,
+                    "beadsKey": "Pearl"
+                },
+                {
+                    "index": 10,
+                    "beadsKey": "Pearl"
+                }
+            ],
+            "price": 0
+        },
+        {
+            "boardKey": "A",
+            "key": "20251126144822",
+            "userBeadsPlaceDatas": [
+                {
+                    "index": 0,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 1,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 2,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 3,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 4,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 5,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 6,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 7,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 8,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 9,
+                    "beadsKey": "CupCake_1"
+                },
+                {
+                    "index": 10,
+                    "beadsKey": "CupCake_1"
+                }
+            ],
+            "price": 0
+        }
+    ],
     "userBeads": [
         {
             "key": "Pink",
-            "count": 26
+            "count": 1495
         },
         {
             "key": "Pearl",
-            "count": 4
+            "count": 1383
         },
         {
             "key": "Purple",
-            "count": 10
+            "count": 996
         },
         {
             "key": "Black",
-            "count": 29
+            "count": 994
+        },
+        {
+            "key": "Summer Pink",
+            "count": 1000
         },
         {
             "key": "Dice3",
-            "count": 28
+            "count": 989
+        },
+        {
+            "key": "Strawberry",
+            "count": 10
+        },
+        {
+            "key": "CupCake_1",
+            "count": 85
         }
     ],
     "userCatData": [],
@@ -34,13 +149,13 @@
     ],
     "userQuestList": [
         {
-            "name": "Daily Quest 1",
-            "des": "Contents 1",
+            "name": "Daily Quest 3",
+            "des": "Contents 3",
             "boardKey": "A",
             "beadsPlaceCorrects": [
                 {
                     "index": 0,
-                    "beadKey": "Black"
+                    "beadKey": "Dice3"
                 },
                 {
                     "index": 1,
@@ -48,31 +163,31 @@
                 },
                 {
                     "index": 2,
-                    "beadKey": "Dice3"
+                    "beadKey": "Pink"
                 },
                 {
                     "index": 3,
-                    "beadKey": "Pink"
-                },
-                {
-                    "index": 4,
-                    "beadKey": "Pink"
-                },
-                {
-                    "index": 5,
-                    "beadKey": "Purple"
-                },
-                {
-                    "index": 6,
-                    "beadKey": "Black"
-                },
-                {
-                    "index": 7,
                     "beadKey": "Dice3"
                 },
                 {
-                    "index": 8,
+                    "index": 4,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 7,
                     "beadKey": "Pink"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Pearl"
                 },
                 {
                     "index": 9,
@@ -84,29 +199,327 @@
                 }
             ],
             "price": 100,
-            "questKey": "questKey1"
-        }
-    ],
-    "userFurnitures": [
-        {
-            "furnitureName": "Chairs_1",
-            "key": "f41beedc-da21-4949-b00b-65197f55f300",
-            "setUp": false,
-            "position": {
-                "x": 1.693333387374878,
-                "y": 0.4755553901195526
-            },
-            "rotationZ": 2
+            "questKey": "questKey3"
         },
         {
-            "furnitureName": "Flooring_1",
-            "key": "118d41ff-b842-473f-bdc9-7da79530799e",
-            "setUp": false,
-            "position": {
-                "x": 0.0,
-                "y": 0.0
-            },
-            "rotationZ": 0
+            "name": "Daily Quest 4",
+            "des": "Contents 4",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Dice3"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey4"
+        },
+        {
+            "name": "Daily Quest 5",
+            "des": "Contents 5",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Pearl"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey5"
+        },
+        {
+            "name": "Daily Quest 6",
+            "des": "Contents 6",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Pearl"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey6"
+        },
+        {
+            "name": "Daily Quest 7",
+            "des": "Contents 7",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Dice3"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey7"
+        },
+        {
+            "name": "Daily Quest 8",
+            "des": "Contents 8",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Black"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Pearl"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Pearl"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey8"
+        },
+        {
+            "name": "Daily Quest 9",
+            "des": "Contents 9",
+            "boardKey": "A",
+            "beadsPlaceCorrects": [
+                {
+                    "index": 0,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 1,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 2,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 3,
+                    "beadKey": "Purple"
+                },
+                {
+                    "index": 4,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 5,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 6,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 7,
+                    "beadKey": "Pink"
+                },
+                {
+                    "index": 8,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 9,
+                    "beadKey": "Dice3"
+                },
+                {
+                    "index": 10,
+                    "beadKey": "Pearl"
+                }
+            ],
+            "price": 100,
+            "questKey": "questKey9"
         }
-    ]
+    ],
+    "userFurnitures": [],
+    "userTicketDatas": []
 }

@@ -14,6 +14,7 @@ public class User : MonoBehaviour
 
     public UserData userData;
     public string selectedBoardKey;
+    public int dailyQuestCounter=0;
 
 
 
@@ -45,7 +46,7 @@ public class User : MonoBehaviour
         }
 
 
-
+    userData.userTicketDatas=new List<UserTicketData>();    
 
 
 
@@ -56,6 +57,20 @@ public class User : MonoBehaviour
         SaveManger.SaveData("UserData", userData);
     }
 
+
+public void SubTicket(int t)
+    {
+        for(int i=0; i<t; i--)
+        {
+            if(userData.userTicketDatas.Count>0)
+            {
+                userData.userTicketDatas.RemoveAt(0);
+            }
+        }
+        SaveManger.SaveData("UserData", userData);
+   
+        
+    }
     public void AddExp(int e)
     {
         userData.exp += e;
@@ -204,6 +219,19 @@ public class User : MonoBehaviour
 
     */
 
+    public void DailyQuestCounter()
+    {
+        dailyQuestCounter++;
+
+        if(dailyQuestCounter==10)
+        {
+            AddUserTicketData();
+            
+        }
+
+
+    }
+
     public void SubBracelet(UserBracelet userBracelet)
     {
         userData.userBracelets.Remove(userBracelet);
@@ -278,6 +306,15 @@ public class User : MonoBehaviour
     //특정 가구의 위치를 저장하는 함수
     // 처음 생성될떄랑
     // 드래그하다가 손가락을 해제했을떄
+
+    public void AddUserTicketData()
+    {
+        UserTicketData userTicketData = new UserTicketData();
+        userTicketData.count ++;
+        userData.userTicketDatas.Add(userTicketData);
+        SaveManger.SaveData("UserData", userData);
+    }
+   
     public void SetFurniturePosition(UserFurniture userFurniture, Vector2 position)
     {
         userFurniture.position = position;
@@ -377,8 +414,11 @@ public class UserData
 {
     public int coin;
 
+
     public int level;
     public int exp;
+
+    
 
 
     public List<UserBracelet> userBracelets = new List<UserBracelet>();
@@ -391,7 +431,9 @@ public class UserData
     public List<UserBoardData> userBoardData = new List<UserBoardData>(); //사용자가 ㄷ어떤 보드 가지고 있고 안가지고 있고 유저의 보드 보유 상태 
     public List<QuestData> userQuestList = new List<QuestData>(); //유저가 수락한 퀘스트
 
-    public List<UserFurniture> userFurnitures = new List<UserFurniture>(); //어느 가구를 가지고 있는지 
+    public List<UserFurniture> userFurnitures = new List<UserFurniture>();
+    
+    public List<UserTicketData> userTicketDatas = new List<UserTicketData>(); //
 }
 
 
@@ -445,4 +487,11 @@ public class UserQuestBraceletData
     public string QuestBraceletKey;
     public int price;
 
+}
+
+
+[System.Serializable]
+public class UserTicketData
+{
+    public int count;
 }

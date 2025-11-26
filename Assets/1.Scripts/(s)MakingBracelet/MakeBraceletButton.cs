@@ -12,6 +12,8 @@ public class MakeBraceletButton : MonoBehaviour
 
   public BeadsPlace[] beadsPlaces;
 
+  public bool isThisSpecial = false;
+
 
   [SerializeField]
   public int countBeads;
@@ -122,7 +124,9 @@ public class MakeBraceletButton : MonoBehaviour
       {
 
 
-        User.Instance.userData.userQuestList.Remove(userQuestList[i]); //이게 닫기 버튼 누른 후에 반영된다 왜지 
+        User.Instance.userData.userQuestList.Remove(userQuestList[i]);
+        User.Instance.DailyQuestCounter();
+        //이게 닫기 버튼 누른 후에 반영된다 왜지 
         //User.Instance.AddBracelet(1);
         //그리고 이제 여기서 퀘스트 보드 업데이트 
         // QuestComp.Instance.data(userQuestList[i]); 아진짜 뭐냐 이거 어쩌지 
@@ -225,6 +229,12 @@ public class MakeBraceletButton : MonoBehaviour
     if (makeBraceletData != null) //이게 참이면
     {
 
+
+
+
+
+
+
       //User.Instance.AddBracelet(userBracelet.userBeadsPlaceDatas, userBracelet.boardKey);
       //팔찌 데이터 추가 
       //팔찌를 가지고 있는게 0 일때 아래가 실행이 안되니까 문제
@@ -289,6 +299,8 @@ public class MakeBraceletButton : MonoBehaviour
       userBeadsPlaceDatas[i].beadsKey = MakingBraceletManager.Instance.beadsBoard.beadsPlaces[i].beads.beadsKey;
       userBeadsPlaceDatas[i].index = i;
 
+
+
     }
 
     User.Instance.AddBracelet(braceletKey, userBeadsPlaceDatas, MakingBraceletManager.Instance.beadsBoard.key);
@@ -298,7 +310,7 @@ public class MakeBraceletButton : MonoBehaviour
     completeBraceletCanvas.OpenCompleteFreeMode(braceletKey);
 
 
-  
+
 
 
 

@@ -47,15 +47,33 @@ public class BeadsProductPanel : MonoBehaviour
 
     public void OnClickedPurchaseButton()
     {
-        //User user = FindObjectOfType<User>(); //이거 너무 무거워서 
-        User user = User.Instance;
-        if (user.userData.coin < beadsData.price)
+        if (beadsData.concept == Concept.Fairy)
         {
-            Debug.Log("no money");
-            return;
+            Debug.Log("Fairy Beads Purchased");
+            User user = User.Instance;
+            if (user.userData.userTicketDatas.Count< beadsData.price)
+            {
+                Debug.Log("no Tickets");
+                return;
+            }
+            user.SubTicket(beadsData.price);
+            user.AddBeads(beadsKey, 10);
+
         }
-        user.AddCoin(-beadsData.price);
-        user.AddBeads(beadsKey, 10); //사용자 구매시 얻게 되는 비즈 1개에서 10개로 수정 
+        else
+        {
+            //User user = FindObjectOfType<User>(); //이거 너무 무거워서 
+            User user = User.Instance;
+            if (user.userData.coin < beadsData.price)
+            {
+                Debug.Log("no money");
+                return;
+            }
+            user.AddCoin(-beadsData.price);
+            user.AddBeads(beadsKey, 10); //사용자 구매시 얻게 되는 비즈 1개에서 10개로 수정 
+
+        }
+
 
 
     }

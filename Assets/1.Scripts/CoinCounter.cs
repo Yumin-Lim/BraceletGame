@@ -8,6 +8,8 @@ public class CoinCounter : MonoBehaviour
     
     public TMP_Text coinCounter;
     public TMP_Text levelCounter;
+
+    public TMP_Text ticketCounter;
     
     
     // Start is called before the first frame update
@@ -26,5 +28,7 @@ public class CoinCounter : MonoBehaviour
         coinCounter.text = user.userData.coin.ToString(); 
 
         levelCounter.text = user.userData.level.ToString();
+
+        ticketCounter.text = user.userData.userTicketDatas.Count.ToString();
     }
 }

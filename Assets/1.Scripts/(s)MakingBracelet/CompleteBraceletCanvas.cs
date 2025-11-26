@@ -8,12 +8,15 @@ using System;
 public class CompleteBraceletCanvas : MonoBehaviour
 {
     public static CompleteBraceletCanvas Instance;
+    public Canvas stmepCanvas;
 
 
     public Image thumImage;
     public TMP_Text nameText;
     [SerializeField] private GameObject questCompleteBtn;
     public List<QuestData> currentQuestData = new List<QuestData>();
+
+    public Canvas stempQanvas;
 
     [SerializeField] public static bool flag;
 
@@ -41,6 +44,10 @@ public class CompleteBraceletCanvas : MonoBehaviour
         gameObject.SetActive(true);
         thumImage.sprite = Capture.LoadSpriteFromFile(braceletKey);
         nameText.text = "퀘스트 성공";
+        stempQanvas.gameObject.SetActive(true);
+
+        QuestStampCanvas.Instance.QuestStempAdd();
+        stempQanvas.gameObject.SetActive(true);
 
     }
     public void OpenCompleteFreeMode(string braceletKey) //프리모드 우해서 
@@ -94,5 +101,7 @@ public class CompleteBraceletCanvas : MonoBehaviour
         }
 
     }
+
+
 }
 

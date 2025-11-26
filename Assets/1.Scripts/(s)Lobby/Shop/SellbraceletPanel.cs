@@ -21,14 +21,14 @@ public class SellbraceletPanel : MonoBehaviour
     Instance = this;
 
 
-   
-    
-    
+
+
+
   }
 
   public void SetBracelet(UserBracelet userBracelet)
   {
-    
+
 
     this.userBracelet = userBracelet;
     thumImage.sprite = userBracelet.GetBraceletThum();
@@ -39,8 +39,11 @@ public class SellbraceletPanel : MonoBehaviour
 
     Debug.Log("팔렸습니다.");
 
+
     User.Instance.SubBracelet(userBracelet);
-    
+    User.Instance.AddCoin(userBracelet.price);
+    User.Instance.AddExp(2);
+
     BraceletData braceletData = BraceletManager.Instance.GetBraceletData(userBracelet.key);
 
     Destroy(thumImage.sprite); //팔았으니까 캡쳐 이미지 지우기
@@ -52,11 +55,11 @@ public class SellbraceletPanel : MonoBehaviour
 
   }
 
- 
+
 
   void Start()
   {
-  
+
   }
 
   // Update is called once per frame
